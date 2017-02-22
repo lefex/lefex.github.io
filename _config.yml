@@ -2,7 +2,7 @@
 title: iMetalk
 subtitle: 北京同创智业iOS技术团队
 welcome_message: <a href="https://github.com/onevcat/vno-jekyll" target="_blank">Download the theme</a>
-description: Vno Jekyll is a port of my Ghost theme vno.
+description: 我们是一群90后，热爱技术，喜欢分享。不局限于iOS技术本身，学习Node，了解产品，掌握跨平台开发。做好技术的同时做好产品。
 creator: <a href="http://onev.cat">@onevcat</a>
 
 url: "http://vno.onevcat.com"
@@ -37,11 +37,11 @@ comment:
     
 # Social
 social:
-    weibo: onevcat
-    github: onevcat
-    twitter: onevcat
+    weibo: iMetalk
+    github: iMetalk
+    twitter: iMetalk
     gplus: 107108267983477358170
-    mail: onev@onevcat.com
+    mail: iMetalk@163.com
 
 # Google Analytics
 ga:
