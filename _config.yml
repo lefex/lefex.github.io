@@ -17,13 +17,13 @@ cover_color: red
 
 # The blog button should not be removed.
 blog_button:
-    title: Blog
+    title: 博客
     description: Visit blog
 
 # Navigation buttons in the front page.
 nav:
-    - {title: Projects, description: My Projects, url: 'http://project.onevcat.com'}
-    # - {title: Another Button, description: A button, url: 'http://example.com'}
+    - {title: 项目, description: 我们的项目汇总, url: 'https://lefex.github.io/2016/02/hello-world-vno/'}
+    - {title: 关于我们, description: 关于我们描述, url: 'https://lefex.github.io/2016/02/sample-post/'}
 
 # Pagination
 gems: [jekyll-paginate]
