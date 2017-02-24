@@ -22,8 +22,8 @@ blog_button:
 
 # Navigation buttons in the front page.
 nav:
-    - {title: 项目, description: 我们的项目汇总, url: 'https://lefex.github.io/2016/02/hello-world-vno/'}
-    - {title: 关于我们, description: 关于我们描述, url: 'https://lefex.github.io/2016/02/sample-post/'}
+    - {title: 项目, description: 我们的项目汇总, url: 'https://lefex.github.io/2017/02/项目介绍/'}
+    - {title: 关于我们, description: 关于我们描述, url: 'https://lefex.github.io/2017/02/关于我们/'}
 
 # Pagination
 gems: [jekyll-paginate]
