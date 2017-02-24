@@ -5,7 +5,7 @@ welcome_message: <a href="http://www.immetalk.com/" target="_blank">[密语 觅�
 description: 我们是一群90后，热爱技术，喜欢分享。不局限于iOS技术本身，学习Node，了解产品，掌握跨平台开发。做好技术的同时做好产品。
 creator: <a href="https://github.com/iMetalk">@iMetalk</a>
 
-url: "http://vno.onevcat.com"
+url: "https://github.com/iMetalk"
 
 permalink: /:year/:month/:title/
 
