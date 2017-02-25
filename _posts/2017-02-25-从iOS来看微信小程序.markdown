@@ -66,7 +66,7 @@
 
 **2.微信小程序没有`UITableView`：**  
 如果想做一个列表，只能用`scroll-view`，而且特别好用，我们只需要把你将要创建的视图添加到`scroll-view`中即可，也不需要计算子视图的高度。比如做一个图文混排的页面。
-![图文混排](http://upload-images.jianshu.io/upload_images/1664496-f50bd24b17b3fa8e.JPG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![图文混排](http://upload-images.jianshu.io/upload_images/1664496-ddadb6e504022c2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 对于这个页面，OC会咋么实现呢？思考中......，看看小程序的实现吧，看完后，你绝对有想学小程序的冲动，而且它的流畅度也不亚于原生应用，只是第一次进入时稍微慢点。直接上代码：
 
