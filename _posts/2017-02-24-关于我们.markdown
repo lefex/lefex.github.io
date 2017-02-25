@@ -34,6 +34,9 @@ date: 2017-02-24 08:32:24.000000000 +09:00
 - [**Github**](https://github.com/iMetalk) 是我们平时写的一些小的Demo，后期会有一些开源项目。   
 - **邮箱**：iMetalk@163.com。     
 - **密语ID**：可以添加某个人的密语ID添加好友。
-- **密语群**：扫一扫下方二维码加入密语群，联系我们。
+- **微信公众号**：关注微信公众号，第一时间获取最新信息。
 
+![微信公众号](http://upload-images.jianshu.io/upload_images/1664496-f94c6e4f349a2f74.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+- **密语群**：扫一扫下方二维码加入密语群，联系我们。
 ![iMetalk](http://upload-images.jianshu.io/upload_images/1664496-877ef14077cd5911.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
