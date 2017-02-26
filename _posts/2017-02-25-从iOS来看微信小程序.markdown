@@ -222,7 +222,7 @@ bindMenu: function(event){
 }
 ```
 
-**四：事件**
+**五：事件**
 
 iOS中可以给视图添加一个事件，比如点击事件。而小程序中也可以给视图添加事件，而且可以携带一些参数。
 这里引用微信官方的一段话：
@@ -249,7 +249,7 @@ iOS中可以给视图添加一个事件，比如点击事件。而小程序中�
 ```
 这样就形成了一个绑定，点击事件后直接把数据传递到了`.js`文件中，这样大大降低了耦合度，想想iOS中如何这样实现呢？
 
-**五：数据层，缓存：**   
+**六：数据层，缓存：**   
 iOS中我们可以使用`Sqlite`、`Realm`、`NSUserDefault`等对数据做缓存处理，而小程序中使用了Storage对数据做缓存处理。
 > 每个微信小程序都可以有自己的本地缓存，可以通过 wx.setStorage（wx.setStorageSync）、wx.getStorage（wx.getStorageSync）、wx.clearStorage（wx.clearStorageSync）可以对本地缓存进行设置、获取和清理。本地缓存最大为10MB。
 
