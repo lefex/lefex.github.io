@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 更简单的使用UITableView
-date: 2017-03-04 07:51:24.000000000 +08:00
+date: 2017-03-04 13:30:24.000000000 +08:00
 ---
 
 **本文由 [iMetalk](https://lefex.github.io/) 团队的成员 武卓 完成，主要帮助读者简化UITableView的创建**。  
