@@ -4,6 +4,7 @@ title: About UICollectionView
 date: 2017-03-12 17:15:24.000000000 +08:00
 ---
 
+
 **本文由 [iMetalk](https://lefex.github.io/) 团队的成员 田向阳 完成，主要帮助读者使用UICollectionView进行自定义布局**。  
 
 ## 前言 
@@ -104,8 +105,7 @@ self.collectionView = ({
 
 前面已经讲过了关于自定义layout的几个重要的方法，那么下面就开始进入实战吧，下面我就先写一个我们项目中的一个小的例子，至于其他的效果，就要看你们自己的脑洞有多大了，废多看码~
 
-```objectivec
-
+```
     - (void)prepareLayout
     {
     [super prepareLayout];
