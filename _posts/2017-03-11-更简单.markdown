@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 更简单的使用UITableView的副本
-date: 2017-03-12 13:30:24.000000000 +08:00
+title: 更简单
+date: 2017-03-11 13:30:24.000000000 +08:00
 ---
 
 **本文由 [iMetalk](https://lefex.github.io/) 团队的成员 武卓 完成，主要帮助读者简化UITableView的创建**。  
@@ -25,6 +25,7 @@ typedef void (^TCZCellConfigureBlock)(id cell, NSIndexPath * indexPath);
 
 // 初始化
 - (id)init;
+
 
 // 表示数据源是否是有多个`section`
 @property (nonatomic, assign) BOOL isGroup;
