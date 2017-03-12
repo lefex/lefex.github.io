@@ -6,13 +6,13 @@ date: 2017-03-12 07:51:24.000000000 +08:00
 
 **本文由 [iMetalk](https://lefex.github.io/) 团队的所有成员完成，主要总结我们遇到的坑，这样可以提高我们的工作效率，这篇文章会不断更新**。
 
-#### kejkll 提交时博客时，错误
+##### kejkll 提交博客时，错误
 ```
   Liquid Exception: Liquid syntax error (line 104): Variable '\{\{104, 10\}' was not properly terminated with regexp: \}\} in /Users/wangsuyan/Desktop/iMetalk/lefex.github.io/_posts/2017-03-12-UICollectionView自定义布局.markdown
 ```    
 解决方法，解析Markdown语法时错误，不能使用`\{\{`，需要添加\
 
-#### 使用iOS AVAudioRecorder 录音后，使用 AVAudioPlayer 播放不了
+##### 使用iOS AVAudioRecorder 录音后，使用 AVAudioPlayer 播放不了
 这个原因一般是声音权限的问题，录音完成后一定要Stop，不然播放不来，而且没有错误提示。
 
 如果您想第一时间看到我们的文章，欢迎关注公众号。
