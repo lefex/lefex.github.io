@@ -4,261 +4,120 @@ title: UICollectionView 自定义布局
 date: 2017-03-12 07:51:24.000000000 +08:00
 ---
 
-**本文由 [iMetalk](https://lefex.github.io/) 团队的成员 `Lefe` 完成，主要帮助读者从iOS的角度入门小程序**。    
-对于一名iOS开发者来说，微信小程序的出现，让我们感觉到些许的不安，`Lefe`接触一段时间后，发现其实不然，微信小程序不可能替代原生APP，也没有绝对的优势战胜原生APP。不过，微信小程序固然有它的好处，比如我们需要用到的那些不常用的服务。对于小企业来说，可以更便捷地宣传他们的服务，给顾客一个更好的线下体验。那么对于一个iOS开发的成员来说开发小程序会有哪些挑战呢？
-## 回顾iOS的开发过程
-最基本的iOS开发，大致会有以下流程:   
+**本文由 [iMetalk](https://lefex.github.io/) 团队的成员 田向阳 完成，主要帮助读者使用UICollectionView进行自定义布局**。  
 
-- 开发工具，Xcode；
-- UI层，页面的搭建；
-- 网络层，基本的网络请求；
-- 页面跳转及传值；
-- 事件；
-- 数据层，缓存；
+## 前言 
+上一期，由我们的污大神给大家讲解了如何简单的使用tableview，想必大家一定会很想亲自上手去练练吧，但是这一期我就不讲tableview了，不过看了标题就知道这一期我要讲什么了，没错,就是UICollectionView，不过可能让大家失望的是，我并不会教大家怎么简单的使用CollectionView，而是会给大家安利一些关于UICollectionView的一些常规的知识点，帮助大家在以后项目中如何轻松的实现某些效果和样式！
 
-## 小程序开发流程
-小程序的开发流程完全可以按照开发一个原生APP的流程，`Lefe`也是按照这个流程入门小程序的。总体感觉没那么复杂，相信只要你静下心来仔细的去研究，开发一款微信小程序是很容易的。
+ `俗话说的好：没有什么界面是一个 UITableView 解决不了的，如果不行，那就俩个！` 污大神这句话说的一点都不错，在这个tableview横行的年代，你说你不会用tableview，那么真的只有 呵呵 了~~。
 
-**一：开发工具**
+不过UICollectionView相对于UITableView可以说是青出于蓝而胜于蓝（话也不能这么说，毕竟他俩都是继承于UIScrollView），它和UITableView很相似，但它要更加强大，并不是因为tableview不够用，而是因为在UICollectionView中Apple给我们打开了一扇通向无限可能的大门:UICollectionViewFlowLayout.下面我就慢慢给大家讲解这个大门，如何去打开。
 
-iOS开发我们使用`Xcode`开发，下载直接安装，新建一个项目，即可运行。微信小程序使用官方提供的工具`微信Web开发者工具`，下载安装，即可创建项目，不过创建项目时需要微信授权登录。同样，创建项目的时候微信提供了一个模板，打开项目即可看到实时预览的效果。不过这里有一个比较坑的问题是，预览小程序时不能链接VPN。`Lefe`建议打开`微信Web开发者工具`前关闭VPN，等项目运行起来后再打开VPN。
+## UICollectionView 基础： 
+ 这个部分不做细讲，可直接查看系统的API 查看相关的方法，大部分用法类似tableview 
+ 
+ - UICollectionViewDataSource 数据源协议
+ - UICollectionViewDelegate   委托协议 
+ - UICollectionViewFlowLayout 视图布局对象(这个是流视图布局，继承于UICollectionViewLayout)基本上这个布局可以说是自动排版，也就是一行排满，就自动换行。如果我们要自定义样式的话，一般继承UICollectionViewFlowLayout就行了。
+ * UICollectionViewDelegateFlowLayout 这个是FlowLAyout的代理协议  可以通过这些个协议来调整 cell大大小 和 layout的一些属性 （minimumInteritemSpacing，minimumLineSpacing,sectionInset等）
+ 
+## UICollectionView 创建： 
 
-**二：搭建UI界面**   
+```objectivec
+// 初始化
+self.collectionView = ({
+    CollectionViewFlowLayout *layout = [[CollectionViewFlowLayout alloc] init];
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 64, CGRectGetWidth(self.view.frame), CGRectGetWidth(self.view.frame)/2.0) collectionViewLayout:layout];
+    [self.view addSubview:collectionView];
+    collectionView.backgroundColor = [UIColor whiteColor];//我为什么要设置为白色呢，以为没有数据的时候就是一片漆黑！！！
+    collectionView.delegate = self;
+    collectionView.dataSource = self;
+    collectionView.showsHorizontalScrollIndicator = NO;
+//注册Cell
+    [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+    collectionView;
+    });
 
-对于iOS开发者来说，UI布局可以使用坐标（Frame）来直接布局一个视图，也可以使用自动布局。而对于微信小程序来说，建议使用`Flexbox`布局，它会给你一种不一样的布局方式。`Flexbox`布局，也叫弹性布局，是CSS3提出的一种布局解决方案。说到布局时，必须说明一下`rpx`，这种屏幕适配解决方案让我们羡慕忌妒恨（开玩笑呢）。
-> rpx的全称是responsive pixel，它是小程序自己定义的一个尺寸单位，可以根据当前设备屏幕宽度进行自适应。小程序中规定，所有的设备屏幕宽度都为750rpx，根据设备屏幕实际宽度的不同，1rpx所代表的实际像素值也不一样。
+//必须实现的两个数据源协议方法 
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 
-比如我们要实现以下布局，仅需要不多的几行代码就可以搞定，关于`Flexbox`布局这里不做更多的解释。有兴趣的同学可以找相关资料。
-   
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0  blue:arc4random()%255/255.0  alpha:1];
+    return cell;
 
-![](http://upload-images.jianshu.io/upload_images/1664496-ca8193fa6e8a202a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-**1.简单的Flexbox布局：** 
-
-简单的几行代码：   
-**.wxml文件:**
-
-```
-// class='xxx',xxx样式，如同CSS样式
-<view class="flex-container">
-    <view class="children1"></view>
-    <view class="children2"></view>
-    <view class="children3"></view>
-</view>
-
-```
-
-**.wxss文件:**    
-
-```
-.flex-container {
-    height: 200rpx; // 注意单位 rpx，当然px也可以
-    display: flex; // 设置这个属性后，表示为Flexbox布局
-    flex-direction: row; // 布局方向为行
-    justify-content: space-around; // X轴的对齐方式
-    align-items: center; // Y轴的对齐方式
-    background-color: lightblue;
 }
-.children1 {
-    height: 100rpx;
-    width: 100rpx;
-    background-color: red;
-}
-.children2 {
-    width: 100rpx;
-    height: 100rpx;
-    background-color: yellow;
-}
-.children3 {
-    width: 100rpx;
-    height: 100rpx;
-    background-color: purple;
-}
-```
 
-**2.微信小程序没有`UITableView`：**  
-如果想做一个列表，只能用`scroll-view`，而且特别好用，我们只需要把你将要创建的视图添加到`scroll-view`标签中即可，也不需要计算子视图的高度。比如做一个图文混排的页面。
-![图文混排](http://upload-images.jianshu.io/upload_images/1664496-ddadb6e504022c2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 2;
+}
 
-对于这个页面，OC会咋么实现呢？思考中......，看看小程序的实现吧，看完后，你绝对有想学小程序的冲动，而且它的流畅度也不亚于原生应用，只是第一次进入时稍微慢点。直接上代码：
+// 还有一部分相关的代理方法 就不一一列举了  如  和UITableView一样 UICollectionView也可设置段头段尾
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{}
 
-**.wxml文件:**
+//控制单元格的大小 就用到了  UICollectionViewDelegateFlowLayout
+#pragma mark ---- UICollectionViewDelegateFlowLayout
 
-```
-<view class="promise-container">
-    <view class="promise-title-container">
-      //goodInfo 是一个Json，存放数据
-      <text class="promise-title">{{goodInfo.detail.title}}</text>
-      <view class="promise-title-line"></view>
-    </view>
-   //相当于一个for循环
-  <block wx:for="{{goodInfo.detail.data}}">
-    //根据不同类型来渲染图片还是文字
-    <view wx:if="{{item.type==1}}" class="promise-container">
-      <image src="{{item.content}}" class="good-image"></image>
-    </view>
-    <view wx:if="{{item.type==0}}" class="promise-container">
-      <text class="good-content">{{item.content}}</text>
-    </view>
-</block>
-</view>
-```
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(100.f,100.f);
+}
 
-**.wxss文件:** 
+//collectionView 上下左右的偏移  类似 scroll的 contentInset
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(5, 5, 5, 5);
+}
+//区头  区尾 的大小 高度 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    return CGSizeMake(100.f,100.f);
+}
 
-```
-.promise-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-}
-.promise-title-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: center;
-    margin-top: 40rpx;
-    margin-left: 16rpx;
-    margin-right: 40rpx;
-    margin-bottom: 40rpx;
-}
-.promise-title-line {
-    height: 1rpx;
-    background-color: #FF4642;
-    margin-top: 6rpx;
-    width: 177rpx;
-}
-.promise-title {
-    font-size: 44rpx;
-}
-.promise-content {
-    margin-top: 0rpx;
-    margin-left: 16rpx;
-    margin-right: 16rpx;
-    font-size: 32rpx;
-    color: #505050;
-    line-height: 40rpx;
-}
-.good-image {
-    margin-top: 8rpx;
-    margin-bottom: 8rpx;
-}
-.good-content {
-    margin-top: 8rpx;
-    margin-left: 16rpx;
-    margin-right: 16rpx;
-    font-size: 32rpx;
-    color: #505050;
-    line-height: 40rpx;
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
+{
+    return (CGSize){ScreenWidth,22};
 }
 
 ```
-看到了吗，就需要这么几行代码，而且图片也会自动加载，自动等比缩放。是不是觉得很简单。通过以上的例子，相信读者朋友已经大体上明白了FlexBox布局。更多关于`FlexBox`，可以参考作者早期的一片 [文章](http://www.jianshu.com/p/957d709f5ef4) 。对于UI布局来说，微信小程序的思想值得我们借鉴，主要有以下几点：    
+代码中的 CollectionViewFlowLayout  就是我自己定义的layout继承于UICollectionViewFlowLayout
+ 
+## UICollectionView自定义布局： 
+关于布局，而且用UICollectionView去布局，最常见的莫过于九宫格了吧，相信绝大多数的app里面多多少少都会用到这样的布局，在没有collectionView的年代，布局九宫格大家是不是跟我一样要用个for循环，然后计算出相应的坐标去排布呢？另外还有在两年前比较流行的 瀑布流布局刚开始怎么实现呢，用scrollView?亦或tableview 但是这两个都太麻烦，不过有了collectionView实现这样的效果就省事多了。
+    
+要自定义UICollectionView布局，就要创建自己的layout继承于UICollectionViewFlowLayout，然后重写父类的几个方法就可以达到我们自定义布局的需求。下来我们来看看UICollectionViewFlowLayout类里一些比较重要的方法
 
-**(1).各个文件分工明确：**
+-  \- (void)prepareLayout;     
+为layout显示做准备工作，你可以在该方法里设置一些属性。另外说一下里面可能会遇到的坑，那就是计算单元格大小的时候，比如你要做一个九宫格，那么你计算的每一个宫格的大小 就应该把 宫格的间距 和左右的边距都给算进去 然后再根据具体需求去计算大小 否则计算出来的大小会有问题 一句话 细心为妙！！
+- \- (nullable NSArray<__kindof UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect     
+这个方法返回的是在collectionView的可见范围所有item对应的UICollectionViewLayoutAttributes对象的数组。collectionView的每个item都对应一个专门的UICollectionViewLayoutAttributes类型的对象来表示该item的一些属性，他不是一个视图，但包含了视图所有的属性，比如，frame  transform 等 
 
-- `.wxml`负责页面的布局，也就是布局文件
-- `.wxss`负责每个视图的样式，比如字体大小等样式
-- `.js`监听并处理小程序的生命周期函数、声明全局变量，数据都在这里。
+- \- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds     
+当前layout的布局发生变动时，是否重写加载该layout。默认返回的是NO，若返回YES，则重新执行上面的两个方法。讲一下最初遇到的坑，第一次自己写layout的时候，由于没有写这个方法，（没写的话是默认为NO，不刷新layout，然后自己在 layoutAttributesForElementsInRect 方法里更改了相应的Attributes属性 但是得到的效果和自己想要的效果差距太大，太大。后来还是在度娘的帮助下把这个问题给解决，重写了方法并设返回值为 YES！    
+    
+- \- (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity   
+这个方法 是返回最终collectionView的偏移量，也就是collectionView停止滚动时候的偏移量，通过这个方法可以控制你最终想要让collectionView停止的位置
 
-**(2).布局简单：**
+## 项目实战 
+最终的效果图
+![collectionViewLayout.gif](http://upload-images.jianshu.io/upload_images/1664496-0e7a18fa7d13021b.gif?imageMogr2/auto-orient/strip)
 
-创建UI的时候，微信小程序更加简单，而且会自动适配屏幕，不过需要使用`rpx`为单位。
-
-**(3).系统提供了常用的控间：**
-
-系统提供了我们常用的控件，这样搭建届面的时候会省很多事。那么既然布局这么简单，iOS方面会不会也有这中布局方式的，果不其然，[Yoga](https://github.com/facebook/yoga) 是`facebook`实现的一个库，有兴趣的读者可以研究一下。
-
-**三：网络层**
-
-对于iOS开发来说，网络层的设计绝对是很重要的一部分，网络层设计的好会直接关系到应用的好坏，及将来的维护成本。不过好在有一些优秀的三方库帮我们解决了很多问题。比如：[AFNetworking](https://github.com/AFNetworking/AFNetworking)， [YTKNetwork](https://github.com/yuantiku/YTKNetwork) 是基于`AFNetworking `的封装。为了简单，微信小程序已经为我们做了网络层的封装，必须是`Https`，不过`Http`也可以请求成功，只是有警告。以下是`Lefe`写的一个网络请求：
-
-**network.js**
-
-```
-function network(baseUrl, api, params,  callback){
-    var requestUrl = covertUrl(baseUrl, api);
-    wx.request({
-      url: requestUrl,
-      data: params,
-      method: 'GET', 
-      header: {
-      'content-type': 'application/json'
-      },
-      success: function(res){
-        // res.data 网络请求返回的数据
-        callback(true, res.data);
-      },
-      fail: function() {
-        // fail
-        callback(false);
-      },
-      complete: function() {
-        
-      }
-    })
-}
-
-function covertUrl(baseUrl, params){
-    return baseUrl + params;
-}
-
-module.exports = {
-    network: network
-}
-```
-
-
-**四：页面跳转及传值**
-
-iOS中页面跳转常用的有`UINavigationController`与`Modal`形式跳转，而在小程序当中，使用官方提供的接口进行页面跳转，以`wx.navigateTo(OBJECT)`为例来说明。`url`是要跳转到页面的路径，`name`是给下一个页面传递的数据。这样就如同iOS中的`Push`。有了iOS的基础，相信理解起来很容易的。
+前面已经讲过了关于自定义layout的几个重要的方法，那么下面就开始进入实战吧，下面我就先写一个我们项目中的一个小的例子，至于其他的效果，就要看你们自己的脑洞有多大了，废多看码。大家在实践过程中，可以去尝试着把 shouldInvalidateLayoutForBoundsChange 这个方法给注释了，可以看一下注释后的效果。另外，关于我在注视的地方提到的警告 可能重写layout的同学都会遇到 下面我把错误代码粘上来 。
 
 ```
-bindMenu: function(event){
-   wx.navigateTo({
-     url: `category?name=${event.currentTarget.dataset.name}`
-   })
-}
-```
 
-**五：事件**
-
-iOS中可以给视图添加一个事件，比如点击事件。而小程序中也可以给视图添加事件，而且可以携带一些参数。
-这里引用微信官方的一段话：
-> - 事件是视图层到逻辑层的通讯方式。
-- 事件可以将用户的行为反馈到逻辑层进行处理。
-- 事件可以绑定在组件上，当达到触发事件，就会执行逻辑层中对应的事件处理函数。
-- 事件对象可以携带额外信息，如 id, dataset, touches。
-
-
-`bindtap`后的`bindMenu`为视图绑定的事件名，`data-name`中的`name`为事件传递的参数。
+2017-03-09 12:44:11.483 CollectionViewLayout[11131:92643] Logging only once for UICollectionViewFlowLayout cache mismatched frame
+2017-03-09 12:44:11.484 CollectionViewLayout[11131:92643] UICollectionViewFlowLayout has cached frame mismatch for index path <NSIndexPath: 0xc000000000000016> {length = 2, path = 0 - 0} - cached value: \{\{104.02791666666667, 10.02791666666667}, \{167.44416666666666, 167.44416666666666\}\}; expected value: \{\{104, 10\}, \{167.5, 167.5\}\}
+2017-03-09 12:44:11.484 CollectionViewLayout[11131:92643] This is likely occurring because the flow layout subclass CollectionViewFlowLayout is modifying attributes returned by UICollectionViewFlowLayout without copying them
 
 ```
-<view bindtap="bindMenu" data-name="{{‘123’}}">
-    <image src="{{item.icon}}"/>
-</view>
-
-```
-我们只需要在`.js`文件中实现函数：
-
-```
- bindMenu: function(event){
-   var name = event.currentTarget.dataset.name;
- },
-```
-这样就形成了一个绑定，点击事件后直接把数据传递到了`.js`文件中，这样大大降低了耦合度，想想iOS中如何这样实现呢？
-
-**六：数据层，缓存：**   
-iOS中我们可以使用`Sqlite`、`Realm`、`NSUserDefault`等对数据做缓存处理，而小程序中使用了Storage对数据做缓存处理。
-> 每个微信小程序都可以有自己的本地缓存，可以通过 wx.setStorage（wx.setStorageSync）、wx.getStorage（wx.getStorageSync）、wx.clearStorage（wx.clearStorageSync）可以对本地缓存进行设置、获取和清理。本地缓存最大为10MB。
+消除警告的方法就是 在对 UICollectionViewLayoutAttributes 对象更改属性的时候要做一下copy操作,除此之外 要用另一个数组重新组装一下 然后return 。另外关于 copy 和 mutableCopy 有兴趣的可以去研究研究，我就不在此多说了。
 
 ## 总结
-这篇文章主要帮助读者了解小程序的开发。小程序的开发过程大体上与iOS的开发过程上一致，当然如果你有`RN`或者前端开发经验，会更容易学习小程序。那么移动端如何学习小程序呢？`Lefe`建议读者先学习一下`JavaScript`、`CSS`和`HTML`。如果您发现有什么问题，欢迎给我们反馈（iMetalk@163.com）。如果您想第一时间看到我们的文章，欢迎关注公众号。
+在自定义collectionViewLayout的时候，难免会踩到坑，但是坑归坑，关键我们要心细，胆大，多去尝试，这样才能解决问题。关于collectionView自定义layout的简单介绍，大概就这么多了，可能也有一部分没有讲解出来，但是万变不离其宗，只要你理解了里面的原理和你自己想要的效果，剩下的事情就是代码的事情了~
 
+[demo 地址](：https://github.com/a254711559/CollectionViewLayout)
+
+如果您想第一时间看到我们的文章，欢迎关注公众号。
 ![微信公众号](http://upload-images.jianshu.io/upload_images/1664496-f94c6e4f349a2f74.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-## 参考
-本文主要参考了以下文章：
-
-[微信小程序官网](https://mp.weixin.qq.com/debug/wxadoc/dev/)
