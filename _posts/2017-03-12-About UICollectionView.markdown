@@ -6,8 +6,6 @@ date: 2017-03-12 17:15:24.000000000 +08:00
 
 **本文由 [iMetalk](https://lefex.github.io/) 团队的成员 田向阳 完成，主要帮助读者使用UICollectionView进行自定义布局**。  
 
-# 
-
 ## 前言 
 上一期，由我们的污大神给大家讲解了如何简单的使用tableview，想必大家一定会很想亲自上手去练练吧，但是这一期我就不讲tableview了，不过看了标题就知道这一期我要讲什么了，没错,就是UICollectionView，不过可能让大家失望的是，我并不会教大家怎么简单的使用CollectionView，而是会给大家安利一些关于UICollectionView的一些常规的知识点，帮助大家在以后项目中如何轻松的实现某些效果和样式！
 
