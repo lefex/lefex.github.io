@@ -1,7 +1,7 @@
 ---
 layout: post
 title: About UICollectionView
-date: 2017-03-04 13:30:24.000000000 +08:00
+date: 2017-03-12 17:15:24.000000000 +08:00
 ---
 
 **本文由 [iMetalk](https://lefex.github.io/) 团队的成员 田向阳 完成，主要帮助读者使用UICollectionView进行自定义布局**。  
