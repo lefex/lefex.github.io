@@ -17,7 +17,7 @@ date: 2017-03-26 21:11:24.000000000 +08:00
 #import <Foundation/Foundation.h>
 
     typedef NS_ENUM(NSUInteger,MTChageFontType) {
-    MTChangeFontType_intput = 1,/ /输入性文字
+    MTChangeFontType_intput = 1,//输入性文字
     MTChangeFontType_fix = 2  // 固定性文字
     };
 
@@ -450,13 +450,12 @@ date: 2017-03-26 21:11:24.000000000 +08:00
 ```
 	// 初始化界面时调用
     - (void)viewDidLoad{
-	    [super viewDidLoad];
-	    self.sliderValue = [MTChangeFontManager getCurrentFontValue];
-       [MTChangeFontManager shareFontManager].isPushSetCurrentFontValue = YES;
-       [MTChangeFontManager shareFontManager].isSetEventFont = YES;
-       [self selectedPointIndex:self.sliderValue];
-       self.sliderView.selectedNumber = self.sliderValue;
-	}
+    [super viewDidLoad];
+    self.sliderValue = [MTChangeFontManager getCurrentFontValue];
+    [MTChangeFontManager shareFontManager].isPushSetCurrentFontValue = YES;
+    [MTChangeFontManager shareFontManager].isSetEventFont = YES;\[self selectedPointIndex:self.sliderValue];
+    self.sliderView.selectedNumber = self.sliderValue;
+    }
 
 	// 滑动slider时存储字体标准值。
 	- (void)selectedPointIndex:(NSInteger)index
