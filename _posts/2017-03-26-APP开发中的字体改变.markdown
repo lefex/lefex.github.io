@@ -1,0 +1,504 @@
+---
+layout: post
+title: APP开发中的字体改变
+date: 2017-03-26 21:11:24.000000000 +08:00
+---
+
+**本文由 [iMetalk](https://lefex.github.io/) 团队的成员 刘运新 完成，主要帮助读者如何对APP进行字体大小切换**。
+
+## 前言
+上一期我们的薛好霞同学介绍了主题切换的实现过程，想必大家印象深刻，也学到了很多有用的知识。那今天我来介绍下与主题相关的另一个功能，相信大家都见过很多应用的设置里面都有一个改变字体大小的辅助功能,比如密语、QQ、支付宝等。滑动到一个字体的标准值,就会改变应用里面相应模块的字体大小。那么接下来我来介绍下，这个功能的实现流程：
+ 
+##  1.首先要创建一个管理字体改变的工具类：
+
+**MTChangeFontManager.h**
+
+```
+#import <Foundation/Foundation.h>
+
+    typedef NS_ENUM(NSUInteger,MTChageFontType) {
+    MTChangeFontType_intput = 1,/ /输入性文字
+    MTChangeFontType_fix = 2  // 固定性文字
+    };
+
+    @interface MTChangeFontManager : NSObject
+
+    @property (nonatomic, assign, readonly) NSInteger standardFontValue;//标准字体(0,1,2,3,4 五个设置,standard = 1)
+    @property (nonatomic, assign) NSInteger currentFontValue;//当前字体标准
+    @property (nonatomic, assign, readonly) NSInteger changeValue;//当前字体标准与改变后字体标准的差值
+    @property (nonatomic, assign, readonly) NSUInteger inputFontOnceChangeSize;//输入性文字每次改变2pt
+    @property (nonatomic, assign, readonly) NSUInteger fixFontOnceChangeSize;//固定性文字每次改变1pt
+    @property (nonatomic, assign) BOOL isPushSetCurrentFontValue;//进入设置字体页面时为YES  pop页面时设为NO.
+    @property (nonatomic, assign) BOOL isSetEventFont;//是否设置过事件字体
+    @property (nonatomic, assign)  NSInteger lastFontValue;//记录上一次的字体标准
+    
+    + (instancetype)shareFontManager;
+
+    // 获取当前的字体标准
+    + (NSInteger)getCurrentFontValue;
+
+    /**
+    改变字体方法
+    @param oldFont 要改变的字体
+    @param type 是输入性文字还是固定性文字
+    @return 改变之后的字体大小
+    */
+    - (CGFloat)getNewFontSizeWithOldFont:(UIFont *)oldFont andFontType:(MTChageFontType)type;
+
+    @end
+```
+
+**MTChangeFontManager.m**
+
+```
+    #import "MTChangeFontManager.h"
+    static  NSString *KFontSizeKey = @"MeTalkMessageFontSize";
+    
+    @implementation MTChangeFontManager
+
+    @synthesize currentFontValue = _currentFontValue;
+
+    + (instancetype)shareFontManager{
+    	static MTChangeFontManager *manager;
+    	static dispatch_once_t onceToken;
+    	dispatch_once(&onceToken, ^{
+        manager = [[MTChangeFontManager alloc] init];
+        [manager setlastFontValue];
+    });
+     return manager;
+    }
+
+    - (void)setlastFontValue
+    {
+    if (self.currentFontValue) {
+        self.isSetEventFont = YES;
+        self.isPushSetCurrentFontValue = YES;
+    }
+    self.lastFontValue = self.standardFontValue;
+    }
+
+    - (void)setCurrentFontValue:(NSInteger)currentFontValue{
+
+    //进入字体设置页面,lastFontValue赋值为标准字体
+    if (self.isPushSetCurrentFontValue) {
+         [self setlastFontValue];
+    }else{
+        self.lastFontValue = _currentFontValue;
+    }
+        _currentFontValue = currentFontValue;
+    
+        [userDefaults setObject:@(currentFontValue) forKey:KFontSizeKey];
+        [userDefaults synchronize];
+    }
+
+    - (NSInteger)currentFontValue{
+        return [MTChangeFontManager getCurrentFontValue];
+    }
+
+    - (NSInteger)changeValue{
+        return self.currentFontValue - self.lastFontValue;
+    }
+
+    - (NSUInteger)inputFontOnceChangeSize{
+        return 2;
+    }
+
+    - (NSUInteger)fixFontOnceChangeSize{
+       return 1;
+    }
+
+    + (NSInteger)getCurrentFontValue{
+    
+       NSNumber *valueObj = [userDefaults objectForKey:KFontSizeKey];
+       if (valueObj != nil) {
+        return [valueObj integerValue];
+       }
+       return 1;
+    }
+
+    /**
+    获取改变后的字体大小
+
+    @param oldFont 要改变的字体
+    @param type 字体的类型
+    @return 改变后的字体大小
+    */
+    - (CGFloat)getNewFontSizeWithOldFont:(UIFont *)oldFont andFontType:(MTChageFontType)type{
+
+       CGFloat fontSize;
+       NSInteger multiple = type == MTChangeFontType_intput ? 2 : 1;
+       fontSize = oldFont.pointSize + multiple * self.changeValue;
+       return fontSize;
+    }
+
+    - (NSInteger)standardFontValue{
+    return 1;
+    }
+```
+	
+这个管理字体的工具类是通过 NSUserDefault 存储设置字体标准的值，我们这里的字体标准为0-4，共5个标准，若是没有设置过，currentValue返回为标准字体。
+
+
+## 2.创建界面获取字体使用的字体 configure 类和布局界面计算高度使用的layout类
+
+在改变字体大小的模块界面，需创建字体的 configure 类和管理布局的 layout 类，若是模块内改变字体较少，如消息字体，可以不用创建，直接用 changeFontManager 里面的方法即可。若是模块里面有较多的字体大小需要被改变，并且字体格式也不尽相同，那么创建是非常有必要的。里面的所有字体都要改变，configure 和 layout 如下：
+
+**EVEEventConfiguration.h**
+
+```
+    #import <Foundation/Foundation.h>
+    @interface EVEEventConfiguration : NSObject
+
+    + (instancetype)sharedEventConfiguration;
+    //title
+    - (UIFont *)eve_eventDetailTitleFont;
+    - (UIFont *)eve_TitleFont;
+    //content
+    - (UIFont *)eve_eventListEventContentFont;
+    - (UIFont *)eve_ContentFont;
+    //时区字体
+    - (UIFont *)eve_evenListTimeZoneNumTextFont;
+    - (UIFont *)eve_TimeZoneNumTextFont;
+    //timeZone
+    - (UIFont *)eve_eventListTimeZoneTextFont;
+    - (UIFont *)eve_TimeZoneTextFont;
+
+    - (UIFont *)eve_eventStartTimeLeftTextFont;
+    - (UIFont *)eve_StartTimeLeftTextFont;
+
+    - (UIFont *)eve_eventStartTimeRightTextFont;
+    - (UIFont *)eve_StartTimeRightTextFont;
+
+    - (UIFont *)eve_eventEndTimeLeftTextFont;
+	- (UIFont *)eve_EndTimeLeftTextFont;
+
+	- (UIFont *)eve_eventEndTimeRightTextFont;
+	- (UIFont *)eve_EndTimeRightTextFont;
+	//adress font
+	- (UIFont *)eve_eventListEventAddressPartRightLabelTextFont;
+	- (UIFont *)eve_AddressPartRightLabelTextFont;
+
+	- (UIFont *)eve_eventListEventAddressLeftLabelTextFont;
+	- (UIFont *)eve_AddressLeftLabelTextFont;
+	//accessory的字体
+	- (UIFont *)eve_eventListEventAccessoryRightLabelTextFont;
+	- (UIFont *)eve_AccessoryRightLabelTextFont;
+
+	- (UIFont *)eve_eventListEventAccessoryLeftLabelTextFont;
+	- (UIFont *)eve_AccessoryLeftLabelTextFont;
+	//alertView的字体
+	- (UIFont *)eve_eventListEventAlertViewPartRightLabelTextFont;
+	- (UIFont *)eve_AlertViewPartRightLabelTextFont;
+
+	- (UIFont *)eve_eventListEventAlertViewPartLeftLabelTextFont;
+	- (UIFont *)eve_AlertViewPartLeftLabelTextFont;
+
+	//设置标准字体
+	- (void)eve_SetStandardFont;
+
+	@end
+	}
+```
+	
+**EVEEventConfiguration.m**
+	 
+```
+	 //在UI界面设置字体时使用
+	- (UIFont *)eve_eventDetailTitleFont
+	{
+    	titleFontSize = [[EVEEventConfiguration 		sharedEventConfiguration] 		eve_eventSliderValueChangeFontWithFontValue:titleFontSize isFixFont:NO];
+    	return [UIFont mt_DINCondensedFontWithSize:titleFontSize];
+	}
+     //在layout中计算文字高度时使用，若不写此方法，都用上面的方法设置字体和计算高度，会使字体改变大于2次，导致字体大小，与预期偏差较大。
+	- (UIFont *)eve_TitleFont{
+
+    	return [UIFont mt_DINCondensedFontWithSize:titleFontSize];
+	}
+
+	//矫正字体，为解决反复进退页面造成字体字体一直变大或变小的问题，此方法把所有字体的值设为标准大小。
+	- (void)eve_SetStandardFont{
+
+    	[self eve_SetStandardFontSize];
+    	MTChangeFontManager *manager = [MTChangeFontManager shareFontManager];
+    	manager.lastFontValue = manager.standardFontValue;
+    	manager.isSetEventFont = NO;
+	}
+    //通过字体管理工具类修改字体大小
+	- (CGFloat )eve_eventSliderValueChangeFontWithFontValue:(CGFloat)fontSize isFixFont:(BOOL)isFixFont{
+
+    	NSInteger multiple = [MTChangeFontManager shareFontManager].changeValue;
+    	if (isFixFont) {
+        	backFontSize = fontSize + multiple;
+    	}else{
+        	backFontSize = fontSize + 2 * multiple;
+    	}
+   
+    	return backFontSize;
+	}
+```
+
+**layout.h**
+
+```
+	#import <Foundation/Foundation.h>
+	#import "EVEEventCommonEnum.h"
+
+	@class EVEEventModel,MTTYLabel,EVEEventModelData;
+	@interface EVEEventLayout : NSObject
+
+	@property (nonatomic, strong, readonly) EVEEventModelData *eventModel;
+
+	- (instancetype)initWithEventModel:(EVEEventModelData *)aModel;
+
+
+	//title
+	- (CGFloat)eve_eventDetailTitleHeight;
+	//content
+	- (CGFloat)eve_eventContentTextHeight;
+	//time
+	- (CGFloat)eve_eventTimeDetailTextHeight;
+	- (CGFloat)eve_startTimeViewHeight;
+	- (CGFloat)eve_endTimeViewHeight;
+	- (CGFloat)eve_startTimeLabelHeight;
+	- (CGFloat)eve_endTimeLabelHeight;
+	- (CGFloat)eve_eventTimeZoneTextHeight;
+	- (CGFloat)eve_eventDetailTimeZoneAndTimeHeight;
+	//address
+	- (CGFloat)eve_evenDetailAddressHeight;
+	//alertView
+	- (CGFloat)eve_evenDetailAlertHeight;
+	//acessory
+	- (CGFloat)eve_evenDetailAccessoryHeight;
+	+ (CGFloat)eve_eventTitleTopAndBottomMargin;
+	+ (CGFloat)eve_eventContentTopAndBottomMargin;
+	+ (CGFloat)eve_eventTimeZoneCellTopAndBottomMargin;
+	+ (CGFloat)eve_eventStartTimeAndEndTimeCellTopAndBottomMargin;
+	+ (CGFloat)eve_eventStartCellBottomAndEndTimeTopMargin;
+	+ (CGFloat)eve_eventEndTimeBottomMargin;
+	+ (CGFloat)eve_eventTimePartBottomMargin;
+	+ (CGFloat)eve_eventAddressPartCellTopAndBottomMargin;
+	+ (CGFloat)eve_eventAddressPartBottomMargin;
+
+	@end
+```
+
+**layout.m**  
+以title的高度计算为例，其他类似
+
+```
+	//title
+	- (CGFloat)eve_eventDetailTitleHeight
+	{
+   	 return [_eventModel.eventModel.title mt_heightWithWidth:WINDOW_WIDTH - 2 * [EVEEventLayout eve_eventLeftAndRightEdge] font:[[EVEEventConfiguration sharedEventConfiguration] eve_TitleFont]] + 2 * [EVEEventLayout eve_eventTitleTopAndBottomMargin];
+	}
+```
+
+## 3.工具准备完毕，接下来就是用它们来实现功能了
+模块界面共有两处使用：一是在加载数据源时，改变界面UI字体；二是在改变字体之后更新UI布局。代码如下：
+
+```
+	- (void)loadDataWithEventModelData:(EVEEventModelData *)eventModelData
+	{
+    	if (!eventModelData) {
+        	return;
+    	}
+    _eventModelData = eventModelData;
+    [self changeFont];
+    //标题
+    titleLabel.text = eventModelData.eventModel.title ?: @"";
+    //内容
+    contentLabel.mt_layout = eventModelData.detailContentMatch;
+    [contentLabel mt_parseText];
+    contentLabel.hidden = !eventModelData.isHaveContent;
+    [contentLabel mas_updateConstraints:^(MASConstraintMaker *make) 	{        	make.height.mas_equalTo(eventModelData.eventDetailContentHeight);
+    }];
+    //时区时间
+    timeZoneLabel.text = [NSString stringWithFormat:@"%@(GMT%@)",eventModelData.eventModel.zone, eventModelData.eventModel.zoneNumber];
+    timeView.startTimeBgView.rightLabel.text = eventModelData.eventModel.startTimeString;
+    timeView.endTimeBgView.rightLabel.text = eventModelData.eventModel.endTimeString;
+    //地点
+    addressView.rightLabel.text = eventModelData.eventModel.address ?: @"";
+    //附件
+    accessoryView.rightLabel.text = [NSString stringWithFormat:@"%@个附件",@(eventModelData.eventModel.attachment.count)];
+    //提醒
+    alertView.rightLabel.text = eventModelData.eventModel.alertTimeString ?: @"";
+    
+    [self layoutSubviews];
+	}
+
+  	//MARK:修改字体
+	- (void)changeFont{
+    
+    EVEEventConfiguration *configuration = [EVEEventConfiguration sharedEventConfiguration];
+    MTChangeFontManager *manager = [MTChangeFontManager shareFontManager];
+    //进页面时,字体size恢复标准之后在进行设置.
+    if (manager.isSetEventFont || manager.isPushSetCurrentFontValue) {
+        [configuration eve_SetStandardFont];
+    }
+    _eventModelData.detailContentMatch.mt_font = [configuration eve_eventListEventContentFont];
+    [_eventModelData.detailContentMatch layoutTextWith:nil isReply:NO];
+    
+    titleLabel.font = [configuration eve_eventDetailTitleFont];
+    timeZoneLabel.font = [configuration eve_eventListTimeZoneTextFont];
+    timeZoneNumLabel.font = [configuration eve_evenListTimeZoneNumTextFont];
+    timeView.startTimeBgView.leftLabel.font = [configuration eve_eventStartTimeLeftTextFont];
+    timeView.endTimeBgView.leftLabel.font = [configuration eve_eventEndTimeLeftTextFont];
+    timeView.startTimeBgView.rightLabel.font = [configuration eve_eventStartTimeRightTextFont];
+    timeView.endTimeBgView.rightLabel.font = [configuration eve_eventEndTimeRightTextFont];
+    addressView.rightLabel.font = [configuration eve_eventListEventAddressPartRightLabelTextFont];
+    addressView.leftLabel.font = [configuration eve_eventListEventAddressLeftLabelTextFont];
+    accessoryView.leftLabel.font = [configuration eve_eventListEventAccessoryLeftLabelTextFont];
+    accessoryView.rightLabel.font = [configuration eve_eventListEventAccessoryRightLabelTextFont];
+    alertView.leftLabel.font = [configuration eve_eventListEventAlertViewPartLeftLabelTextFont];
+    alertView.rightLabel.font = [configuration eve_eventListEventAlertViewPartRightLabelTextFont];
+	}
+
+	- (void)layoutSubviews
+	{    
+    	[super layoutSubviews];
+    
+    	[titleLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+        	make.height.mas_equalTo([_eventModelData.eventLayout eve_eventDetailTitleHeight]);
+        	make.left.mas_equalTo(leftPadding);
+       		make.top.mas_equalTo(self).offset([EVEEventLayout eve_eventTitleTopAndBottomMargin]);
+       		make.right.mas_equalTo(-rightPaddig);
+    	}];
+    
+    	//分割线
+    	[lineImgView mas_updateConstraints:^(MASConstraintMaker *make) {
+        	make.height.mas_equalTo(0.5);
+        	make.left.mas_equalTo(0);
+        	make.right.mas_equalTo(0);
+       		make.top.mas_equalTo(titleLabel.mas_bottom).offset([EVEEventLayout eve_eventTitleTopAndBottomMargin]);
+    	}];
+    
+    	[contentLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo([_eventModelData.eventLayout eve_eventContentTextHeight]);
+       	 make.left.mas_equalTo(leftPadding);
+        				make.top.mas_equalTo(lineImgView.mas_bottom).offset([EVEEventLayout 	eve_eventContentTopAndBottomMargin]);
+       	 make.right.mas_equalTo(-rightPaddig);
+    	}];
+    
+    	[timeZoneAndTimeView mas_updateConstraints:^(MASConstraintMaker *make) {
+        	make.left.mas_equalTo(0);
+        	make.right.mas_equalTo(0);
+        	make.top.mas_equalTo(contentLabel.mas_bottom).offset([EVEEventLayout eve_eventContentTopAndBottomMargin]);
+        	make.height.mas_equalTo([_eventModelData.eventLayout eve_eventDetailTimeZoneAndTimeHeight]);
+    	}];
+    
+    	[timeZoneLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+       	 make.height.mas_equalTo([_eventModelData.eventLayout eve_eventTimeZoneTextHeight]);
+        	make.left.mas_equalTo(leftPadding);
+        	make.top.mas_equalTo(16);
+        	make.right.mas_equalTo(-rightPaddig);
+    	}];
+    	[timeView mas_updateConstraints:^(MASConstraintMaker *make) {
+        	make.height.mas_equalTo([_eventModelData.eventLayout eve_eventTimeDetailTextHeight]);
+        	make.left.mas_equalTo(leftPadding);
+        	make.right.mas_equalTo(-rightPaddig);
+        	make.bottom.mas_equalTo(-16);
+    	}];
+    
+    	[timeView.startTimeBgView mas_updateConstraints:^(MASConstraintMaker *make) {
+        	make.height.mas_equalTo([_eventModelData.eventLayout eve_startTimeViewHeight]);
+    	}];
+    
+    	[timeView.endTimeBgView mas_updateConstraints:^(MASConstraintMaker *make) {
+        	make.height.mas_equalTo([_eventModelData.eventLayout eve_endTimeViewHeight]);
+    	}];
+    
+    [addressView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(0);
+        make.right.mas_equalTo(0);   		make.top.mas_equalTo(timeZoneAndTimeView.mas_bottom).offset([EVEEventLayout eve_eventTimePartBottomMargin]);
+        	make.height.mas_equalTo([_eventModelData.eventLayout eve_evenDetailAddressHeight]);
+    	}];
+    
+    	[accessoryView mas_updateConstraints:^(MASConstraintMaker *make) {
+        	make.left.mas_equalTo(0);
+        	make.right.mas_equalTo(0);
+        	make.top.mas_equalTo(addressView.mas_bottom);
+        	make.height.mas_equalTo([_eventModelData.eventLayout eve_evenDetailAccessoryHeight]);
+    	}];
+    
+    	[alertView mas_updateConstraints:^(MASConstraintMaker *make) {
+        	make.left.mas_equalTo(0);
+        	make.right.mas_equalTo(0);
+        	make.top.mas_equalTo(accessoryView.mas_bottom);
+        	make.height.mas_equalTo([_eventModelData.eventLayout eve_evenDetailAlertHeight]);
+    	}];
+    	//重新计算
+    	[_eventModelData calculateEventDetailHeaderHeight];
+    
+	}
+
+	//计算事件详情header的高度
+	- (void)calculateEventDetailHeaderHeight
+	{
+   	 if (self.isHaveContent) {
+
+        self.eventDetailContentHeight = self.detailContentMatch.textHeight;
+    	}else{
+        	self.eventDetailContentHeight = 0;
+    	}
+    	self.eventDetailHeaderHeight =  2 * [EVEEventLayout eve_eventTitleTopAndBottomMargin] + [_eventLayout eve_eventDetailTitleHeight] + self.eventDetailContentHeight + 2 *[EVEEventLayout eve_eventContentTopAndBottomMargin] + [_eventLayout eve_eventDetailTimeZoneAndTimeHeight] + [EVEEventLayout eve_eventTimePartBottomMargin] + [_eventLayout eve_evenDetailAddressHeight] + [_eventLayout eve_evenDetailAccessoryHeight] + [_eventLayout eve_evenDetailAlertHeight];
+	}
+	
+```
+
+## 4.在设置界面字体工具类的使用
+
+```
+	// 初始化界面时调用
+    - (void)viewDidLoad{
+	    [super viewDidLoad];
+	    self.sliderValue = [MTChangeFontManager getCurrentFontValue];
+       [MTChangeFontManager shareFontManager].isPushSetCurrentFontValue = YES;
+       [MTChangeFontManager shareFontManager].isSetEventFont = YES;
+       [self selectedPointIndex:self.sliderValue];
+       self.sliderView.selectedNumber = self.sliderValue;
+	}
+
+	// 滑动slider时存储字体标准值。
+	- (void)selectedPointIndex:(NSInteger)index
+	{
+   	// 输入行文字每次调节2sp 固定性文字每次调节1sp
+   	 switch (index) {
+        case 0:
+            self.sliderValue = 0;
+            break;
+        case 1:
+            self.sliderValue = 1;
+            break;
+        case 2:
+            self.sliderValue = 2;
+            break;
+        case 3:
+            self.sliderValue = 3;
+            break;
+        case 4:
+            self.sliderValue = 4;
+            break;
+            
+        default:
+            break;
+    	}
+    
+    	[[MTChangeFontManager shareFontManager] setCurrentFontValue:self.sliderValue];
+    	[MTChangeFontManager shareFontManager].isPushSetCurrentFontValue = NO;
+	}
+```
+	
+## 总结
+到这里事件预览的字体改变的功能就基本实现了，下面介绍下，开发是时会遇到的问题：
+
+- 1.进入设置字体页面，一定要把ChangeFontManager的lastFontValue设置为standardValue；
+- 2.在每次视图加载数据源时，根据判断来执行是否把所有字体的大小设为标准值，若是在设置界面来回滑动时，不需要，若是来回进出设置字体页面和预览时间视图页面，则需要；
+
+  ```
+// 进页面时,字体size恢复标准之后在进行设置.
+if (manager.isSetEventFont || manager.isPushSetCurrentFontValue) {
+   [configuration eve_SetStandardFont];
+}
+  ```
+- 3.界面字体设置和计算高度取字体时不要都用会改变字体大小的方法；
+- 4.计算界面高度时要仔细计算，约束的间距不要漏加。
