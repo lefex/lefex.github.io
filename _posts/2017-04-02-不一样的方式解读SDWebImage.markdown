@@ -781,8 +781,6 @@ static char TAG_ACTIVITY_STYLE;
 - **注意性能：**一定要注意性能，结合多线程，提升性能，比如 SD 读取文件时会在一条线程中读取；
 - **方便使用者：**写三方库时，要让用户使用起来超级方便，比如在自己项目中写项目组中公用的模块时，要有明确的注释，让使用这更方便的使用；
 
-如果您想第一时间看到我们的文章，欢迎关注公众号。
-![微信公众号](http://upload-images.jianshu.io/upload_images/1664496-f94c6e4f349a2f74.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 参考
 
@@ -791,3 +789,6 @@ static char TAG_ACTIVITY_STYLE;
 [时序图](http://www.cnblogs.com/ywqu/archive/2009/12/22/1629426.html)
 
 [类图](http://design-patterns.readthedocs.io/zh_CN/latest/read_uml.html)
+
+如果您想第一时间看到我们的文章，欢迎关注公众号。
+![微信公众号](http://upload-images.jianshu.io/upload_images/1664496-f94c6e4f349a2f74.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
