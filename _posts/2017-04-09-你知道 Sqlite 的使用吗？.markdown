@@ -499,3 +499,7 @@ NULL，INTEGER, REAL, TEXT, BLOB
 
    由于项目对数据库采取了加密，每次出现bug的时候总想到数据库中找一下数据是否异常，可使用sqlite工具的时候必须下载包，然后找到数据库，这时打开数据库，发现数据库是加密的，即使输入正确的密码也不能查看数据库中的数据，每次感觉很头疼。最后实在没办法，自己写了一个查看数据库的小工具（ 
  [ PMFMDB-iOS ](https://github.com/lefex/PMFMDB-iOS)），写的很粗糙，不过一直使用，感觉还行。
+
+
+ 如果您想第一时间看到我们的文章，欢迎关注公众号。
+![微信公众号](http://upload-images.jianshu.io/upload_images/1664496-f94c6e4f349a2f74.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
