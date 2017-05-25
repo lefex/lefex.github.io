@@ -1,10 +1,4 @@
----
-layout: post
-title: 从零开始部署小程序服务器（腾讯云）？
-date: 2017-05-22 08:00:24.000000000 +08:00
----
-
-**本文由 [iMetalk](https://lefex.github.io/) 团队的成员 Lefe 完成，主要帮助读者了解一下小程序和服务器的环境配置**。
+## 从零开始部署小程序服务器（腾讯云）
 
 > 话说目前云已经很便宜了，腾讯有一个月的试用期，不过阿里云也有，而且对于学生认证的用户 9.9元一个月的最低配置，这让 Lefe 才有可能尝试配置一个线上的服务器。从一个小白开始，感觉都是新的东西，有时候碰到问题，很难，无从下手，不过通过网上的各种资料最终都解决了，下面主要讲一讲过程，这些知识对于服务器端的同学来说，应该很简单，但我只想记录下这一路走来所经历的！
 
@@ -184,18 +178,18 @@ Nginx是一款轻量级的Web 服务器/反向代理服务器及电子邮件（I
 
 安装 Nginx：
 
-gcc、g++依赖库 
+- gcc、g++依赖库 
 apt-get install build-essential apt-get install libtool
-安装 pcre依赖库（http://www.pcre.org/） 
+- 安装 pcre依赖库（http://www.pcre.org/） 
 sudo apt-get install libpcre3 libpcre3-dev
 
-安装 zlib依赖库（http://www.zlib.net） 
+- 安装 zlib依赖库（http://www.zlib.net） 
 apt-get install zlib1g-dev
 
-安装
+- 安装
 cd /usr/local/src wget http://nginx.org/download/nginx-1.4.2.tar.gz tar -zxvf nginx-1.4.2.tar.gz cd nginx-1.4.2
 
-./configure 
+- ./configure 
 --sbin-path=/usr/local/nginx/nginx \
 --conf-path=/usr/local/nginx/nginx.conf \
 --pid-path=/usr/local/nginx/nginx.pid \
@@ -204,7 +198,7 @@ cd /usr/local/src wget http://nginx.org/download/nginx-1.4.2.tar.gz tar -zxvf ng
 --with-zlib=/opt/app/openet/oetal1/chenhe/zlib-1.2.8 \
 --with-openssl=/opt/app/openet/oetal1/chenhe/openssl-1.0.1t
 
-make
+- make
 
 执行完一大堆后，就算安装完成了。那么如何才能 让`https://wqjp.lefe.wang:400/api/store/get`的请求指向`https://wqjp.lefe.wang/api/store/get`。只能修改配置文件了。Lefe 的配置文件如下，它同时支持 http 和 https。安装完后的 Nginx 在 `/usr/local/` 目录下，找到配置文件 `/usr/local/nginx/conf/nginx.conf`，编辑这个配置文件，在编辑配置文件时，有几个坑需要注意一下：
 

@@ -88,17 +88,17 @@ iOS开发我们使用`Xcode`开发，下载直接安装，新建一个项目，�
 <view class="promise-container">
     <view class="promise-title-container">
       //goodInfo 是一个Json，存放数据
-      <text class="promise-title">{{goodInfo.detail.title}}</text>
+      <text class="promise-title">\{\{goodInfo.detail.title\}\}</text>
       <view class="promise-title-line"></view>
     </view>
    //相当于一个for循环
-  <block wx:for="{{goodInfo.detail.data}}">
+  <block wx:for="\{\{goodInfo.detail.data\}\}">
     //根据不同类型来渲染图片还是文字
-    <view wx:if="{{item.type==1}}" class="promise-container">
-      <image src="{{item.content}}" class="good-image"></image>
+    <view wx:if="\{\{item.type==1\}\}" class="promise-container">
+      <image src="\{\{item.content\}\}" class="good-image"></image>
     </view>
-    <view wx:if="{{item.type==0}}" class="promise-container">
-      <text class="good-content">{{item.content}}</text>
+    <view wx:if="\{\{item.type==0\}\}" class="promise-container">
+      <text class="good-content">\{\{item.content\}\}</text>
     </view>
 </block>
 </view>
@@ -235,8 +235,8 @@ iOS中可以给视图添加一个事件，比如点击事件。而小程序中�
 `bindtap`后的`bindMenu`为视图绑定的事件名，`data-name`中的`name`为事件传递的参数。
 
 ```
-<view bindtap="bindMenu" data-name="{{‘123’}}">
-    <image src="{{item.icon}}"/>
+<view bindtap="bindMenu" data-name="\{\{‘123’\}\}">
+    <image src="\{\{item.icon\}\}"/>
 </view>
 
 ```
