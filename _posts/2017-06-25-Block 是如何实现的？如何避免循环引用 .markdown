@@ -6,7 +6,8 @@ date: 2017-06-25 18:00:24.000000000 +08:00
 
 **本文由 [iMetalk](https://lefex.github.io/) 团队的成员 Lefe 完成**。
 
-#### 说明：
+
+### 说明：
 
 使用 Block 的时候，我们通常会有以下几点疑问，我们带着这种疑问来阅读本文，本文难免会有遗漏或者错误，望读者朋友们提出来。Lefe 在使用 Block 的时候主要遇到了以下问题：
 
@@ -20,7 +21,7 @@ date: 2017-06-25 18:00:24.000000000 +08:00
 
 带着这些问题，我们一块来揭开 Block 的真实面目，本文篇幅较长，可以分段阅读，建议读者耐心阅读，很枯燥的，如果能动手实现以下，会有趣很多。在阅读之前我们先了解下 `Clang`
 
-#### Clang
+### Clang
 
 本文主要用到了 `Clang`，那什么是 `Clang` 呢？它是 Xcode 默认的编译器。更多关于`Clang` 可以参考 [本文](https://github.com/ming1016/study/wiki/%E6%B7%B1%E5%85%A5%E5%89%96%E6%9E%90-iOS-%E7%BC%96%E8%AF%91-Clang---LLVM) 。这里我们主要用 Clang 把 Block 的实现转换成 C++ ，其实和 C 差不多，除了构造函数外。
 
@@ -30,7 +31,7 @@ date: 2017-06-25 18:00:24.000000000 +08:00
 
 ![屏幕快照 2017-06-25 上午9.36.43.png](http://upload-images.jianshu.io/upload_images/1664496-a821be9ae04537e5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-#### 内存分配
+### 内存分配
 
 在阅读下文前，我们需要对内存分配有一定的了解
 
@@ -43,7 +44,7 @@ date: 2017-06-25 18:00:24.000000000 +08:00
 
 关于内存分配的阅读 [本文](http://chenqx.github.io/2014/09/25/Cpp-Memory-Management/)
 
-#### Block 是如何实现的
+### Block 是如何实现的
 
 掌握了 `Clange` 的基本使用，那我们就看看 Block 究竟做了什么。从一个简单的例子开始。
 
@@ -131,7 +132,7 @@ static void _I_HelloLefe_lefeTestComplete(HelloLefe * self, SEL _cmd) {
 
 到这里相信读者还是对 Block 的实现很陌生，很正常，坚持阅读一会，试试看。头脑中试着把 Block 就当做是一个 NSObject 对象。
 
-#### Block 捕获变量
+### Block 捕获变量
 
 记得刚接触 Block 的时候，只是隐约听到 Block 可以自动捕获 Block 中使用的变量。是的，Block 可以捕获它所用到的自动变量或对象，但是它只是捕获了它所用到的变量，其他用不到的变量它并不会捕获，这里就是引起循环引用的一个重点，下文会详细将到。对应全局变量 Block 并不或去捕获。
 
@@ -191,7 +192,7 @@ static void _I_HelloLefe_lefeTestComplete(HelloLefe * self, SEL _cmd) {
 
 ```
 
-#### 修改 Block 中的捕获的变量
+### 修改 Block 中的捕获的变量
 
 上面的例子中，并不能在 Block 中修改所捕获的变量，那么如何修改 Block 中所捕获的变量呢？可以使用 __block。如果修改 Block 中的变量，编译器会直接报错。比如：
 
@@ -462,7 +463,7 @@ LefeBlock block;
 
 ```
 
-#### 循环引用一：
+### 循环引用一：
 
 ````
 - (void)testMemoryLeakCase1
@@ -528,7 +529,8 @@ LefeBlock block;
 }
 ````
 
-#### 循环引用二：
+### 循环引用二：
+
 ````
 - (void)testMemoryLeakCase2
 {
@@ -561,7 +563,7 @@ LefeBlock block;
 }
 ````
 
-#### 循环引用三：
+### 循环引用三：
 
 其实实例变量是通过 self->name 访问的，所以也可能造成循环引用。
 
