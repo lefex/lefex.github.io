@@ -1,9 +1,9 @@
 # Basic
-title: iMetalk
-subtitle: 北京同创智业iOS技术团队
-welcome_message: <a href="http://www.immetalk.com/" target="_blank">[密语 觅友购]</a>
-description: 我们是一群90后，热爱技术，喜欢分享。不局限于iOS技术本身，学习Node，了解产品，掌握跨平台开发。做好技术的同时做好产品。
-creator: <a href="https://github.com/iMetalk">@iMetalk</a>
+title: 汽配
+subtitle: 公司
+welcome_message: <a href="http://www.immetalk.com/" target="_blank">[]</a>
+description: 好产品。
+creator: <a href="https://github.com/lefex">@Lefe_x</a>
 
 url: "https://github.com/iMetalk"
 
@@ -22,8 +22,8 @@ blog_button:
 
 # Navigation buttons in the front page.
 nav:
-    - {title: 项目, description: 我们的项目汇总, url: 'https://lefex.github.io/2017/02/项目介绍/'}
-    - {title: 关于我们, description: 关于我们描述, url: 'https://lefex.github.io/2017/02/关于我们/'}
+    - {title: 项目, description: 我们的项目汇总, url: 'https://github.com/lefex'}
+    - {title: 关于, description: 关于我们描述, url: 'https://github.com/lefex'}
 
 # Pagination
 gems: [jekyll-paginate]
@@ -37,11 +37,11 @@ comment:
     
 # Social
 social:
-    weibo: iMetalk
-    github: iMetalk
-    twitter: iMetalk
+    weibo: 汽配
+    github: 汽配
+    twitter: 汽配
     gplus: 107108267983477358170
-    mail: iMetalk@163.com
+    mail: wsyxyxs@126.com
 
 # Google Analytics
 ga:
