@@ -1,24 +1,12 @@
-- name: Pricing
+- name: 产品中心
   link: /pricing/
   new_window: false
   highlight: false
-- name: Blog
-  link: /blog/
-  new_window: false
-  highlight: false
-- name: About
+- name: 关于我们
   link: /about/
   new_window: false
   highlight: false
-- name: Contact
+- name: 联系我们
   link: /contact/
   new_window: false
   highlight: false
-- name: Login
-  link: /
-  new_window: true
-  highlight: false
-- name: Sign Up
-  link: /
-  new_window: true
-  highlight: true
