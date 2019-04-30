@@ -1,69 +1,68 @@
 ---
-title: 内蒙古包头王记汽配公司
-description: 东北电瓶、汽车灯泡、马达、发电机批发
+layout: default
 ---
-<section class="hero">
-	<div class="text-container">
-		<h1 class="editable"><strong>内蒙古包头王记汽配公司</strong></h1>
-		<p class="subtext editable">东北电瓶、汽车灯泡、马达、发电机等批发</p>
-		<div class="cta button alt"><a href="">电话：0472-2102123</a></div>
-		<div>
-			<!-- <img src="/images/dashboard_home.png" alt="Screenshot" class="screenshot editable" /> -->
-		</div>
-	</div>
-</section>
 
-<div class="content">
-	<section>
-		<div class="container flex">
-			<div class="text">
-				<h2><strong>公司简介</strong></h2>
-				<p> <strong>王记汽配公司</strong>位于内蒙古自治区包头市昆都仑区海湖豪庭(莫尼路南)，成立于2000年。公司以诚信为本、质量第一为经营理念，多年来积累了成千上万个客户。公司主要经营电瓶、灯泡、发电机、马达、密封胶、轴承、电瓶、汽车装饰等批发和零售，价格绝对合理，质量有保证。 </p>
-			</div>
-			<div class="image">
-				<img src="/images/dashboard_main.png" alt="Screenshot" class="screenshot editable" />
-			</div>
-		</div>
-	</section>
+<div class="home">
+ 
+  
+    <div class="row pack">
 
-	<section>
-		<div class="container flex">
-			<div class="text editable">
-				<h2><strong>蓄电池</strong></h2>
-				<p> “凌云”系列汽车起动型铅酸蓄电池自投放市场以来受到用户好评，行销全国31个省市自治区，整车已先后为陕汽集团、北方奔驰公司、重汽集团、上汽依维柯红岩、苏州金龙、西沃公司、中通客车、申龙客车以及徐工、山推、中联重科、集瑞重工、北汽乘用车、陕西通家等厂家配套，产品出口美国、俄罗斯、澳大利亚、伊朗等十几个国家和地区。</p>
-			</div>
-			<div class="image">
-				<img src="/images/dashboard_pro1.png" alt="Screenshot" class="screenshot editable" />
-			</div>
-		</div>
-	</section>
+        {% for post in paginator.posts %}   
+            <div class="col-md-4 card">
+             <a href="{{ post.url | prepend: site.baseurl }}" class="index-anchor">    
+                <div class="panel panel-default">
+                  
+                  {% if post.img %}
+                  <img width="100%" src="{{site.baseurl}}/images/{{post.img}}" alt="{{post.title}}">
+                  {% else %}
+                  <img width="100%" src="{{site.baseurl}}/images/webjeda-logo-big.jpg" alt="{{site.title}}">
+                  {% endif %}
+                  
+                  <div class="panel-body">
+                    <h3 class="panel-title pull-left">{{ post.title | truncate: 25 }}</h3><span class="post-meta pull-right"><small>{{ post.date | date: "%b %-d, %Y" }}</small></span>
+                  </div>
+                  
+                  <div class="panel-body"><small>
+                    {{ post.excerpt | strip_html | strip_newlines | truncate: 180 }}</small>
+                  </div>
+                </div>
+                </a>
+            </div>
+        
+          {% endfor %}
 
-	<section>
-		<div class="container flex">
-			<div class="text editable">
-				<h2><strong>灯泡大全</strong></h2>
-				<p>我们提供各种型号的灯泡，主要以鹰牌灯泡为主。各种小车、打车、私家车专用灯泡。由于我们主要做批发，所有相比市场上的价格更公道。</p>
-			</div>
-			<div class="image">
-				<img src="/images/dashboard_pro2.png" alt="Screenshot" class="screenshot editable" />
-			</div>
-		</div>
-	</section>
+    </div> 
+    
+<div class="row">
+    <div class="col-md-4">  </div>
+    <div class="col-md-4">
+        {% if paginator.total_pages > 1 %}
+        <ul class="pagination">
+          {% if paginator.previous_page %}
+            <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a></li>
+          {% else %}
+            <li><span>&laquo; Prev</span></li>
+          {% endif %}
 
-	<section class="testimonial">
-		<div class="container flex">
-			<div class="testimonial-block">
-				<div class="square-image"><img src="/images/cover.jpg" alt="Jim James" class="editable"></div>
-				<blockquote>
-					<p class="editable">我们服务于包头，呼和浩特，乌兰察布市等上千家大小企业。我们坚持以诚信为本、质量第一为公司发展理念，旨在为客户提供满意的服务。</p>
-					<p class="editable author">王记汽配所有员工</p>
-				</blockquote>
-			</div>
-		</div>
-	</section>
+          {% for page in (1..paginator.total_pages) %}
+            {% if page == paginator.page %}
+              <li class="active"><span><em>{{ page }}</em></span></li>
+            {% elsif page == 1 %}
+            <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a></li>
+            {% else %}
+            <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+            {% endif %}
+          {% endfor %}
 
-	<section class="bottom-cta">
-		<h2 class="editable">地址：内蒙古自治区包头市昆都仑区海湖豪庭(莫尼路南)</h2>
-		<div class="button alt"><a href="#">致电：137-0472-5053</a></div>
-	</section>
+          {% if paginator.next_page %}
+            <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a></li>
+          {% else %}
+            <li><span >Next &raquo;</span></li>
+          {% endif %}
+          </ul>
+        {% endif %}
+
+    </div>
+    <div class="col-md-4">  </div>
+</div>
 </div>
