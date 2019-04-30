@@ -2,7 +2,7 @@
   - name: 产品中心
     link: /pricing/
 - links:
-  - name: 关于我们
+  - name: 关于
     link: /
     new_window: true
 - links:
