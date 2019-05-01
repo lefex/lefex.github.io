@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-01T13:02:52+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">超越技术</title><subtitle>超越技术，专注于图解计算机通用技术，比如图解算法、图解数据结构。目前正在做图解LeetCode算法和数据结构。我希望作为一名”说人话“的技术人。</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2019/05/01/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2019-05-01T09:28:47+08:00</published><updated>2019-05-01T09:28:47+08:00</updated><id>http://localhost:4000/jekyll/update/2019/05/01/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2019/05/01/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-01T13:12:17+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">超越技术</title><subtitle>超越技术，专注于图解计算机通用技术，比如图解算法、图解数据结构。目前正在做图解LeetCode算法和数据结构。我希望作为一名”说人话“的技术人。</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2019/05/01/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2019-05-01T09:28:47+08:00</published><updated>2019-05-01T09:28:47+08:00</updated><id>http://localhost:4000/jekyll/update/2019/05/01/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2019/05/01/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
 &lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
 
@@ -126,24 +126,24 @@
 
 &lt;p&gt;我会用10篇文章来说明各个排序算法，并会用OC代码实现算法。后续文章涉及到的排序算法都是以整形数为例。这些文章目的是让你理解排序算法的思想，所以算法实现方面，我省略了很多异常处理。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;冒泡排序&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&quot;冒泡排序&quot;&gt;冒泡排序&lt;/h4&gt;
 
 &lt;p&gt;冒泡排序是通过比较两个相邻元素的大小实现排序，如果后一个元素大于前一个元素，就交换这两个元素。这样就会让每一趟冒泡都能找到最大一个元素并放到最后。&lt;/p&gt;
 
 &lt;p&gt;以 [ 8, 1, 4, 6, 2, 3, 5, 7 ] 为例，对它进行冒泡排序：&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://mmbiz.qpic.cn/mmbiz_png/rzprzksWzSjBJXNgoUA38UCuNiaxxRK1Xft7fu7rvjNnK8C1jic2Z3bmgFH8Lb7uiaicicm1sD1uB0NhKVhSR76iaicvA/640?wx_fmt=png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/lefex.github.io/blob/master/images/all.005.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://mmbiz.qpic.cn/mmbiz_jpg/rzprzksWzSjBJXNgoUA38UCuNiaxxRK1Xu2mXBlTCXVGQ1Bk5C7AyDEeLicT0gNGQhuSxUXVgHjjw9uRA4DSAk0A/640?wx_fmt=jpeg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/lefex.github.io/blob/master/images/all.005.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://mmbiz.qpic.cn/mmbiz_jpg/rzprzksWzSjBJXNgoUA38UCuNiaxxRK1XDb0uxCk9E3EEJcpkNUmRLuwTCr0Crziavvib5IibxGXAticCibYicgWHXyDQ/640?wx_fmt=jpeg&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/lefex.github.io/blob/master/images/all.005.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;代码实现：&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;+ (NSArray *)bubbleSort:(NSArray *)unsortDatas {    NSMutableArray *unSortArray = [unsortDatas mutableCopy];    for (int i = 0; i &amp;lt; unSortArray.count -1 ; i++) {        BOOL isChange = NO;        for (int j = 0; j &amp;lt; unSortArray.count - 1 - i; j++) {            // 比较相邻两个元素的大小，后一个大于前一个就交换            if ([unSortArray[j] integerValue] &amp;gt; [unSortArray[j+1] integerValue]) {                NSNumber *data = unSortArray[j+1];                unSortArray[j+1] = unSortArray[j];                unSortArray[j] = data;                isChange = YES;            }        }        if (!isChange) {            // 如果某次未发生数据交换，说明数据已排序            break;        }    }    return [unSortArray copy];}
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;特点&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&quot;特点&quot;&gt;特点&lt;/h4&gt;
 
 &lt;p&gt;稳定性：它是指对同样的数据进行排序，会不会改变它的相对位置。比如 [ 1, 3, 2, 4, 2 ] 经过排序后，两个相同的元素 2 位置会不会被交换。冒泡排序是比较相邻两个元素的大小，显然不会破坏稳定性。&lt;/p&gt;
 
@@ -151,14 +151,12 @@
 
 &lt;p&gt;时间复杂度：最后的情况 O(n*n)，平均为 O(nlgn);&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;感想&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&quot;感想&quot;&gt;感想&lt;/h4&gt;
 
 &lt;p&gt;冒泡排序在排序的过程中设置一个 Flag 标记是否已经有序，会减少冒泡排序的趟数。它更适合基本有序的数据，只有几个无序，最好的情况时间复杂度为 O ( n )。它的基本操是每次找出最大的元素放到最后。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;推荐阅读：&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&quot;推荐阅读&quot;&gt;推荐阅读：&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483806&amp;amp;idx=1&amp;amp;sn=b85f43e846e96433755c7dc6adc1d033&amp;amp;chksm=fabb010dcdcc881b242ad387e6da4ea4174b99f5423d7bed11cc07dcd2af92f3ac00ebfc4ee8&amp;amp;scene=21#wechat_redirect&quot;&gt;编程的背后&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;微博@Lefe_x&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://mmbiz.qpic.cn/mmbiz_png/rzprzksWzSjsUaianTEy5sfyVk4RS3jKaCAfnDwwamtUMaZtWS7ZnEe1urlR2ENBl0kdkfZCdQTvosqWzADHGPg/640?wx_fmt=png&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">本文首次发表于超越技术公众号 图解排序 1/10 - 冒泡排序</summary></entry></feed>
+&lt;p&gt;&lt;img style=&quot;border-radius: 30px&quot; src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/images/cyjs_qr.png?raw=true&quot; title=&quot;lefex&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">本文首次发表于超越技术公众号 图解排序 1/10 - 冒泡排序</summary></entry></feed>
