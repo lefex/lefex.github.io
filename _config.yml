@@ -16,7 +16,7 @@
 title: 超越技术
 email: wsyxyxs@126.com
 description: >- # this means to ignore newlines until "baseurl:"
-  超越技术，专注于图解计算机通用技术，比如图解算法、图解数据结构。目前正在做图解LeetCode算法和数据结构。我希望作为一名”说人话“的技术人。
+  图解LeectCode算法和数据结构，一名会”说人话“的技术人。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://lefex.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: lefex
