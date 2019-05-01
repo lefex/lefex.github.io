@@ -5,9 +5,9 @@
 layout: home
 ---
 
-# 图解 LeetCode 算法
 
-![](https://github.com/lefex/LeetCodeGraphically/blob/master/images/banner.png)
+<img style="border-radius: 30px" src="https://github.com/lefex/LeetCodeGraphically/blob/master/images/banner.png?raw=true" title="lefex"/>
+
 
 
 Hi，大家好！
