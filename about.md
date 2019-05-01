@@ -1,17 +1,19 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: About Me
+menu: about
+subtitle:   <h3>Download My CV</h3>
+            <a role="button" class="btn btn-primary hvr-grow-shadow" href="/assets/files/CV_Chuan_Dong_FR.pdf" target="_blanks">
+                <span class="flag-icon flag-icon-bl"></span> Français
+            </a>
+            <a role="button" class="btn btn-primary hvr-grow-shadow" href="/assets/files/CV_Chuan_Dong_FR.pdf" target="_blanks">
+                <span class="flag-icon flag-icon-gb"></span> English
+            </a>
+            <a role="button" class="btn btn-primary hvr-grow-shadow" href="/assets/files/CV_Chuan_Dong_FR.pdf" target="_blanks">
+                <span class="flag-icon flag-icon-cn"></span> 中文
+            </a>
+                            
+css: ['about.css', 'sidebar-popular-repo.css', '../../bower_components/flag-icon-css/css/flag-icon.min.css']
 ---
 
-
-
-
-Webjeda cards is a Bootstrap based theme. Any Bootstrap element can be used in the theme. Read [Webjeda Blog](http://blog.webjeda.com){: target="_blank"} for jekyll tutorials. 
-
-For more themes, visit [jekyll-themes](https://jekyll-themes.com){: target="_blank"}
-
-**Does the theme deserve a star?**
-
-<a class="github-button" href="https://github.com/sharu725/cards" data-style="mega" data-count-href="/sharu725/cards/stargazers" data-count-api="/repos/sharu725/cards#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star sharu725/cards on GitHub">Star</a>
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+{% include about.html %}
