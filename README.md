@@ -1,139 +1,126 @@
-# Yummy Jekyll Theme
+## Cards Jekyll Template - [Demo](https://willianjusten.github.io/cards-jekyll-template)
 
-A Simple, Bootstrap Based Theme. Especially for developers who like to show their projects on website and like to take notes. There are also some magical features to discover. 
+![Screenshot](screenshot.png)
 
-## [Live Demo](http://dongchuan.github.io/)
+This is a simple and minimalist template for Jekyll designed for developers that want to write blog posts but don't want to care about frontend stuff.
 
-Open issues if you find bugs or even have trouble installing jekyll or dependencies. :D
+The Theme features:
 
-Or contact: dongchuan55@gmail.com
+- Gulp
+- Stylus (Jeet, Rupture, Kouto Swiss)
+- Live Search
+- Offcanvas Menu
+- SVG icons
+- Very very small and fast!
+- Shell Script to create posts
+- Tags page
+- Series page
+- About Me page
+- Feed RSS
+- Sitemap.xml
+- Color Customization
+- Info Customization
 
-> Strongly suggest to fork and change project name to create your GitHub Pages instead of downloading it directly. Because in the future, I will develop many funny modules like 'footprint' to show your world wide trip. Could be easier to merge new features in the future.
+If you want to see this template in real action, take a look at my [original site](http://willianjusten.com.br/).
 
-## Notable Features
+## Basic Setup
 
-* Compatible with Jekyll 3.x and GitHub Pages
-* Based on Bootstrap
-* [Github Module](http://dongchuan.github.io/open-source) to show your popular projects in a single page and on sidebar automatically. (Datas are retreived by github metadata instead of by api calls, so no delay) 
-* [Post Module](http://dongchuan.github.io/blog) to show all your posts with timeline
-* [Bookmark Module](http://dongchuan.github.io/bookmark) to establish a quick mark about all libs/tools/books you like to use.
-* [Post Navigation Module](http://dongchuan.github.io/css/2016/04/22/CSS-Animation.html) to generat a quick directory of your post by titles/subtitles automatically.
-* Support [Disqus Comment](https://disqus.com/home/explore/)
-* Support [Google Analytics](https://analytics.google.com/analytics/web/)
+1. [Install Jekyll](http://jekyllrb.com) (use the command ```sudo gem install jekyll```)
+2. Fork the [Cards Jekyll Template](https://github.com/willianjusten/cards-jekyll-template/fork)
+3. Clone the repo you just forked.
+4. Edit `_config.yml` to personalize your site.
+5. Check out the sample posts in `_posts` to see examples for assigning categories and tags, and other YAML data.
+6. Read the documentation below for further customization pointers and documentation.
+7. **Remember to compile your assets files with Gulp.**
 
-Features in future:
-* A Footprint module to show all your travel around the world
-* Feature to share. (Facebook, twitter, evernote and so on)
-* (Not sure) A embeded todo list. (Not sure) to travel, to complete, to do for your parents, etc. To do in life!
-* Creative ideas to discuss with you :P
+## Site and User Settings
 
-## Install and setup
-
-Before using it, you may need [Bower](http://bower.io/) and [Bundler](http://bundler.io/) on your local to install dependencies.
-
-1. Fork code and clone
-2. Run `bower install` to install all dependencies in [bower.json](https://github.com/DONGChuan/DONGChuan.github.io/blob/master/bower.json)
-3. Run `bundle install` to install all dependencies in [Gemfile](https://github.com/DONGChuan/DONGChuan.github.io/blob/master/Gemfile)
-4. Update `_config.yml` with your own settings.
-5. Add posts in `/_posts`
-6. Commit to your own Username.github.io repository.
-7. Then come back to star this theme!
-
-> When install dependencies by bundler or gem, you may have some errors depending on your environment.
-
-> Error about `json`. Check response of [Massimo Fazzolari on Stackoverflow](http://stackoverflow.com/questions/8100891/the-json-native-gem-requires-installed-build-tools) to quick fix your problem. (Please also use latest version instead of 1.9.3 mentioned in the response)
-  
-> Error about `jekyll-paginate`. Please check [here](http://stackoverflow.com/questions/35401566/dont-have-jekyll-paginate-or-one-of-its-dependencies-installed)
-
-> Error about `SSL_connect`. Please check [here](http://stackoverflow.com/questions/15305350/gem-install-fails-with-openssl-failure) and [here](http://railsapps.github.io/openssl-certificate-verify-failed.html)
-
-> For the moment, when you test on your local, you need to keep internet connection. Bug will be fixed soon.
-
-## How to use
-
-#### Create a new post
-
-Create a `.md` file inside `_posts` folder.
-
-Name the file according to the standard jekyll format.
+You have to fill some informations on `_config.yml` to customize your site.
 
 ```
-2016-01-19-i-love-yummy.md
+# Site settings
+title: Willian Justen - Desenvolvedor Front End
+description: A blog about lorem ipsum dolor sit amet
+baseurl: "" # the subpath of your site, e.g. /blog/ or empty.
+url: "http://localhost:3000" # the base hostname & protocol for your site 
+
+# User settings
+username: Lorem Ipsum
+user_description: Anon Developer at Lorem Ipsum Dolor
+email: anon@anon.com
+twitter_username: lorem_ipsum
+github_username:  lorem_ipsum
+gplus_username:  lorem_ipsum
+disqus_username: lorem_ipsum
 ```
 
-Write the Front Matter and content in the file.
+## Header Name
+
+To use the power of CSS Content and media query, the header name is defined on [src/styl/_header.styl](src/styl/_header.styl). Change to your prefered name.
+
+## Color customization
+
+All color variables are in [src/styl/_variables.styl](src/styl/_variables.styl). To change the main color, just set the new value at `main` assignment. Another colors are for texts and the code background color.
+
+## Theme Colors
+
+Every post has a main color that is defined on [src/styl/_theme-colors.styl](src/styl/_theme-colors.styl). Just create a new color with the prefix `post-` and define your main-class: 'css' and color: '#2DA0C3' on every post you create.
+
+## Creating posts
+
+You can use the `initpost.sh` to create your new posts. Just follow the command:
+
+```
+./initpost.sh -c Post Title
+```
+
+The new file will be created at `_posts` with this format `date-title.md`.
+
+## Front-matter 
+
+When you create a new post, you need to fill the post information in the front-matter, follow this example:
 
 ```
 ---
 layout: post
-title: Post title
-category: Category
-tags: [tag1, tag2]
+title: "Falando sobre RSCSS"
+date: 2016-02-07 18:48:16
+image: '/assets/img/rscss/rscss.png'
+description: 'Escrevendo CSS sem perder a sanidade. Aprenda uma metodologia que pode salvar muitas dores de cabeça.'
+main-class: 'css'
+color: '#2DA0C3'
+tags:
+- css
+- metodologia
+- frontend
+categories:
+twitter_text: 'Escrevendo CSS sem perder a sanidade.'
+introduction: 'Escrevendo CSS sem perder a sanidade. Com essa introdução, Rico St. Cruz o criador chama a atenção de todos sobre uma metodologia melhor para se escrever CSS.'
 ---
 ```
 
-Please find examples [here](https://github.com/DONGChuan/DONGChuan.github.io/tree/master/_posts)
+## Running the blog in local
 
-> Jekyll supports different structure of repository. You could just create as many folders as you want under _posts. Then jekyll will look through all folders/subfolders to find your posts. So cool, right? :D
+In order to compile the assets and run Jekyll on local you need to follow those steps:
 
-#### [Post Navigation Module](http://dongchuan.github.io/css/2016/04/22/CSS-Animation.html)
+- Install [NodeJS](https://nodejs.org/) (remember to use the latest version)
+- Run `npm install`
+- Run `npm install -g gulp gulp-cli`
+- Run `gulp`
 
-When writing post, please always follow this format:
+## Questions
 
-```
-Description about this post, blablabla
+Having a problem getting something to work or want to know why I setup something in a certain way? Ping me on Twitter [@willian_justen](https://twitter.com/willian_justen) or file a [GitHub Issue](https://github.com/willianjusten/will-jekyll-template/issues/new).
 
-## Title A
 
-### Title A-1
+## Donation
 
-### Title A-2
+If you liked my work, buy me a coffee <3
 
-## Title B
-
-### Title B-1
-
-```
-
-So, Title A, A-1, A-2, Title B, B-1 will be detected and created as a directory
-
-For example, [a demo post](https://github.com/DONGChuan/DONGChuan.github.io/edit/master/_posts/2016-04-22-CSS-Animation.md)
-
-But if you do not like it or your post is quite short. You want to hide this navigation to make your post occupy your full screen. You just need to set **no-post-nav:true** in the Front Matter of the post where you want to hide this feature :D
-
-#### [Github Module](http://dongchuan.github.io/open-source)
-
-This module will get automatically all your repository information from github. But to test on your local, you must keep internet connection. 
-In the future, it will also show the repositories you contributed a lot and the ones of your organization.
-
-#### [Bookmark Module](http://dongchuan.github.io/bookmark)
-
-To add new marks, you only need to edit [bookmark.md](https://github.com/DONGChuan/Yummy-Jekyll/blob/master/bookmark.md).
-
-#### [Customize About Page](http://dongchuan.github.io/about)
-
-Feel free to customize about.me page to show yourself. You only need to modify [about.md](https://github.com/DONGChuan/Yummy-Jekyll/blob/master/about.md) and [about.html](https://github.com/DONGChuan/Yummy-Jekyll/blob/master/_includes/about.html)
-
-## ToDo
-
-- [ ] List posts by a specified tag
-- [ ] New module FootPrint to show your world around trips
-- [ ] Show projects from your orgnization on github. (Siderbar, in open-source page)
-- [ ] To fix bug - could only test on local with internet connected.
-
-## Contributor
-
-* [DONGChuan](https://github.com/DONGChuan)
-* [Mojtaba Koosej](https://github.com/mkoosej)
-* [shahsaurabh0605](https://github.com/shahsaurabh0605)
-* [Z-Beatles](http://www.waynechu.cn/)
-* [LM450N](https://github.com/LM450N)
-* [XhmikosR](https://github.com/XhmikosR)
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UTMFZUHX6EUGE)
 
 ## License
 
-The Apache License 2.0
+This theme is free and open source software, distributed under the The MIT License. So feel free to use this Jekyll theme on your site without linking back to me or using a disclaimer.
 
-Copyright (c) 2016 DONG Chuan
-
-Check [LICENSE](https://github.com/DONGChuan/DONGChuan.github.io/blob/master/LICENSE) file and [official website](http://www.apache.org/licenses/LICENSE-2.0) for details
+If you’d like to give me credit somewhere on your blog or tweet a shout out to [@willian_justen](https://twitter.com/willian_justen), that would be pretty sweet.
