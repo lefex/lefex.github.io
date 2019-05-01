@@ -1,0 +1,124 @@
+---
+layout: post
+title:  "图解 LeetCode 链表: 83. Remove Duplicates from Sorted List"
+date:   2019-04-11 09:28:47 +0800
+categories: jekyll update
+---
+
+> 本文首次发表于超越技术公众号 [图解 LeetCode 链表: 83. Remove Duplicates from Sorted List](https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247483939&idx=1&sn=5e68e353c5216ff197b8403152d03c02&chksm=fabb02b0cdcc8ba6fab84dca5b239dd44f0d1924fa5c559b681688c46ca885e00f0b93b9fe9a&token=623725354&lang=zh_CN#rd)
+
+
+
+![img](https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/lec_83/1.png?raw=true)
+
+
+
+今天是图解 LeetCode 算法的 第 1 阶段第 1 天 ，这一阶段主要学习链表相关的算法题和链表数据结构。这个公众号之所以叫「超越技术」，是因为我想利用技术做一些有意义的事情，发挥技术的价值。LeetCode   是我发现的第一个价值，算法和数据结构是进“大厂”的「必备条件」，一面面试往往包含对算法题的考察，即使你的技术水平非常好，如果算法和数据结构不给力，面试结果会大打折扣。算法和数据结构在工作中也十分重要，比如写出「更好的代码」，读懂别人代码的思想，复杂问题的处理，性能优化等等。
+
+我的一个兴趣爱好是画图和做音视频处理（虽然画的很烂，但有激情），我想利用我的兴趣爱好把技术问题描述的更「通俗易懂」，我也在不断探索更好的教学方式，能帮助更多的人「入门数据结构和算法」，所以不要觉得题目太简单，算法大牛不需要看这个教程。下面我们进入今天的算法学习，题目如下：
+
+> Given a sorted linked list, delete all duplicates such that each element appear only *once*.
+>
+> **Example 1:**
+>
+> ```
+> Input: 1->1->2
+> Output: 1->2
+> ```
+
+
+
+### 分析
+
+
+
+给定一个「有序」的链表，去掉重复的节点，每个节点只能出现一次，假定为单链表。开始之前需要补充一下单链表数据结构，学完链表相关的算法后，链表这个数据结构你也就掌握了，一箭双雕。
+
+
+
+![img](https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/lec_83/2.png?raw=true)
+
+
+
+单链表由数据部分和指向下一个节点的指针构成，包含一个指向头节点的指针，尾节点的下一个节点为 NULL。
+
+可以把单链表看做是链接在一起的水管，每根水管有链接到下一个水管的编号（相当于指向下一个节点的指针），而整个链表相关的算法题就是把这些水管进行重组、删除等。
+
+![img](https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/lec_83/3.png?raw=true)
+
+
+
+单链表数据结构定义：
+
+```
+struct ListNode {    
+  int val;    
+  ListNode *next;    
+  ListNode(int x) : val(x), next(NULL) {}
+};
+```
+
+
+
+题目要求去掉「重复的节点」，对整个单链表进行遍历，把重复多余的节点去掉。假设单链表 L1 ：1-> 1 -> 2，遍历 L1，把第 2 个节点去掉，让第 3 个节点链接到第 1 个节点的后面。
+
+
+
+![img](https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/lec_83/4.png?raw=true)
+
+
+
+### 代码
+
+整体思路比较简，关键是把思路转换成代码，C++ 实现。
+
+
+
+**代码实现请前往 GitHub 项目[LeetCodeGraphically](https://github.com/lefex/LeetCodeGraphically)**
+
+
+
+### 结果
+
+Runtime: 12 ms, faster than 100.00% of C++ online submissions for Remove Duplicates from Sorted List.
+Memory Usage: 9.2 MB, less than 65.42% of C++ online submissions for Remove Duplicates from Sorted List.
+
+
+
+### 总结
+
+整个过程就如同对已经接好的水管进行重组，把编号重复的水管去掉，同一编号的水管只能出现一次。在重组的过程中，只有保证顺序正确且“不漏水”即可。上述代码中，我们掌握了单链表数据结构的定义、遍历和创建。
+
+
+
+
+
+下一道题目留给你思考：
+
+**82.Remove Duplicates from Sorted List II**
+
+> Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only *distinct* numbers from the original list.
+>
+> 
+>
+> **Example 1:**
+>
+> ```
+> Input: 1->2->3->3->4->4->5
+> Output: 1->2->5
+> ```
+
+
+
+
+
+**推荐阅读：**
+
+[10个常见的排序算法总结](http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247483937&idx=1&sn=df45985b71f592cb93b7e48aba39ac31&chksm=fabb02b2cdcc8ba404a0345868d7c3f7ce8d701e1280d81ddb897d07f7476e78e24de6c4cd97&scene=21#wechat_redirect)
+
+
+
+
+
+<img style="border-radius: 30px" src="https://github.com/lefex/LeetCodeGraphically/blob/master/images/cyjs_qr.png?raw=true" title="lefex" width="200"/>
+

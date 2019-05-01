@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>图解排序 5/10 - 归并排序 | 超越技术</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="图解排序 5/10 - 归并排序" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="本文首次发表于超越技术公众号 图解排序 5/10 - 归并排序" />
+<meta property="og:description" content="本文首次发表于超越技术公众号 图解排序 5/10 - 归并排序" />
+<link rel="canonical" href="http://localhost:4000/jekyll/update/2019/04/05/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F.html" />
+<meta property="og:url" content="http://localhost:4000/jekyll/update/2019/04/05/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F.html" />
+<meta property="og:site_name" content="超越技术" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-04-05T09:28:47+08:00" />
+<script type="application/ld+json">
+{"description":"本文首次发表于超越技术公众号 图解排序 5/10 - 归并排序","@type":"BlogPosting","url":"http://localhost:4000/jekyll/update/2019/04/05/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F.html","headline":"图解排序 5/10 - 归并排序","dateModified":"2019-04-05T09:28:47+08:00","datePublished":"2019-04-05T09:28:47+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/jekyll/update/2019/04/05/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="超越技术" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">超越技术</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">关于我</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">图解排序 5/10 - 归并排序</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-04-05T09:28:47+08:00" itemprop="datePublished">Apr 5, 2019
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <blockquote>
+  <p>本文首次发表于超越技术公众号 <a href="https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;mid=2247483848&amp;idx=1&amp;sn=35145839503cf88a88fdd6e964a6c90d&amp;chksm=fabb015bcdcc884d06dccf879889abed4f680cbb62e07aae65a82ce7f7a28de9a0c29d0c0cce&amp;scene=21#wechat_redirect">图解排序 5/10 - 归并排序</a></p>
+</blockquote>
+
+<p>归并排序，采用分治思想，先把待排序序列拆分成一个个子序列，直到子序列只有一个元素，停止拆分，然后对每个子序列进行边排序边合并。其实，从名字「归并」可以看出一丝「拆、合」的意思（妄加猜测）。</p>
+
+<h2 id="归并排序">归并排序</h2>
+
+<p>以 arr = [ 8, 1, 4, 6, 2, 3, 5, 7 ] 为例，排序需要分两步：</p>
+
+<p>a、「拆」，以 length/2 拆分为 A = [ 8, 1, 4, 6 ] ，B = [ 2, 3, 5, 7 ]，继续对 A 和 B 进行拆分，A1 = [ 8, 1 ] 、A2 = [ 4, 6 ]、B1 = [ 2, 3 ]、B2 = [ 5, 7 ]，继续拆分，<strong>直到只有一个元素</strong>，A11 = [ 8 ] , A12= [ 1 ] 、A21 = [ 4 ]、A22 = [ 6 ]、B11 = [ 2 ]、B12 = [ 3 ]、B21 = [ 5 ]、B22 = [ 7 ]。</p>
+
+<p>b、「合」，对单个元素的序列进行合并，A11和A12合并为[ 1, 8 ], A21 和 A22 合并为 [ 4, 6 ]，等等。在合并的过程中也需要排序。「一图胜千言」。</p>
+
+<p><img src="https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/5-guibin/all.034.jpeg?raw=true" alt="img" /></p>
+
+<h2 id="特点">特点</h2>
+
+<p>稳定性：在元素拆分的时候，虽然相同元素可能被分到不同的组中，但是合并的时候相同元素相对位置不会发生变化，故稳定。</p>
+
+<p>空间复杂度：需要用到一个数组保存排序结果，也就是合并的时候，需要开辟空间来存储排序结果，故为 O ( n );</p>
+
+<p>时间复杂度：最好最坏都为 O(nlogn);</p>
+
+<h2 id="感想">感想</h2>
+
+<p>归并排序，需要额外申请存储空间用来存储排序结果，也就是给合并的时候使用，不过它的时间复杂度均为 O(nlogn)。整体思想比较简单，同样使用到了递归思想。</p>
+
+<p><strong>代码实现请前往 GitHub 项目<a href="https://github.com/lefex/LeetCodeGraphically">LeetCodeGraphically</a></strong></p>
+
+<h2 id="推荐阅读">推荐阅读：</h2>
+
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;mid=2247483806&amp;idx=1&amp;sn=b85f43e846e96433755c7dc6adc1d033&amp;chksm=fabb010dcdcc881b242ad387e6da4ea4174b99f5423d7bed11cc07dcd2af92f3ac00ebfc4ee8&amp;scene=21#wechat_redirect">编程的背后</a></p>
+
+<p><img style="border-radius: 30px" src="https://github.com/lefex/LeetCodeGraphically/blob/master/images/cyjs_qr.png?raw=true" title="lefex" width="200" /></p>
+
+
+  </div><a class="u-url" href="/jekyll/update/2019/04/05/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">超越技术</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">超越技术</li><li><a class="u-email" href="mailto:wsyxyxs@126.com">wsyxyxs@126.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lefex"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lefex</span></a></li><li><a href="https://www.twitter.com/lefex"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lefex</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>超越技术，专注于图解计算机通用技术，比如图解算法、图解数据结构。目前正在做图解LeetCode算法和数据结构。我希望作为一名”说人话“的技术人。</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

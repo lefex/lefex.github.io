@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>图解排序 6/10 - 堆排序 | 超越技术</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="图解排序 6/10 - 堆排序" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="本文首次发表于超越技术公众号 图解排序 6/10 - 堆排序" />
+<meta property="og:description" content="本文首次发表于超越技术公众号 图解排序 6/10 - 堆排序" />
+<link rel="canonical" href="http://localhost:4000/jekyll/update/2019/04/06/%E5%A0%86%E6%8E%92%E5%BA%8F.html" />
+<meta property="og:url" content="http://localhost:4000/jekyll/update/2019/04/06/%E5%A0%86%E6%8E%92%E5%BA%8F.html" />
+<meta property="og:site_name" content="超越技术" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-04-06T09:28:47+08:00" />
+<script type="application/ld+json">
+{"description":"本文首次发表于超越技术公众号 图解排序 6/10 - 堆排序","@type":"BlogPosting","url":"http://localhost:4000/jekyll/update/2019/04/06/%E5%A0%86%E6%8E%92%E5%BA%8F.html","headline":"图解排序 6/10 - 堆排序","dateModified":"2019-04-06T09:28:47+08:00","datePublished":"2019-04-06T09:28:47+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/jekyll/update/2019/04/06/%E5%A0%86%E6%8E%92%E5%BA%8F.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="超越技术" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">超越技术</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">关于我</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">图解排序 6/10 - 堆排序</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-04-06T09:28:47+08:00" itemprop="datePublished">Apr 6, 2019
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <blockquote>
+  <p>本文首次发表于超越技术公众号 <a href="https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;mid=2247483889&amp;idx=1&amp;sn=4c92c6d9fdb9b0fbc3cc99ee1a2fcadf&amp;chksm=fabb0162cdcc8874bb601ed836f996dcd849f50993960d07e34539f6779b2dc295fcad0d4d63&amp;scene=21#wechat_redirect">图解排序 6/10 - 堆排序</a></p>
+</blockquote>
+
+<p>堆排序需要借助于一种数据结构「堆」，注意下文说的都是 「大根堆」。排序的过程中需要不断进行重组堆（heapify 阶段）。关于堆这种数据结构在<a href="http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;mid=2247483852&amp;idx=1&amp;sn=e9068173df1e17c0c92647d9a9d8adcf&amp;chksm=fabb015fcdcc8849a5525cc8b1d458607c987e4feef582678ad10933fc335c34f86b7017f354&amp;scene=21#wechat_redirect">上一篇文章</a>已经讲过了。堆需要满足 2 个条件：</p>
+
+<p>「a」、是一颗完全二叉树（完全二叉树是由满二叉树衍生出来的，满二叉树是指除最后一层无任何子节点外其它节点都有2个子节点，当二叉树的每个节点的编号都与其对应的满二叉树节点的编号对应，则这棵树为完全二叉树）；</p>
+
+<p>「 b 」、父节点的值大于等于子节点。</p>
+
+<p>从上面的两个特点可以推出：堆的第一个元素最大。堆排序正是利用了这个特点来对数据进行排序，整个排序过程分为 2 个阶段：</p>
+
+<p>1、根节点与最后一个节点交换位置；</p>
+
+<p>2、对根节点进行重组堆（heapify）；</p>
+
+<p>整个排序过程中每次可以获得一个最大的元素放到最后，这样下来就可以得到一个有序序列。</p>
+
+<p>理解堆排序需要掌握一个重要的特点，堆可以用数组表示，数组的索引正是堆的下标。「一图胜前言，看图吧」。</p>
+
+<h2 id="堆排序">堆排序</h2>
+
+<p>以数组 arr[] = { 1, 2, 3, 11, 13, 12, 9 , 8, 10, 15, 14, 7 } 为例，进行堆排序之前需要是一个堆，所以第一步需要把数组转换成一个堆。</p>
+
+<p><img src="https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.039.jpeg?raw=true" alt="img" /></p>
+
+<p><img src="https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.040.jpeg?raw=true" alt="img" /></p>
+
+<p><img src="https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.041.jpeg?raw=true" alt="img" /></p>
+
+<p><img src="https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.042.jpeg?raw=true" alt="img" /></p>
+
+<p><img src="https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.043.jpeg?raw=true" alt="img" /></p>
+
+<p><img src="https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.039.jpeg?raw=true" alt="img" /></p>
+
+<p><img src="https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.044.jpeg?raw=true" alt="img" /></p>
+
+<p><img src="https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.045.jpeg?raw=true" alt="img" /></p>
+
+<p><img src="https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.046.jpeg?raw=true" alt="img" /></p>
+
+<p><img src="https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.047.jpeg?raw=true" alt="img" /></p>
+
+<p><img src="https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.048.jpeg?raw=true" alt="img" /></p>
+
+<p><img src="https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.049.jpeg?raw=true" alt="img" /></p>
+
+<p>把最终二叉树转换成数组：{1，3，3，7，，8，9，10，11，12，13，14，15}</p>
+
+<h2 id="特点">特点</h2>
+
+<p>稳定性：在堆不断重组的过程中，相同元素的相对位置可能会发生变化，故不稳定。</p>
+
+<p>空间复杂度：在原序列堆元素进行操作，故为 O ( 1 );</p>
+
+<p>时间复杂度：最好最坏都为 O(nlogn);</p>
+
+<h2 id="感想">感想</h2>
+
+<p>堆排序利用了堆数据结构，堆本身是一棵二叉树，根据一个节点可以计算出它的父节点，左子节点和右子节点的下标。父节点=(i-1)/2，左子节点=2<em>i + 1，右子节点=2</em>i + 2。「 i表示第几个节点 」。整个思想就是不断进行堆重组，交换根节点与最后节点的位置，再对除最后一个节点外的其它元素进重组、交换。</p>
+
+<p><strong>代码实现请前往 GitHub 项目<a href="https://github.com/lefex/LeetCodeGraphically">LeetCodeGraphically</a></strong></p>
+
+<h2 id="推荐阅读">推荐阅读：</h2>
+
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;mid=2247483806&amp;idx=1&amp;sn=b85f43e846e96433755c7dc6adc1d033&amp;chksm=fabb010dcdcc881b242ad387e6da4ea4174b99f5423d7bed11cc07dcd2af92f3ac00ebfc4ee8&amp;scene=21#wechat_redirect">编程的背后</a></p>
+
+<p><img style="border-radius: 30px" src="https://github.com/lefex/LeetCodeGraphically/blob/master/images/cyjs_qr.png?raw=true" title="lefex" width="200" /></p>
+
+
+  </div><a class="u-url" href="/jekyll/update/2019/04/06/%E5%A0%86%E6%8E%92%E5%BA%8F.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">超越技术</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">超越技术</li><li><a class="u-email" href="mailto:wsyxyxs@126.com">wsyxyxs@126.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lefex"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lefex</span></a></li><li><a href="https://www.twitter.com/lefex"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lefex</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>超越技术，专注于图解计算机通用技术，比如图解算法、图解数据结构。目前正在做图解LeetCode算法和数据结构。我希望作为一名”说人话“的技术人。</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

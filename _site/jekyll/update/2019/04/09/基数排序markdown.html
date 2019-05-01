@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>图解排序 9/10 - 基数排序 | 超越技术</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="图解排序 9/10 - 基数排序" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="本文首次发表于超越技术公众号 图解排序 9/10 - 基数排序" />
+<meta property="og:description" content="本文首次发表于超越技术公众号 图解排序 9/10 - 基数排序" />
+<link rel="canonical" href="http://localhost:4000/jekyll/update/2019/04/09/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8Fmarkdown.html" />
+<meta property="og:url" content="http://localhost:4000/jekyll/update/2019/04/09/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8Fmarkdown.html" />
+<meta property="og:site_name" content="超越技术" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-04-09T09:28:47+08:00" />
+<script type="application/ld+json">
+{"description":"本文首次发表于超越技术公众号 图解排序 9/10 - 基数排序","@type":"BlogPosting","url":"http://localhost:4000/jekyll/update/2019/04/09/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8Fmarkdown.html","headline":"图解排序 9/10 - 基数排序","dateModified":"2019-04-09T09:28:47+08:00","datePublished":"2019-04-09T09:28:47+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/jekyll/update/2019/04/09/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8Fmarkdown.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="超越技术" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">超越技术</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">关于我</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">图解排序 9/10 - 基数排序</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-04-09T09:28:47+08:00" itemprop="datePublished">Apr 9, 2019
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <blockquote>
+  <p>本文首次发表于超越技术公众号 <a href="https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;mid=2247483895&amp;idx=1&amp;sn=0c3097272d4587963a026cf699d10ce0&amp;chksm=fabb0164cdcc88724dfaebd98087baa914f33253bd9278c95f48859529f34943185e83ee2f62&amp;scene=21#wechat_redirect">图解排序 9/10 - 基数排序</a></p>
+</blockquote>
+
+<p>明天还剩最后一个比较简单的排序算法「选择排序」，排序系列的文章就要截止了，希望在我「理解算法」的同时也能够帮助你。最近在做「链表」相关的算法题，后续会整理成文章发出来，链表算法比较简单，可以把它想象成「接水管」，每个节点是一根「水管」。</p>
+
+<p>基数排序是从待排序序列找出可以作为排序的「关键字」，按照「关键字」进行多次排序，最终得到有序序列。比如对  100 以内的序列 arr =  [ 3,  9,  489,  1,  5, 10, 2, 7, 6, 204  ]进行排序，排序关键字为「个位数」、「十位数」和「百位数」这 3 个关键字，分别对这 3 个关键字进行排序，最终得到一个有序序列。</p>
+
+<h2 id="基数排序">基数排序</h2>
+
+<p>以 arr =  [ 3,  9,  489,  1,  5, 10, 2, 7, 6, 204 ] 为例，最大为 3 位数，分别对个、十、百位进行排序，最终得到的序列就是有序序列。可以把 arr 看成 [ 003,  009,  489,  001,  005, 010, 002, 007, 006, 204 ]，这样理解起来比较简单。数字的取值范围为 0-9，故可以分为 10 个桶。</p>
+
+<p><img src="https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/9-jishu/all.068.jpeg?raw=true" alt="img" /></p>
+
+<p><img src="https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/9-jishu/all.069.jpeg?raw=true" alt="img" /></p>
+
+<h2 id="特点">特点</h2>
+
+<p>稳定性：在元素拆分的时候，相同元素会被分到同一组中，合并的时候也是按顺序合并，故稳定。</p>
+
+<p>空间复杂度：O ( n + k );</p>
+
+<p>时间复杂度：最好最坏都为 O( n * k );</p>
+
+<h2 id="感想">感想</h2>
+
+<p>基数排序与其它不同的是它需要对「 多个关键值 」进行多次桶排序。</p>
+
+<p><strong>代码实现请前往 GitHub 项目<a href="https://github.com/lefex/LeetCodeGraphically">LeetCodeGraphically</a></strong></p>
+
+<h2 id="推荐阅读">推荐阅读：</h2>
+
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;mid=2247483806&amp;idx=1&amp;sn=b85f43e846e96433755c7dc6adc1d033&amp;chksm=fabb010dcdcc881b242ad387e6da4ea4174b99f5423d7bed11cc07dcd2af92f3ac00ebfc4ee8&amp;scene=21#wechat_redirect">编程的背后</a></p>
+
+<p><img style="border-radius: 30px" src="https://github.com/lefex/LeetCodeGraphically/blob/master/images/cyjs_qr.png?raw=true" title="lefex" width="200" /></p>
+
+
+  </div><a class="u-url" href="/jekyll/update/2019/04/09/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8Fmarkdown.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">超越技术</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">超越技术</li><li><a class="u-email" href="mailto:wsyxyxs@126.com">wsyxyxs@126.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lefex"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lefex</span></a></li><li><a href="https://www.twitter.com/lefex"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lefex</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>超越技术，专注于图解计算机通用技术，比如图解算法、图解数据结构。目前正在做图解LeetCode算法和数据结构。我希望作为一名”说人话“的技术人。</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

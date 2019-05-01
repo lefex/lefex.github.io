@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>图解排序 3/10 - 希尔排序 | 超越技术</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="图解排序 3/10 - 希尔排序" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="本文首次发表于超越技术公众号 图解排序 3/10 - 希尔排序" />
+<meta property="og:description" content="本文首次发表于超越技术公众号 图解排序 3/10 - 希尔排序" />
+<link rel="canonical" href="http://localhost:4000/jekyll/update/2019/04/03/%E5%B8%8C%E5%B0%94markdown.html" />
+<meta property="og:url" content="http://localhost:4000/jekyll/update/2019/04/03/%E5%B8%8C%E5%B0%94markdown.html" />
+<meta property="og:site_name" content="超越技术" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-04-03T09:28:47+08:00" />
+<script type="application/ld+json">
+{"description":"本文首次发表于超越技术公众号 图解排序 3/10 - 希尔排序","@type":"BlogPosting","url":"http://localhost:4000/jekyll/update/2019/04/03/%E5%B8%8C%E5%B0%94markdown.html","headline":"图解排序 3/10 - 希尔排序","dateModified":"2019-04-03T09:28:47+08:00","datePublished":"2019-04-03T09:28:47+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/jekyll/update/2019/04/03/%E5%B8%8C%E5%B0%94markdown.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="超越技术" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">超越技术</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">关于我</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">图解排序 3/10 - 希尔排序</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-04-03T09:28:47+08:00" itemprop="datePublished">Apr 3, 2019
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <blockquote>
+  <p>本文首次发表于超越技术公众号 <a href="https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;mid=2247483834&amp;idx=1&amp;sn=d91d9d354d765da8bece9c06510f3a5d&amp;chksm=fabb0129cdcc883f5c48e76a7690b4fe698415827c82c8ef4c8482a8618fdff05258f13eff03&amp;token=623725354&amp;lang=zh_CN#rd">图解排序 3/10 - 希尔排序</a></p>
+</blockquote>
+
+<p>希尔排序，它是由 D.L.Shell 于1959 年提出而得名。根据它的名字很难想象算法的核心思想。[ 所以只能死记硬背了，面试官问：希尔排序的思想是什么？]。它的核心思想是把一个序列分组，对分组后的内容进行<a href="http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;mid=2247483828&amp;idx=1&amp;sn=d8f0675f4e54e3b273c90c59be54eaeb&amp;chksm=fabb0127cdcc883158bb0791f26cae1ea8494b496744f802b22babb4c03eaaef25e98dfbff57&amp;scene=21#wechat_redirect"><strong>插入排序</strong></a>，这里的分组只是逻辑上的分组，不会重新开辟存储空间。它其实是插入排序的优化版，插入排序对基本有序的序列性能好，希尔排序利用这一特性把原序列分组，对每个分组进行排序，逐步完成排序。</p>
+
+<h2 id="希尔排序">希尔排序</h2>
+
+<p>以 arr = [ 8, 1, 4, 6, 2, 3, 5, 7 ] 为例，通过 floor(8/2) 来分为 4 组，8 表示数组中元素的个数。分完组后，对组内元素进行插入排序。</p>
+
+<p>「 第1次分组 」</p>
+
+<p><img src="https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/3-shell/all.020.jpeg?raw=true" alt="img" /></p>
+
+<p>「 利用第 1 次分组结果进行第 2 次分组 」</p>
+
+<p><img src="https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/3-shell/all.021.jpeg?raw=true" alt="img" /></p>
+
+<p>「 利用第 2 次分组结果进行最后一次分组 」</p>
+
+<p><img src="https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/3-shell/all.022.jpeg?raw=true" alt="img" /></p>
+
+<h2 id="特点">特点</h2>
+
+<p>稳定性：它可能会把相同元素分到不同的组中，那么两个相同的元素就有可能调换相对位置，故不稳定。</p>
+
+<p>空间复杂度：由于整个排序过程是在原数据上进行操作，故为 O(1);</p>
+
+<p>时间复杂度：</p>
+
+<blockquote>
+  <p>希尔排序的时间复杂度与增量序列的选取有关，例如希尔增量时间复杂度为O(n²)，而Hibbard增量的希尔排序的时间复杂度为O(log n的3/2)，希尔排序时间复杂度的下界是n*log2n</p>
+
+  <p>百度百科</p>
+</blockquote>
+
+<h2 id="感想">感想</h2>
+
+<p>希尔排序在整个过程中，分组方式为：group = length/2,  group/2 …… 1，直到只能分一组，在整个分组过程中使元素逐渐变得有序，这样使用插入排序的时候就不需要移动大量元素，比如一个逆序序列 arr = [6, 5, 4, 4, 2, 1]，采用插入排序每次需要移动大量元素，如果换成希尔排序移动次数就会减少。希尔排序一个有意思的点是采用不同方式进行分组（上面提到的是采用的希尔增量分组），时间复杂度会有所不同，有兴趣的读者可以了解下其它分组方式。</p>
+
+<p><strong>代码实现请前往 GitHub 项目<a href="https://github.com/lefex/LeetCodeGraphically">LeetCodeGraphically</a></strong></p>
+
+<h2 id="推荐阅读">推荐阅读：</h2>
+
+<p><a href="http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;mid=2247483806&amp;idx=1&amp;sn=b85f43e846e96433755c7dc6adc1d033&amp;chksm=fabb010dcdcc881b242ad387e6da4ea4174b99f5423d7bed11cc07dcd2af92f3ac00ebfc4ee8&amp;scene=21#wechat_redirect">编程的背后</a></p>
+
+<p><img style="border-radius: 30px" src="https://github.com/lefex/LeetCodeGraphically/blob/master/images/cyjs_qr.png?raw=true" title="lefex" width="200" /></p>
+
+
+  </div><a class="u-url" href="/jekyll/update/2019/04/03/%E5%B8%8C%E5%B0%94markdown.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">超越技术</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">超越技术</li><li><a class="u-email" href="mailto:wsyxyxs@126.com">wsyxyxs@126.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/lefex"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">lefex</span></a></li><li><a href="https://www.twitter.com/lefex"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">lefex</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>超越技术，专注于图解计算机通用技术，比如图解算法、图解数据结构。目前正在做图解LeetCode算法和数据结构。我希望作为一名”说人话“的技术人。</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

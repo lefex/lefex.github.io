@@ -1,0 +1,50 @@
+---
+layout: post
+title:  "图解排序 2/10 - 插入排序"
+date:   2019-04-02 09:28:47 +0800
+categories: jekyll update
+---
+
+> 本文首次发表于超越技术公众号 [图解排序 2/10 - 插入排序](https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247483828&idx=1&sn=d8f0675f4e54e3b273c90c59be54eaeb&chksm=fabb0127cdcc883158bb0791f26cae1ea8494b496744f802b22babb4c03eaaef25e98dfbff57&scene=21#wechat_redirect)
+
+
+
+这是图解排序的第 2 篇。选择排序的核心思想是把一个待排序序列，分成 2 部分，前半部分为有序序列，后半部分为无序序列，遍历后半部分数据，插入到前半部分已经排序好的序列，最终得到一个有序序列。
+
+
+
+## 插入排序
+
+在整个排序过程如图所示，以 arr = [ 8, 1, 4, 6, 2, 3, 5, 7] 为例，它会把 arr 分成两组 A = [ 8 ] 和 B = [ 1, 4, 6, 2, 3, 5, 7] ，逐步遍历 B 中元素插入到 A 中，最终构成一个有序序列：
+
+![img](https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/10-insert/all.015.jpeg?raw=true)
+
+## 特点
+
+稳定性：它是从后往前遍历已排序好的序列，相同元素不会改变位置，故为稳定排序；
+空间复杂度：它是在原序列进行排序，故为 O ( 1 );
+
+时间复杂度：排序的过程中，首先要遍历所有的元素，然后在已排序序列中找到合适的位置并插入。共需要 2 层循环，故为 O ( n * n );
+
+
+
+## 感想
+
+插入排序的特点是把一个序列分成 2 组，开始的时候把第1个元素作为一组（有序），剩余元素作为另一组（无序）。这种方式如同打扑克，每次抓取一张牌插入到手里已经排序好的牌中。这种排序方式更适合某个序列本身已经有序或基本有序，插入几个元素。想优化这种排序可以在查找插入位置的时候选择一种更高效的算法，比如折半查找。
+
+
+
+**代码实现请前往 GitHub 项目[LeetCodeGraphically](https://github.com/lefex/LeetCodeGraphically)**
+
+
+
+## 推荐阅读：
+
+[编程的背后](http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247483806&idx=1&sn=b85f43e846e96433755c7dc6adc1d033&chksm=fabb010dcdcc881b242ad387e6da4ea4174b99f5423d7bed11cc07dcd2af92f3ac00ebfc4ee8&scene=21#wechat_redirect)
+
+
+
+<img style="border-radius: 30px" src="https://github.com/lefex/LeetCodeGraphically/blob/master/images/cyjs_qr.png?raw=true" title="lefex" width="200"/>
+
+
+

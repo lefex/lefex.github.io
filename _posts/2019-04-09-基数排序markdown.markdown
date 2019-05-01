@@ -1,0 +1,59 @@
+---
+layout: post
+title:  "图解排序 9/10 - 基数排序"
+date:   2019-04-09 09:28:47 +0800
+categories: jekyll update
+---
+
+> 本文首次发表于超越技术公众号 [图解排序 9/10 - 基数排序](https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247483895&idx=1&sn=0c3097272d4587963a026cf699d10ce0&chksm=fabb0164cdcc88724dfaebd98087baa914f33253bd9278c95f48859529f34943185e83ee2f62&scene=21#wechat_redirect)
+
+
+
+明天还剩最后一个比较简单的排序算法「选择排序」，排序系列的文章就要截止了，希望在我「理解算法」的同时也能够帮助你。最近在做「链表」相关的算法题，后续会整理成文章发出来，链表算法比较简单，可以把它想象成「接水管」，每个节点是一根「水管」。
+
+基数排序是从待排序序列找出可以作为排序的「关键字」，按照「关键字」进行多次排序，最终得到有序序列。比如对  100 以内的序列 arr =  [ 3,  9,  489,  1,  5, 10, 2, 7, 6, 204  ]进行排序，排序关键字为「个位数」、「十位数」和「百位数」这 3 个关键字，分别对这 3 个关键字进行排序，最终得到一个有序序列。
+
+
+
+## 基数排序
+
+以 arr =  [ 3,  9,  489,  1,  5, 10, 2, 7, 6, 204 ] 为例，最大为 3 位数，分别对个、十、百位进行排序，最终得到的序列就是有序序列。可以把 arr 看成 [ 003,  009,  489,  001,  005, 010, 002, 007, 006, 204 ]，这样理解起来比较简单。数字的取值范围为 0-9，故可以分为 10 个桶。
+
+![img](https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/9-jishu/all.068.jpeg?raw=true)
+
+
+
+![img](https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/9-jishu/all.069.jpeg?raw=true)
+
+
+
+## 特点
+
+稳定性：在元素拆分的时候，相同元素会被分到同一组中，合并的时候也是按顺序合并，故稳定。
+
+空间复杂度：O ( n + k );
+
+  时间复杂度：最好最坏都为 O( n * k );
+
+
+
+## 感想
+
+基数排序与其它不同的是它需要对「 多个关键值 」进行多次桶排序。
+
+
+
+**代码实现请前往 GitHub 项目[LeetCodeGraphically](https://github.com/lefex/LeetCodeGraphically)**
+
+
+
+## 推荐阅读：
+
+[编程的背后](http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247483806&idx=1&sn=b85f43e846e96433755c7dc6adc1d033&chksm=fabb010dcdcc881b242ad387e6da4ea4174b99f5423d7bed11cc07dcd2af92f3ac00ebfc4ee8&scene=21#wechat_redirect)
+
+
+
+<img style="border-radius: 30px" src="https://github.com/lefex/LeetCodeGraphically/blob/master/images/cyjs_qr.png?raw=true" title="lefex" width="200"/>
+
+
+

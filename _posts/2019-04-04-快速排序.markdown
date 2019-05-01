@@ -1,0 +1,68 @@
+---
+layout: post
+title:  "图解排序 4/10 - 快速排序"
+date:   2019-04-04 09:28:47 +0800
+categories: jekyll update
+---
+
+> 本文首次发表于超越技术公众号[图解排序 4/10 - 快速排序](https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247483843&idx=1&sn=0d0e23585aacaa4a291c201a155f7617&chksm=fabb0150cdcc88464eacf4f6b60a0562171658cb4e0c6262b2fb9ecd02c194e58faae777ab0f&scene=21#wechat_redirect)
+
+
+
+快速排序，人称最快的排序（其实我不太赞同，只能说它整体上效率比较高，有些排序算法在特定的数据序列中远比快速排序效率高）。掌握快速排序，需要对递归有深入的了解，如果只是了解递归的用法「不知道为什么这样写」，却不知道递归原理和执行顺序，建议深入学习下递归思想（PS：公众号列表中已经躺了一篇关于递归的文章，只是没太想好如何能够通俗易懂把递归讲明白，后面我画一些图来聊一聊递归）。
+
+快速排序的核心思想是对待排序序列通过一个「支点」（支点就是序列中的一个元素，别把它想的太高大上）进行拆分，使得左边的数据小于支点，右边的数据大于支点。然后把左边和右边再做一次递归，直到递归结束。支点的选择也是一门大学问，我们以 （左边index + 右边index）/ 2 来选择支点。一图胜千言，看图吧。
+
+
+
+## 快速排序
+
+以 arr = [ 8, 1, 4, 6, 2, 3, 5, 7 ] 为例，选择一个支点, index=  (L+R)/2 = (0+7)/2=3, 支点的值 pivot = arr[index] = arr[3] = 6，接下来需要把 arr 中小于 6 的移到左边，大于 6 的移到右边。快速排序使用一个高效的方法做数据拆分。用一个指向左边的游标 i，和指向右边的游标 j，逐渐移动这两个游标，直到找到 arr[i] > 6 和 arr[j] < 6, 停止移动游标，交换 arr[i] 和 arr[j]，交换完后 i++，j--（对下一个元素进行比较），直到 i>=j，停止移动。图中的 L，R 是指快速排序开始时序列的起始和结束索引，在一趟快速排序中，它们的值不会发生改变，直到下一趟排序时才会改变。文字描述的有点长，我怕你看不懂图就啰嗦了一下。
+
+![img](https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/4-quick/all.026.jpeg?raw=true)
+
+一趟快速排序完成后，分别对小于6和大于等于6的部分进行快速排序，递归就好了。对 [ 5, 1, 4, 3, 2 ] 进行一趟快速排序。
+
+![img](https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/4-quick/all.027.jpeg?raw=true)
+
+![img](https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/4-quick/all.028.jpeg?raw=true)
+
+
+
+![img](https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/4-quick/all.029.jpeg?raw=true)
+
+图中说明了快速排序的核心思想，每次递归过程都一样，掌握一趟快速排序思想和递归思想，即可掌握快速排序。
+
+
+
+## 特点
+
+稳定性：在元素分组的时候，相同元素相对位置可能会发生变化，故不稳定。
+
+空间复杂度：不同实现空间复杂度不太一样;
+
+时间复杂度：它与选取的支点值有关系，如果支点值为最大或最小，导致只有一边进行快速排序，时间复杂度为 O(n*n) , 如果选择中间的值为 O(nlogn);
+
+
+
+## 感想
+
+快速排序理解起来确实比其它排序抽象一点，它的关键点是选择支点值，选最大或者最小，导致快速排序一边倒，性能会大打折扣。回顾一下前面提到的 3
+种排序。冒泡排序，需要每次找到最大元素放到最后；插入排序，需要把待排序序列分组，把未排序序列插入到已排序序列；希尔排序，分多组让待排序序列逐渐变得有序，从而达到优化插入排序的目的。快速排序也是把待排序序列分组，不过它需要找到一个合适的支点。
+
+
+
+**代码实现请前往 GitHub 项目[LeetCodeGraphically](https://github.com/lefex/LeetCodeGraphically)**
+
+
+
+## 推荐阅读：
+
+[编程的背后](http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247483806&idx=1&sn=b85f43e846e96433755c7dc6adc1d033&chksm=fabb010dcdcc881b242ad387e6da4ea4174b99f5423d7bed11cc07dcd2af92f3ac00ebfc4ee8&scene=21#wechat_redirect)
+
+
+
+<img style="border-radius: 30px" src="https://github.com/lefex/LeetCodeGraphically/blob/master/images/cyjs_qr.png?raw=true" title="lefex" width="200"/>
+
+
+

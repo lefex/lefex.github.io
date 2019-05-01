@@ -1,0 +1,93 @@
+---
+layout: post
+title:  "图解排序 6/10 - 堆排序"
+date:   2019-04-06 09:28:47 +0800
+categories: jekyll update
+---
+
+> 本文首次发表于超越技术公众号 [图解排序 6/10 - 堆排序](https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247483889&idx=1&sn=4c92c6d9fdb9b0fbc3cc99ee1a2fcadf&chksm=fabb0162cdcc8874bb601ed836f996dcd849f50993960d07e34539f6779b2dc295fcad0d4d63&scene=21#wechat_redirect)
+
+
+
+堆排序需要借助于一种数据结构「堆」，注意下文说的都是 「大根堆」。排序的过程中需要不断进行重组堆（heapify 阶段）。关于堆这种数据结构在[上一篇文章](http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247483852&idx=1&sn=e9068173df1e17c0c92647d9a9d8adcf&chksm=fabb015fcdcc8849a5525cc8b1d458607c987e4feef582678ad10933fc335c34f86b7017f354&scene=21#wechat_redirect)已经讲过了。堆需要满足 2 个条件：
+
+「a」、是一颗完全二叉树（完全二叉树是由满二叉树衍生出来的，满二叉树是指除最后一层无任何子节点外其它节点都有2个子节点，当二叉树的每个节点的编号都与其对应的满二叉树节点的编号对应，则这棵树为完全二叉树）；
+
+「 b 」、父节点的值大于等于子节点。
+
+从上面的两个特点可以推出：堆的第一个元素最大。堆排序正是利用了这个特点来对数据进行排序，整个排序过程分为 2 个阶段：
+
+1、根节点与最后一个节点交换位置；
+
+2、对根节点进行重组堆（heapify）；
+
+
+
+整个排序过程中每次可以获得一个最大的元素放到最后，这样下来就可以得到一个有序序列。
+
+理解堆排序需要掌握一个重要的特点，堆可以用数组表示，数组的索引正是堆的下标。「一图胜前言，看图吧」。
+
+
+
+## 堆排序
+
+以数组 arr[] = { 1, 2, 3, 11, 13, 12, 9 , 8, 10, 15, 14, 7 } 为例，进行堆排序之前需要是一个堆，所以第一步需要把数组转换成一个堆。
+
+
+
+![img](https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.039.jpeg?raw=true)
+
+![img](https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.040.jpeg?raw=true)
+
+![img](https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.041.jpeg?raw=true)
+
+![img](https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.042.jpeg?raw=true)
+
+![img](https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.043.jpeg?raw=true)
+
+![img](https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.039.jpeg?raw=true)
+
+![img](https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.044.jpeg?raw=true)
+
+![img](https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.045.jpeg?raw=true)
+
+![img](https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.046.jpeg?raw=true)
+
+![img](https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.047.jpeg?raw=true)
+
+![img](https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.048.jpeg?raw=true)
+
+![img](https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.049.jpeg?raw=true)
+
+
+
+把最终二叉树转换成数组：{1，3，3，7，，8，9，10，11，12，13，14，15}
+
+## 特点
+
+稳定性：在堆不断重组的过程中，相同元素的相对位置可能会发生变化，故不稳定。
+
+空间复杂度：在原序列堆元素进行操作，故为 O ( 1 );
+
+  时间复杂度：最好最坏都为 O(nlogn);
+
+## 感想
+
+堆排序利用了堆数据结构，堆本身是一棵二叉树，根据一个节点可以计算出它的父节点，左子节点和右子节点的下标。父节点=(i-1)/2，左子节点=2*i + 1，右子节点=2*i + 2。「 i表示第几个节点 」。整个思想就是不断进行堆重组，交换根节点与最后节点的位置，再对除最后一个节点外的其它元素进重组、交换。
+
+
+
+**代码实现请前往 GitHub 项目[LeetCodeGraphically](https://github.com/lefex/LeetCodeGraphically)**
+
+
+
+## 推荐阅读：
+
+[编程的背后](http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247483806&idx=1&sn=b85f43e846e96433755c7dc6adc1d033&chksm=fabb010dcdcc881b242ad387e6da4ea4174b99f5423d7bed11cc07dcd2af92f3ac00ebfc4ee8&scene=21#wechat_redirect)
+
+
+
+<img style="border-radius: 30px" src="https://github.com/lefex/LeetCodeGraphically/blob/master/images/cyjs_qr.png?raw=true" title="lefex" width="200"/>
+
+
+

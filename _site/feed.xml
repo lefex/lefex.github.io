@@ -1,162 +1,438 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-01T13:12:17+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">超越技术</title><subtitle>超越技术，专注于图解计算机通用技术，比如图解算法、图解数据结构。目前正在做图解LeetCode算法和数据结构。我希望作为一名”说人话“的技术人。</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2019/05/01/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2019-05-01T09:28:47+08:00</published><updated>2019-05-01T09:28:47+08:00</updated><id>http://localhost:4000/jekyll/update/2019/05/01/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2019/05/01/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
-
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
-
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2019/05/01/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2019-05-01T09:28:47+08:00</published><updated>2019-05-01T09:28:47+08:00</updated><id>http://localhost:4000/jekyll/update/2019/05/01/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2019/05/01/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
-
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
-
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">图解LeetCode!</title><link href="http://localhost:4000/jekyll/update/2019/04/05/%E5%9B%BE%E8%A7%A3LeetCode.html" rel="alternate" type="text/html" title="图解LeetCode!" /><published>2019-04-05T09:28:47+08:00</published><updated>2019-04-05T09:28:47+08:00</updated><id>http://localhost:4000/jekyll/update/2019/04/05/%E5%9B%BE%E8%A7%A3LeetCode</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2019/04/05/%E5%9B%BE%E8%A7%A3LeetCode.html">&lt;h1 id=&quot;leetcodegraphically&quot;&gt;LeetCodeGraphically&lt;/h1&gt;
-
-&lt;h3 id=&quot;图解-leetcode-算法让算法活起来&quot;&gt;图解 LeetCode 算法，让算法”活”起来。&lt;/h3&gt;
-
-&lt;p&gt;数据结构和算法是面试非常重要的内容，有些算法非常难以理解，仅靠文字描述很难让读者明白算法思想。如果通过图示的方式来描述算法和数据结构，会形象很多，读者也容易理解算法的真实含义。&lt;/p&gt;
-
-&lt;p&gt;这个项目目的是让学习数据结构和算法变得更轻松，我会逐步解析LeetCode上的题目，在学习算法的同时也会讲解设计到的数据结构。&lt;/p&gt;
-
-&lt;h2 id=&quot;公众号&quot;&gt;公众号&lt;/h2&gt;
-
-&lt;p&gt;图解算法相关的文章每天都会在公众号发布，欢迎关注我的公众号「超越技术」，和我一同学习！！！&lt;/p&gt;
-
-&lt;p&gt;&lt;img style=&quot;border-radius: 30px&quot; src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/images/cyjs_qr.png?raw=true&quot; title=&quot;lefex&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;图解排序算法&quot;&gt;图解排序算法&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/code/LeetCodeGraphically/LeetCodeGraphically/LEFSortManager.h&quot;&gt;代码位置&lt;/a&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483822&amp;amp;idx=1&amp;amp;sn=ff5b8abd13ac4e89953dd07f16eca8d3&amp;amp;chksm=fabb013dcdcc882be39d9aad8c462de93eb7bcf49234caa5dd7403cc67bb84f4d2168a1952a5&amp;amp;scene=21#wechat_redirect&quot;&gt;图解排序 1/10 - 冒泡排序&lt;/a&gt;&lt;/th&gt;
-      &lt;th&gt;冒泡排序是通过比较两个相邻元素的大小实现排序，如果前一个元素大于后一个元素，就交换这两个元素&lt;/th&gt;
-      &lt;th&gt;&lt;img style=&quot;border-radius: 30px&quot; src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/images/maopao.jpeg?raw=true&quot; title=&quot;lefex&quot; width=&quot;200&quot; /&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483828&amp;amp;idx=1&amp;amp;sn=d8f0675f4e54e3b273c90c59be54eaeb&amp;amp;chksm=fabb0127cdcc883158bb0791f26cae1ea8494b496744f802b22babb4c03eaaef25e98dfbff57&amp;amp;scene=21#wechat_redirect&quot;&gt;图解排序 2/10 - 插入排序&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;选择排序的核心思想是把一个待排序序列，分成 2 部分，前半部分为有序序列，后半部分为无序序列，遍历后半部分数据，插入到前半部分已经排序好的序列，最终得到一个有序序列&lt;/td&gt;
-      &lt;td&gt;&lt;img style=&quot;border-radius: 30px&quot; src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/images/charu.jpeg?raw=true&quot; title=&quot;lefex&quot; width=&quot;200&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483834&amp;amp;idx=1&amp;amp;sn=d91d9d354d765da8bece9c06510f3a5d&amp;amp;chksm=fabb0129cdcc883f5c48e76a7690b4fe698415827c82c8ef4c8482a8618fdff05258f13eff03&amp;amp;token=623725354&amp;amp;lang=zh_CN#rd&quot;&gt;图解排序 3/10 - 希尔排序&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;把一个序列分组，对分组后的内容进行&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483828&amp;amp;idx=1&amp;amp;sn=d8f0675f4e54e3b273c90c59be54eaeb&amp;amp;chksm=fabb0127cdcc883158bb0791f26cae1ea8494b496744f802b22babb4c03eaaef25e98dfbff57&amp;amp;scene=21#wechat_redirect&quot;&gt;&lt;strong&gt;插入排序&lt;/strong&gt;&lt;/a&gt;，这里的分组只是逻辑上的分组，不会重新开辟存储空间&lt;/td&gt;
-      &lt;td&gt;&lt;img style=&quot;border-radius: 30px&quot; src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/images/shell.001.jpeg?raw=true&quot; title=&quot;lefex&quot; width=&quot;200&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483843&amp;amp;idx=1&amp;amp;sn=0d0e23585aacaa4a291c201a155f7617&amp;amp;chksm=fabb0150cdcc88464eacf4f6b60a0562171658cb4e0c6262b2fb9ecd02c194e58faae777ab0f&amp;amp;scene=21#wechat_redirect&quot;&gt;图解排序 4/10 - 快速排序&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;对待排序序列通过一个「支点」（支点就是序列中的一个元素，别把它想的太高大上）进行拆分，使得左边的数据小于支点，右边的数据大于支点。然后把左边和右边再做一次递归，直到递归结束&lt;/td&gt;
-      &lt;td&gt;&lt;img style=&quot;border-radius: 30px&quot; src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/images/quick.001.jpeg?raw=true&quot; title=&quot;lefex&quot; width=&quot;200&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483848&amp;amp;idx=1&amp;amp;sn=35145839503cf88a88fdd6e964a6c90d&amp;amp;chksm=fabb015bcdcc884d06dccf879889abed4f680cbb62e07aae65a82ce7f7a28de9a0c29d0c0cce&amp;amp;scene=21#wechat_redirect&quot;&gt;图解排序 5/10 - 归并排序&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;归并排序，采用分治思想，先把待排序序列拆分成一个个子序列，直到子序列只有一个元素，停止拆分，然后对每个子序列进行边排序边合并&lt;/td&gt;
-      &lt;td&gt;&lt;img style=&quot;border-radius: 30px&quot; src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/images/guibing.001.jpeg?raw=true&quot; title=&quot;lefex&quot; width=&quot;200&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483889&amp;amp;idx=1&amp;amp;sn=4c92c6d9fdb9b0fbc3cc99ee1a2fcadf&amp;amp;chksm=fabb0162cdcc8874bb601ed836f996dcd849f50993960d07e34539f6779b2dc295fcad0d4d63&amp;amp;scene=21#wechat_redirect&quot;&gt;图解排序 6/10 - 堆排序&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;堆排序需要借助于一种数据结构「堆」，注意下文说的都是 「大根堆」。排序的过程中需要不断进行重组堆（heapify 阶段）&lt;/td&gt;
-      &lt;td&gt;&lt;img style=&quot;border-radius: 30px&quot; src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/images/heap.003.jpeg?raw=true&quot; title=&quot;lefex&quot; width=&quot;200&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483892&amp;amp;idx=1&amp;amp;sn=2af95b49be0ac263a9fa16444c06a360&amp;amp;chksm=fabb0167cdcc8871c15cf1bb85ef625cc4395e91cbe8f81bdbcb1e47a3d8af30310b0adb4f79&amp;amp;scene=21#wechat_redirect&quot;&gt;图解排序 7/10 - 计数排序&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;计数排序的核心思想是把一个无序序列 A 转换成另一个有序序列 B，从 B 中逐个“取出”所有元素，取出的元素即为有序序列&lt;/td&gt;
-      &lt;td&gt;&lt;img style=&quot;border-radius: 30px&quot; src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/images/count.001.jpeg?raw=true&quot; title=&quot;lefex&quot; width=&quot;200&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483894&amp;amp;idx=1&amp;amp;sn=050c2d219cc16021db0f6cec83045257&amp;amp;chksm=fabb0165cdcc88737c673df3424b615e0e64cc5a0501d9c97cd26bfcff651a60a2d19a43f585&amp;amp;scene=21#wechat_redirect&quot;&gt;图解排序 8/10 - 桶排序&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;桶排序的核心思想是把数据分到若干个“桶”中，对“桶”中的元素进行排序，最终把“桶”中已排序好的数据合并为一个有序序列。&lt;/td&gt;
-      &lt;td&gt;&lt;img style=&quot;border-radius: 30px&quot; src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/images/bucket.001.jpeg?raw=true&quot; title=&quot;lefex&quot; width=&quot;200&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483895&amp;amp;idx=1&amp;amp;sn=0c3097272d4587963a026cf699d10ce0&amp;amp;chksm=fabb0164cdcc88724dfaebd98087baa914f33253bd9278c95f48859529f34943185e83ee2f62&amp;amp;scene=21#wechat_redirect&quot;&gt;图解排序 9/10 - 基数排序&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;基数排序是从待排序序列找出可以作为排序的「关键字」，按照「关键字」进行多次排序，最终得到有序序列。&lt;/td&gt;
-      &lt;td&gt;&lt;img style=&quot;border-radius: 30px&quot; src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/images/diget.001.jpeg?raw=true&quot; title=&quot;lefex&quot; width=&quot;200&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483897&amp;amp;idx=1&amp;amp;sn=8fd337d568a9f56fd1e926fb1012565c&amp;amp;chksm=fabb016acdcc887ce4f0e438a4fb2704c62cf4996a0abda2f2f2f6a629d52aef3be01df46010&amp;amp;scene=21#wechat_redirect&quot;&gt;图解排序 10/10 - 选择排序&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;选择排序的思想是，依次从「无序列表」中找到一个最小的元素放到「有序列表」的最后面&lt;/td&gt;
-      &lt;td&gt;&lt;img style=&quot;border-radius: 30px&quot; src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/images/xuanze.jpeg?raw=true&quot; title=&quot;lefex&quot; width=&quot;200&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;图解leetcode链表相关算法&quot;&gt;图解LeetCode链表相关算法&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/code/LeetCodeGraphically/LeetCodeGraphically/LEFListSubject.hpp&quot;&gt;代码位置&lt;/a&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483939&amp;amp;idx=1&amp;amp;sn=5e68e353c5216ff197b8403152d03c02&amp;amp;chksm=fabb02b0cdcc8ba6fab84dca5b239dd44f0d1924fa5c559b681688c46ca885e00f0b93b9fe9a&amp;amp;token=623725354&amp;amp;lang=zh_CN#rd&quot;&gt;图解 LeetCode 链表: 83. Remove Duplicates from Sorted List&lt;/a&gt;&lt;/th&gt;
-      &lt;th&gt;给定一个「有序」的链表，去掉重复的节点，每个节点只能出现一次&lt;/th&gt;
-      &lt;th&gt;&lt;img style=&quot;border-radius: 30px&quot; src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/images/let_83.png?raw=true&quot; title=&quot;lefex&quot; width=&quot;200&quot; /&gt;&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483940&amp;amp;idx=1&amp;amp;sn=0f71bdcf10b28e523770b8d7d10acbd8&amp;amp;chksm=fabb02b7cdcc8ba1a00c9018834d480bddeeac837d57e7c2940619aafd5b418f1ebfa564c2dd&amp;amp;token=623725354&amp;amp;lang=zh_CN#rd&quot;&gt;图解 LeetCode 链表: 82. Remove Duplicates from Sorted List II&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;移除链表中出现过多次的节点，解这道题的思路也是「水管思路」，对水管进行拆分，重组。链表中可能出现多个重复节点，需要把这些重复的节点全部干掉&lt;/td&gt;
-      &lt;td&gt;&lt;img style=&quot;border-radius: 30px&quot; src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/images/let_82.png?raw=true&quot; title=&quot;lefex&quot; width=&quot;200&quot; /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</content><author><name></name></author><summary type="html">LeetCodeGraphically</summary></entry><entry><title type="html">图解排序 1/10 - 冒泡排序</title><link href="http://localhost:4000/jekyll/update/2019/04/01/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.html" rel="alternate" type="text/html" title="图解排序 1/10 - 冒泡排序" /><published>2019-04-01T09:28:47+08:00</published><updated>2019-04-01T09:28:47+08:00</updated><id>http://localhost:4000/jekyll/update/2019/04/01/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2019/04/01/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.html">&lt;blockquote&gt;
-  &lt;p&gt;本文首次发表于超越技术公众号 &lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483822&amp;amp;idx=1&amp;amp;sn=ff5b8abd13ac4e89953dd07f16eca8d3&amp;amp;chksm=fabb013dcdcc882be39d9aad8c462de93eb7bcf49234caa5dd7403cc67bb84f4d2168a1952a5&amp;amp;scene=21#wechat_redirect&quot;&gt;图解排序 1/10 - 冒泡排序&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-05-01T17:26:36+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">超越技术</title><subtitle>超越技术，专注于图解计算机通用技术，比如图解算法、图解数据结构。目前正在做图解LeetCode算法和数据结构。我希望作为一名”说人话“的技术人。</subtitle><entry><title type="html">图解 LeetCode 链表: 83. Remove Duplicates from Sorted List</title><link href="http://localhost:4000/jekyll/update/2019/04/11/lec-83.html" rel="alternate" type="text/html" title="图解 LeetCode 链表: 83. Remove Duplicates from Sorted List" /><published>2019-04-11T09:28:47+08:00</published><updated>2019-04-11T09:28:47+08:00</updated><id>http://localhost:4000/jekyll/update/2019/04/11/lec-83</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2019/04/11/lec-83.html">&lt;blockquote&gt;
+  &lt;p&gt;本文首次发表于超越技术公众号 &lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483939&amp;amp;idx=1&amp;amp;sn=5e68e353c5216ff197b8403152d03c02&amp;amp;chksm=fabb02b0cdcc8ba6fab84dca5b239dd44f0d1924fa5c559b681688c46ca885e00f0b93b9fe9a&amp;amp;token=623725354&amp;amp;lang=zh_CN#rd&quot;&gt;图解 LeetCode 链表: 83. Remove Duplicates from Sorted List&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;最近温习了10个经典的排序算法：冒泡排序、选择排序、直接插入排序、希尔排序、快速排序、归并排序、堆排序、计数排序、桶排序和基数排序。每个算法都使用 keynote 画出了算法的整个执行过程，使用图的形式会加深对算法思想的理解，如果在学习过程中能找到相关排序算法视频，学起来会更快一些。在整个学习过程中，发现如果光看纯文字的博客，或者算法书籍对理解算法非常吃力。所有我想通过图文的形式来表达我对这10种算法的理解，希望对你有所启发。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/lec_83/1.png?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;排序算法的思想就是把一堆无序的数据采用某一种方法让它变得有序，而通常由于数据的组合形式不同，采用不同的方法有助于提升排序效率，这就是为什么会有这么多的排序算法的原因（纯属个人理解）。&lt;/p&gt;
+&lt;p&gt;今天是图解 LeetCode 算法的 第 1 阶段第 1 天 ，这一阶段主要学习链表相关的算法题和链表数据结构。这个公众号之所以叫「超越技术」，是因为我想利用技术做一些有意义的事情，发挥技术的价值。LeetCode   是我发现的第一个价值，算法和数据结构是进“大厂”的「必备条件」，一面面试往往包含对算法题的考察，即使你的技术水平非常好，如果算法和数据结构不给力，面试结果会大打折扣。算法和数据结构在工作中也十分重要，比如写出「更好的代码」，读懂别人代码的思想，复杂问题的处理，性能优化等等。&lt;/p&gt;
 
-&lt;p&gt;我会用10篇文章来说明各个排序算法，并会用OC代码实现算法。后续文章涉及到的排序算法都是以整形数为例。这些文章目的是让你理解排序算法的思想，所以算法实现方面，我省略了很多异常处理。&lt;/p&gt;
+&lt;p&gt;我的一个兴趣爱好是画图和做音视频处理（虽然画的很烂，但有激情），我想利用我的兴趣爱好把技术问题描述的更「通俗易懂」，我也在不断探索更好的教学方式，能帮助更多的人「入门数据结构和算法」，所以不要觉得题目太简单，算法大牛不需要看这个教程。下面我们进入今天的算法学习，题目如下：&lt;/p&gt;
 
-&lt;h4 id=&quot;冒泡排序&quot;&gt;冒泡排序&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Given a sorted linked list, delete all duplicates such that each element appear only &lt;em&gt;once&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;冒泡排序是通过比较两个相邻元素的大小实现排序，如果后一个元素大于前一个元素，就交换这两个元素。这样就会让每一趟冒泡都能找到最大一个元素并放到最后。&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;Example 1:&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;以 [ 8, 1, 4, 6, 2, 3, 5, 7 ] 为例，对它进行冒泡排序：&lt;/p&gt;
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: 1-&amp;gt;1-&amp;gt;2
+Output: 1-&amp;gt;2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/lefex.github.io/blob/master/images/all.005.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;h3 id=&quot;分析&quot;&gt;分析&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/lefex.github.io/blob/master/images/all.005.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;给定一个「有序」的链表，去掉重复的节点，每个节点只能出现一次，假定为单链表。开始之前需要补充一下单链表数据结构，学完链表相关的算法后，链表这个数据结构你也就掌握了，一箭双雕。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/lefex.github.io/blob/master/images/all.005.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/lec_83/2.png?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;代码实现：&lt;/p&gt;
+&lt;p&gt;单链表由数据部分和指向下一个节点的指针构成，包含一个指向头节点的指针，尾节点的下一个节点为 NULL。&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;+ (NSArray *)bubbleSort:(NSArray *)unsortDatas {    NSMutableArray *unSortArray = [unsortDatas mutableCopy];    for (int i = 0; i &amp;lt; unSortArray.count -1 ; i++) {        BOOL isChange = NO;        for (int j = 0; j &amp;lt; unSortArray.count - 1 - i; j++) {            // 比较相邻两个元素的大小，后一个大于前一个就交换            if ([unSortArray[j] integerValue] &amp;gt; [unSortArray[j+1] integerValue]) {                NSNumber *data = unSortArray[j+1];                unSortArray[j+1] = unSortArray[j];                unSortArray[j] = data;                isChange = YES;            }        }        if (!isChange) {            // 如果某次未发生数据交换，说明数据已排序            break;        }    }    return [unSortArray copy];}
+&lt;p&gt;可以把单链表看做是链接在一起的水管，每根水管有链接到下一个水管的编号（相当于指向下一个节点的指针），而整个链表相关的算法题就是把这些水管进行重组、删除等。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/lec_83/3.png?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;单链表数据结构定义：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;struct ListNode {    
+  int val;    
+  ListNode *next;    
+  ListNode(int x) : val(x), next(NULL) {}
+};
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h4 id=&quot;特点&quot;&gt;特点&lt;/h4&gt;
+&lt;p&gt;题目要求去掉「重复的节点」，对整个单链表进行遍历，把重复多余的节点去掉。假设单链表 L1 ：1-&amp;gt; 1 -&amp;gt; 2，遍历 L1，把第 2 个节点去掉，让第 3 个节点链接到第 1 个节点的后面。&lt;/p&gt;
 
-&lt;p&gt;稳定性：它是指对同样的数据进行排序，会不会改变它的相对位置。比如 [ 1, 3, 2, 4, 2 ] 经过排序后，两个相同的元素 2 位置会不会被交换。冒泡排序是比较相邻两个元素的大小，显然不会破坏稳定性。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/lec_83/4.png?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;空间复杂度：由于整个排序过程是在原数据上进行操作，故为 O(1);&lt;/p&gt;
+&lt;h3 id=&quot;代码&quot;&gt;代码&lt;/h3&gt;
 
-&lt;p&gt;时间复杂度：最后的情况 O(n*n)，平均为 O(nlgn);&lt;/p&gt;
+&lt;p&gt;整体思路比较简，关键是把思路转换成代码，C++ 实现。&lt;/p&gt;
 
-&lt;h4 id=&quot;感想&quot;&gt;感想&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;代码实现请前往 GitHub 项目&lt;a href=&quot;https://github.com/lefex/LeetCodeGraphically&quot;&gt;LeetCodeGraphically&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;冒泡排序在排序的过程中设置一个 Flag 标记是否已经有序，会减少冒泡排序的趟数。它更适合基本有序的数据，只有几个无序，最好的情况时间复杂度为 O ( n )。它的基本操是每次找出最大的元素放到最后。&lt;/p&gt;
+&lt;h3 id=&quot;结果&quot;&gt;结果&lt;/h3&gt;
 
-&lt;h4 id=&quot;推荐阅读&quot;&gt;推荐阅读：&lt;/h4&gt;
+&lt;p&gt;Runtime: 12 ms, faster than 100.00% of C++ online submissions for Remove Duplicates from Sorted List.
+Memory Usage: 9.2 MB, less than 65.42% of C++ online submissions for Remove Duplicates from Sorted List.&lt;/p&gt;
+
+&lt;h3 id=&quot;总结&quot;&gt;总结&lt;/h3&gt;
+
+&lt;p&gt;整个过程就如同对已经接好的水管进行重组，把编号重复的水管去掉，同一编号的水管只能出现一次。在重组的过程中，只有保证顺序正确且“不漏水”即可。上述代码中，我们掌握了单链表数据结构的定义、遍历和创建。&lt;/p&gt;
+
+&lt;p&gt;下一道题目留给你思考：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;82.Remove Duplicates from Sorted List II&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only &lt;em&gt;distinct&lt;/em&gt; numbers from the original list.&lt;/p&gt;
+
+  &lt;p&gt;&lt;strong&gt;Example 1:&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input: 1-&amp;gt;2-&amp;gt;3-&amp;gt;3-&amp;gt;4-&amp;gt;4-&amp;gt;5
+Output: 1-&amp;gt;2-&amp;gt;5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;推荐阅读：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483937&amp;amp;idx=1&amp;amp;sn=df45985b71f592cb93b7e48aba39ac31&amp;amp;chksm=fabb02b2cdcc8ba404a0345868d7c3f7ce8d701e1280d81ddb897d07f7476e78e24de6c4cd97&amp;amp;scene=21#wechat_redirect&quot;&gt;10个常见的排序算法总结&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&quot;border-radius: 30px&quot; src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/images/cyjs_qr.png?raw=true&quot; title=&quot;lefex&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">本文首次发表于超越技术公众号 图解 LeetCode 链表: 83. Remove Duplicates from Sorted List</summary></entry><entry><title type="html">图解排序 10/10 - 选择排序</title><link href="http://localhost:4000/jekyll/update/2019/04/10/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F.html" rel="alternate" type="text/html" title="图解排序 10/10 - 选择排序" /><published>2019-04-10T09:28:47+08:00</published><updated>2019-04-10T09:28:47+08:00</updated><id>http://localhost:4000/jekyll/update/2019/04/10/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2019/04/10/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F.html">&lt;blockquote&gt;
+  &lt;p&gt;本文首次发表于超越技术公众号 &lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483897&amp;amp;idx=1&amp;amp;sn=8fd337d568a9f56fd1e926fb1012565c&amp;amp;chksm=fabb016acdcc887ce4f0e438a4fb2704c62cf4996a0abda2f2f2f6a629d52aef3be01df46010&amp;amp;scene=21#wechat_redirect&quot;&gt;图解排序 10/10 - 选择排序&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;选择排序的思想是，依次从「无序列表」中找到一个最小的元素放到「有序列表」的最后面。以 arr = [ 8, 1, 4, 6, 2, 3, 5, 4 ] 为例，排序开始时把 arr 分为有序列表 A = [ ], 无序列表 B = [ 8, 1, 4, 6, 2, 3, 5, 4 ]，依次从 B 中找出最小的元素放到 A 的最后面。这种排序也是逻辑上的分组，实际上不会创建 A 和 B，只是用下标来标记 A 和 B。&lt;/p&gt;
+
+&lt;h2 id=&quot;选择排序&quot;&gt;选择排序&lt;/h2&gt;
+
+&lt;p&gt;以 arr = [ 8, 1, 4, 6, 2, 3, 5, 4 ] 为例，第一次找到最小元素 1 与 8 进行交换，这时有列表 A = [1], 无序列表 B = [8, 4, 6, 2, 3, 5, 4]；第二次从 B 中找到最小元素 2，与 B 中的第一个元素进行交换，交换后 A = [1，2]，B = [4, 6, 8, 3, 5, 4]；就这样不断缩短 B，扩大 A，最终达到有序。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/2-xuanze/all.011.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;特点&quot;&gt;特点&lt;/h2&gt;
+
+&lt;p&gt;稳定性：排序过程中元素是按顺序进行遍历，相同元素相对位置不会发生变化，故稳定。&lt;/p&gt;
+
+&lt;p&gt;空间复杂度：在原序列进行操作，故为 O( 1 );&lt;/p&gt;
+
+&lt;p&gt;时间复杂度：需要 2 次循环遍历，故为 O( n * n );&lt;/p&gt;
+
+&lt;h2 id=&quot;感想&quot;&gt;感想&lt;/h2&gt;
+
+&lt;p&gt;选择排序与冒泡排序，插入排序都属于同一思想排序，这种排序算法思想简单，往往会用于其它复杂排序算法的子序列排序。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;代码实现请前往 GitHub 项目&lt;a href=&quot;https://github.com/lefex/LeetCodeGraphically&quot;&gt;LeetCodeGraphically&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;推荐阅读&quot;&gt;推荐阅读：&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483806&amp;amp;idx=1&amp;amp;sn=b85f43e846e96433755c7dc6adc1d033&amp;amp;chksm=fabb010dcdcc881b242ad387e6da4ea4174b99f5423d7bed11cc07dcd2af92f3ac00ebfc4ee8&amp;amp;scene=21#wechat_redirect&quot;&gt;编程的背后&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img style=&quot;border-radius: 30px&quot; src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/images/cyjs_qr.png?raw=true&quot; title=&quot;lefex&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">本文首次发表于超越技术公众号 图解排序 1/10 - 冒泡排序</summary></entry></feed>
+&lt;p&gt;&lt;img style=&quot;border-radius: 30px&quot; src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/images/cyjs_qr.png?raw=true&quot; title=&quot;lefex&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">本文首次发表于超越技术公众号 图解排序 10/10 - 选择排序</summary></entry><entry><title type="html">图解排序 9/10 - 基数排序</title><link href="http://localhost:4000/jekyll/update/2019/04/09/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8Fmarkdown.html" rel="alternate" type="text/html" title="图解排序 9/10 - 基数排序" /><published>2019-04-09T09:28:47+08:00</published><updated>2019-04-09T09:28:47+08:00</updated><id>http://localhost:4000/jekyll/update/2019/04/09/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8Fmarkdown</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2019/04/09/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8Fmarkdown.html">&lt;blockquote&gt;
+  &lt;p&gt;本文首次发表于超越技术公众号 &lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483895&amp;amp;idx=1&amp;amp;sn=0c3097272d4587963a026cf699d10ce0&amp;amp;chksm=fabb0164cdcc88724dfaebd98087baa914f33253bd9278c95f48859529f34943185e83ee2f62&amp;amp;scene=21#wechat_redirect&quot;&gt;图解排序 9/10 - 基数排序&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;明天还剩最后一个比较简单的排序算法「选择排序」，排序系列的文章就要截止了，希望在我「理解算法」的同时也能够帮助你。最近在做「链表」相关的算法题，后续会整理成文章发出来，链表算法比较简单，可以把它想象成「接水管」，每个节点是一根「水管」。&lt;/p&gt;
+
+&lt;p&gt;基数排序是从待排序序列找出可以作为排序的「关键字」，按照「关键字」进行多次排序，最终得到有序序列。比如对  100 以内的序列 arr =  [ 3,  9,  489,  1,  5, 10, 2, 7, 6, 204  ]进行排序，排序关键字为「个位数」、「十位数」和「百位数」这 3 个关键字，分别对这 3 个关键字进行排序，最终得到一个有序序列。&lt;/p&gt;
+
+&lt;h2 id=&quot;基数排序&quot;&gt;基数排序&lt;/h2&gt;
+
+&lt;p&gt;以 arr =  [ 3,  9,  489,  1,  5, 10, 2, 7, 6, 204 ] 为例，最大为 3 位数，分别对个、十、百位进行排序，最终得到的序列就是有序序列。可以把 arr 看成 [ 003,  009,  489,  001,  005, 010, 002, 007, 006, 204 ]，这样理解起来比较简单。数字的取值范围为 0-9，故可以分为 10 个桶。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/9-jishu/all.068.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/9-jishu/all.069.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;特点&quot;&gt;特点&lt;/h2&gt;
+
+&lt;p&gt;稳定性：在元素拆分的时候，相同元素会被分到同一组中，合并的时候也是按顺序合并，故稳定。&lt;/p&gt;
+
+&lt;p&gt;空间复杂度：O ( n + k );&lt;/p&gt;
+
+&lt;p&gt;时间复杂度：最好最坏都为 O( n * k );&lt;/p&gt;
+
+&lt;h2 id=&quot;感想&quot;&gt;感想&lt;/h2&gt;
+
+&lt;p&gt;基数排序与其它不同的是它需要对「 多个关键值 」进行多次桶排序。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;代码实现请前往 GitHub 项目&lt;a href=&quot;https://github.com/lefex/LeetCodeGraphically&quot;&gt;LeetCodeGraphically&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;推荐阅读&quot;&gt;推荐阅读：&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483806&amp;amp;idx=1&amp;amp;sn=b85f43e846e96433755c7dc6adc1d033&amp;amp;chksm=fabb010dcdcc881b242ad387e6da4ea4174b99f5423d7bed11cc07dcd2af92f3ac00ebfc4ee8&amp;amp;scene=21#wechat_redirect&quot;&gt;编程的背后&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&quot;border-radius: 30px&quot; src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/images/cyjs_qr.png?raw=true&quot; title=&quot;lefex&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">本文首次发表于超越技术公众号 图解排序 9/10 - 基数排序</summary></entry><entry><title type="html">图解排序 8/10 - 桶排序</title><link href="http://localhost:4000/jekyll/update/2019/04/08/%E6%A1%B6%E6%8E%92%E5%BA%8F.html" rel="alternate" type="text/html" title="图解排序 8/10 - 桶排序" /><published>2019-04-08T09:28:47+08:00</published><updated>2019-04-08T09:28:47+08:00</updated><id>http://localhost:4000/jekyll/update/2019/04/08/%E6%A1%B6%E6%8E%92%E5%BA%8F</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2019/04/08/%E6%A1%B6%E6%8E%92%E5%BA%8F.html">&lt;blockquote&gt;
+  &lt;p&gt;本文首次发表于超越技术公众号 &lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483894&amp;amp;idx=1&amp;amp;sn=050c2d219cc16021db0f6cec83045257&amp;amp;chksm=fabb0165cdcc88737c673df3424b615e0e64cc5a0501d9c97cd26bfcff651a60a2d19a43f585&amp;amp;scene=21#wechat_redirect&quot;&gt;图解排序 8/10 - 桶排序&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;上一篇计数排序也是一种桶排序。桶排序的核心思想是把数据分到若干个“桶”中，对“桶”中的元素进行排序，最终把“桶”中已排序好的数据合并为一个有序序列。&lt;/p&gt;
+
+&lt;h2 id=&quot;桶排序&quot;&gt;桶排序&lt;/h2&gt;
+
+&lt;p&gt;以 arr = [ 8, 1, 4, 6, 2, 3, 5, 7 ] 为例，排序前需要确定桶的个数，和确定桶中元素的取值范围：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/8-tong/all.059.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/8-tong/all.060.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/8-tong/all.061.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/8-tong/all.062.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/8-tong/all.063.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/8-tong/all.064.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;特点&quot;&gt;特点&lt;/h2&gt;
+
+&lt;p&gt;稳定性：在元素拆分的时候，相同元素会被分到同一组中，合并的时候也是按顺序合并，故稳定。&lt;/p&gt;
+
+&lt;p&gt;空间复杂度：桶的个数加元素的个数，为 O ( n + k );&lt;/p&gt;
+
+&lt;p&gt;时间复杂度：最好为 O( n + k )，最坏为 O（n * n）;&lt;/p&gt;
+
+&lt;h2 id=&quot;感想&quot;&gt;感想&lt;/h2&gt;
+
+&lt;p&gt;计数排序和桶排序的思想都是把数据进行拆分，然后把数据放到不同的桶中，对桶中的元素进行排序，最终合并桶。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;代码实现请前往 GitHub 项目&lt;a href=&quot;https://github.com/lefex/LeetCodeGraphically&quot;&gt;LeetCodeGraphically&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;推荐阅读&quot;&gt;推荐阅读：&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483806&amp;amp;idx=1&amp;amp;sn=b85f43e846e96433755c7dc6adc1d033&amp;amp;chksm=fabb010dcdcc881b242ad387e6da4ea4174b99f5423d7bed11cc07dcd2af92f3ac00ebfc4ee8&amp;amp;scene=21#wechat_redirect&quot;&gt;编程的背后&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&quot;border-radius: 30px&quot; src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/images/cyjs_qr.png?raw=true&quot; title=&quot;lefex&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">本文首次发表于超越技术公众号 图解排序 8/10 - 桶排序</summary></entry><entry><title type="html">图解排序 7/10 - 计数排序</title><link href="http://localhost:4000/jekyll/update/2019/04/07/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F.html" rel="alternate" type="text/html" title="图解排序 7/10 - 计数排序" /><published>2019-04-07T09:28:47+08:00</published><updated>2019-04-07T09:28:47+08:00</updated><id>http://localhost:4000/jekyll/update/2019/04/07/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2019/04/07/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F.html">&lt;blockquote&gt;
+  &lt;p&gt;本文首次发表于超越技术公众号 &lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483892&amp;amp;idx=1&amp;amp;sn=2af95b49be0ac263a9fa16444c06a360&amp;amp;chksm=fabb0167cdcc8871c15cf1bb85ef625cc4395e91cbe8f81bdbcb1e47a3d8af30310b0adb4f79&amp;amp;scene=21#wechat_redirect&quot;&gt;图解排序 7/10 - 计数排序&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;前面所讲的 6 种排序都是基于「比较」的思想，总是在比较两个元素的大小，然后交换位置。今天换个“口味”，来看看计数排序。计数排序的核心思想是把一个无序序列 A 转换成另一个有序序列 B，从 B 中逐个“取出”所有元素，取出的元素即为有序序列「没看明白，不急，后面来张图就搞明白了」。这种算法比快速排序还要快「特定条件下」，它适用于待排序序列中元素的取值范围比较小。比如对某大型公司员工按年龄排序，年龄的取值范围很小，大约在（10-100）之间。&lt;/p&gt;
+
+&lt;h2 id=&quot;计数排序&quot;&gt;计数排序&lt;/h2&gt;
+
+&lt;p&gt;对数组 arr = [ 8, 1, 4, 6, 2, 3, 5, 4 ] 进行排序，使用计数排序需要找到与其对应的一个有序序列，可以使用数组的下标与 arr 做一个映射「数组的下标恰好是有序的」。遍历 arr，把 arr 中的元素放到 counArr 中，counArr 的大小是由 arr 中最大元素和最小元素决定的。「 一图胜千言 」&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/7-count/all.054.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;图中有个技巧，为了让 countArr 尽可能地小，countArr 的长度使用了 arr 中的最大值 max - arr 中的最小值 min +
+1 （max - min + 1），arr[i] - min 恰好是 countArr 的下标。countArr 
+中记录了某个值出现的次数，比如 8 出现过 1 次，则在 countArr 中的值为 1；4 出现过 2 次，则在 countArr 中的值为 
+2。&lt;/p&gt;
+
+&lt;h2 id=&quot;特点&quot;&gt;特点&lt;/h2&gt;
+
+&lt;p&gt;稳定性：在元素往 countArr 中记录时按顺序遍历，从 countArr 中取出元素也是按顺序取出，相同元素相对位置不会发生变化，故稳定。&lt;/p&gt;
+
+&lt;p&gt;空间复杂度：需要额外申请空间，复杂度为“桶”的个数，故为 O ( k )， k 为“桶”的个数，也就是 countArr 的长度;&lt;/p&gt;
+
+&lt;p&gt;时间复杂度：最好最坏都为 O(n+k)， k 为“桶”的个数，也就是 countArr 的长度;&lt;/p&gt;
+
+&lt;h2 id=&quot;感想&quot;&gt;感想&lt;/h2&gt;
+
+&lt;p&gt;这种排序不同于其它的「比较」排序，它巧妙地把待排序序列与某个有序序列建立关系，从有序列中通过这种关系再把元素计算出来，就达到了排序的目的。这种对于数据量大，但是数据取值范围比较小的序列非常适用。这种排序思想其实是一种“桶排序”的思想，下一篇会介绍。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;代码实现请前往 GitHub 项目&lt;a href=&quot;https://github.com/lefex/LeetCodeGraphically&quot;&gt;LeetCodeGraphically&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;推荐阅读&quot;&gt;推荐阅读：&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483806&amp;amp;idx=1&amp;amp;sn=b85f43e846e96433755c7dc6adc1d033&amp;amp;chksm=fabb010dcdcc881b242ad387e6da4ea4174b99f5423d7bed11cc07dcd2af92f3ac00ebfc4ee8&amp;amp;scene=21#wechat_redirect&quot;&gt;编程的背后&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&quot;border-radius: 30px&quot; src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/images/cyjs_qr.png?raw=true&quot; title=&quot;lefex&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">本文首次发表于超越技术公众号 图解排序 7/10 - 计数排序</summary></entry><entry><title type="html">图解排序 6/10 - 堆排序</title><link href="http://localhost:4000/jekyll/update/2019/04/06/%E5%A0%86%E6%8E%92%E5%BA%8F.html" rel="alternate" type="text/html" title="图解排序 6/10 - 堆排序" /><published>2019-04-06T09:28:47+08:00</published><updated>2019-04-06T09:28:47+08:00</updated><id>http://localhost:4000/jekyll/update/2019/04/06/%E5%A0%86%E6%8E%92%E5%BA%8F</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2019/04/06/%E5%A0%86%E6%8E%92%E5%BA%8F.html">&lt;blockquote&gt;
+  &lt;p&gt;本文首次发表于超越技术公众号 &lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483889&amp;amp;idx=1&amp;amp;sn=4c92c6d9fdb9b0fbc3cc99ee1a2fcadf&amp;amp;chksm=fabb0162cdcc8874bb601ed836f996dcd849f50993960d07e34539f6779b2dc295fcad0d4d63&amp;amp;scene=21#wechat_redirect&quot;&gt;图解排序 6/10 - 堆排序&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;堆排序需要借助于一种数据结构「堆」，注意下文说的都是 「大根堆」。排序的过程中需要不断进行重组堆（heapify 阶段）。关于堆这种数据结构在&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483852&amp;amp;idx=1&amp;amp;sn=e9068173df1e17c0c92647d9a9d8adcf&amp;amp;chksm=fabb015fcdcc8849a5525cc8b1d458607c987e4feef582678ad10933fc335c34f86b7017f354&amp;amp;scene=21#wechat_redirect&quot;&gt;上一篇文章&lt;/a&gt;已经讲过了。堆需要满足 2 个条件：&lt;/p&gt;
+
+&lt;p&gt;「a」、是一颗完全二叉树（完全二叉树是由满二叉树衍生出来的，满二叉树是指除最后一层无任何子节点外其它节点都有2个子节点，当二叉树的每个节点的编号都与其对应的满二叉树节点的编号对应，则这棵树为完全二叉树）；&lt;/p&gt;
+
+&lt;p&gt;「 b 」、父节点的值大于等于子节点。&lt;/p&gt;
+
+&lt;p&gt;从上面的两个特点可以推出：堆的第一个元素最大。堆排序正是利用了这个特点来对数据进行排序，整个排序过程分为 2 个阶段：&lt;/p&gt;
+
+&lt;p&gt;1、根节点与最后一个节点交换位置；&lt;/p&gt;
+
+&lt;p&gt;2、对根节点进行重组堆（heapify）；&lt;/p&gt;
+
+&lt;p&gt;整个排序过程中每次可以获得一个最大的元素放到最后，这样下来就可以得到一个有序序列。&lt;/p&gt;
+
+&lt;p&gt;理解堆排序需要掌握一个重要的特点，堆可以用数组表示，数组的索引正是堆的下标。「一图胜前言，看图吧」。&lt;/p&gt;
+
+&lt;h2 id=&quot;堆排序&quot;&gt;堆排序&lt;/h2&gt;
+
+&lt;p&gt;以数组 arr[] = { 1, 2, 3, 11, 13, 12, 9 , 8, 10, 15, 14, 7 } 为例，进行堆排序之前需要是一个堆，所以第一步需要把数组转换成一个堆。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.039.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.040.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.041.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.042.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.043.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.039.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.044.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.045.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.046.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.047.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.048.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/6-heap/all.049.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;把最终二叉树转换成数组：{1，3，3，7，，8，9，10，11，12，13，14，15}&lt;/p&gt;
+
+&lt;h2 id=&quot;特点&quot;&gt;特点&lt;/h2&gt;
+
+&lt;p&gt;稳定性：在堆不断重组的过程中，相同元素的相对位置可能会发生变化，故不稳定。&lt;/p&gt;
+
+&lt;p&gt;空间复杂度：在原序列堆元素进行操作，故为 O ( 1 );&lt;/p&gt;
+
+&lt;p&gt;时间复杂度：最好最坏都为 O(nlogn);&lt;/p&gt;
+
+&lt;h2 id=&quot;感想&quot;&gt;感想&lt;/h2&gt;
+
+&lt;p&gt;堆排序利用了堆数据结构，堆本身是一棵二叉树，根据一个节点可以计算出它的父节点，左子节点和右子节点的下标。父节点=(i-1)/2，左子节点=2&lt;em&gt;i + 1，右子节点=2&lt;/em&gt;i + 2。「 i表示第几个节点 」。整个思想就是不断进行堆重组，交换根节点与最后节点的位置，再对除最后一个节点外的其它元素进重组、交换。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;代码实现请前往 GitHub 项目&lt;a href=&quot;https://github.com/lefex/LeetCodeGraphically&quot;&gt;LeetCodeGraphically&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;推荐阅读&quot;&gt;推荐阅读：&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483806&amp;amp;idx=1&amp;amp;sn=b85f43e846e96433755c7dc6adc1d033&amp;amp;chksm=fabb010dcdcc881b242ad387e6da4ea4174b99f5423d7bed11cc07dcd2af92f3ac00ebfc4ee8&amp;amp;scene=21#wechat_redirect&quot;&gt;编程的背后&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&quot;border-radius: 30px&quot; src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/images/cyjs_qr.png?raw=true&quot; title=&quot;lefex&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">本文首次发表于超越技术公众号 图解排序 6/10 - 堆排序</summary></entry><entry><title type="html">图解排序 5/10 - 归并排序</title><link href="http://localhost:4000/jekyll/update/2019/04/05/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F.html" rel="alternate" type="text/html" title="图解排序 5/10 - 归并排序" /><published>2019-04-05T09:28:47+08:00</published><updated>2019-04-05T09:28:47+08:00</updated><id>http://localhost:4000/jekyll/update/2019/04/05/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2019/04/05/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F.html">&lt;blockquote&gt;
+  &lt;p&gt;本文首次发表于超越技术公众号 &lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483848&amp;amp;idx=1&amp;amp;sn=35145839503cf88a88fdd6e964a6c90d&amp;amp;chksm=fabb015bcdcc884d06dccf879889abed4f680cbb62e07aae65a82ce7f7a28de9a0c29d0c0cce&amp;amp;scene=21#wechat_redirect&quot;&gt;图解排序 5/10 - 归并排序&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;归并排序，采用分治思想，先把待排序序列拆分成一个个子序列，直到子序列只有一个元素，停止拆分，然后对每个子序列进行边排序边合并。其实，从名字「归并」可以看出一丝「拆、合」的意思（妄加猜测）。&lt;/p&gt;
+
+&lt;h2 id=&quot;归并排序&quot;&gt;归并排序&lt;/h2&gt;
+
+&lt;p&gt;以 arr = [ 8, 1, 4, 6, 2, 3, 5, 7 ] 为例，排序需要分两步：&lt;/p&gt;
+
+&lt;p&gt;a、「拆」，以 length/2 拆分为 A = [ 8, 1, 4, 6 ] ，B = [ 2, 3, 5, 7 ]，继续对 A 和 B 进行拆分，A1 = [ 8, 1 ] 、A2 = [ 4, 6 ]、B1 = [ 2, 3 ]、B2 = [ 5, 7 ]，继续拆分，&lt;strong&gt;直到只有一个元素&lt;/strong&gt;，A11 = [ 8 ] , A12= [ 1 ] 、A21 = [ 4 ]、A22 = [ 6 ]、B11 = [ 2 ]、B12 = [ 3 ]、B21 = [ 5 ]、B22 = [ 7 ]。&lt;/p&gt;
+
+&lt;p&gt;b、「合」，对单个元素的序列进行合并，A11和A12合并为[ 1, 8 ], A21 和 A22 合并为 [ 4, 6 ]，等等。在合并的过程中也需要排序。「一图胜千言」。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/5-guibin/all.034.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;特点&quot;&gt;特点&lt;/h2&gt;
+
+&lt;p&gt;稳定性：在元素拆分的时候，虽然相同元素可能被分到不同的组中，但是合并的时候相同元素相对位置不会发生变化，故稳定。&lt;/p&gt;
+
+&lt;p&gt;空间复杂度：需要用到一个数组保存排序结果，也就是合并的时候，需要开辟空间来存储排序结果，故为 O ( n );&lt;/p&gt;
+
+&lt;p&gt;时间复杂度：最好最坏都为 O(nlogn);&lt;/p&gt;
+
+&lt;h2 id=&quot;感想&quot;&gt;感想&lt;/h2&gt;
+
+&lt;p&gt;归并排序，需要额外申请存储空间用来存储排序结果，也就是给合并的时候使用，不过它的时间复杂度均为 O(nlogn)。整体思想比较简单，同样使用到了递归思想。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;代码实现请前往 GitHub 项目&lt;a href=&quot;https://github.com/lefex/LeetCodeGraphically&quot;&gt;LeetCodeGraphically&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;推荐阅读&quot;&gt;推荐阅读：&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483806&amp;amp;idx=1&amp;amp;sn=b85f43e846e96433755c7dc6adc1d033&amp;amp;chksm=fabb010dcdcc881b242ad387e6da4ea4174b99f5423d7bed11cc07dcd2af92f3ac00ebfc4ee8&amp;amp;scene=21#wechat_redirect&quot;&gt;编程的背后&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&quot;border-radius: 30px&quot; src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/images/cyjs_qr.png?raw=true&quot; title=&quot;lefex&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">本文首次发表于超越技术公众号 图解排序 5/10 - 归并排序</summary></entry><entry><title type="html">图解排序 4/10 - 快速排序</title><link href="http://localhost:4000/jekyll/update/2019/04/04/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.html" rel="alternate" type="text/html" title="图解排序 4/10 - 快速排序" /><published>2019-04-04T09:28:47+08:00</published><updated>2019-04-04T09:28:47+08:00</updated><id>http://localhost:4000/jekyll/update/2019/04/04/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2019/04/04/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F.html">&lt;blockquote&gt;
+  &lt;p&gt;本文首次发表于超越技术公众号&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483843&amp;amp;idx=1&amp;amp;sn=0d0e23585aacaa4a291c201a155f7617&amp;amp;chksm=fabb0150cdcc88464eacf4f6b60a0562171658cb4e0c6262b2fb9ecd02c194e58faae777ab0f&amp;amp;scene=21#wechat_redirect&quot;&gt;图解排序 4/10 - 快速排序&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;快速排序，人称最快的排序（其实我不太赞同，只能说它整体上效率比较高，有些排序算法在特定的数据序列中远比快速排序效率高）。掌握快速排序，需要对递归有深入的了解，如果只是了解递归的用法「不知道为什么这样写」，却不知道递归原理和执行顺序，建议深入学习下递归思想（PS：公众号列表中已经躺了一篇关于递归的文章，只是没太想好如何能够通俗易懂把递归讲明白，后面我画一些图来聊一聊递归）。&lt;/p&gt;
+
+&lt;p&gt;快速排序的核心思想是对待排序序列通过一个「支点」（支点就是序列中的一个元素，别把它想的太高大上）进行拆分，使得左边的数据小于支点，右边的数据大于支点。然后把左边和右边再做一次递归，直到递归结束。支点的选择也是一门大学问，我们以 （左边index + 右边index）/ 2 来选择支点。一图胜千言，看图吧。&lt;/p&gt;
+
+&lt;h2 id=&quot;快速排序&quot;&gt;快速排序&lt;/h2&gt;
+
+&lt;p&gt;以 arr = [ 8, 1, 4, 6, 2, 3, 5, 7 ] 为例，选择一个支点, index=  (L+R)/2 = (0+7)/2=3, 支点的值 pivot = arr[index] = arr[3] = 6，接下来需要把 arr 中小于 6 的移到左边，大于 6 的移到右边。快速排序使用一个高效的方法做数据拆分。用一个指向左边的游标 i，和指向右边的游标 j，逐渐移动这两个游标，直到找到 arr[i] &amp;gt; 6 和 arr[j] &amp;lt; 6, 停止移动游标，交换 arr[i] 和 arr[j]，交换完后 i++，j–（对下一个元素进行比较），直到 i&amp;gt;=j，停止移动。图中的 L，R 是指快速排序开始时序列的起始和结束索引，在一趟快速排序中，它们的值不会发生改变，直到下一趟排序时才会改变。文字描述的有点长，我怕你看不懂图就啰嗦了一下。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/4-quick/all.026.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;一趟快速排序完成后，分别对小于6和大于等于6的部分进行快速排序，递归就好了。对 [ 5, 1, 4, 3, 2 ] 进行一趟快速排序。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/4-quick/all.027.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/4-quick/all.028.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/4-quick/all.029.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;图中说明了快速排序的核心思想，每次递归过程都一样，掌握一趟快速排序思想和递归思想，即可掌握快速排序。&lt;/p&gt;
+
+&lt;h2 id=&quot;特点&quot;&gt;特点&lt;/h2&gt;
+
+&lt;p&gt;稳定性：在元素分组的时候，相同元素相对位置可能会发生变化，故不稳定。&lt;/p&gt;
+
+&lt;p&gt;空间复杂度：不同实现空间复杂度不太一样;&lt;/p&gt;
+
+&lt;p&gt;时间复杂度：它与选取的支点值有关系，如果支点值为最大或最小，导致只有一边进行快速排序，时间复杂度为 O(n*n) , 如果选择中间的值为 O(nlogn);&lt;/p&gt;
+
+&lt;h2 id=&quot;感想&quot;&gt;感想&lt;/h2&gt;
+
+&lt;p&gt;快速排序理解起来确实比其它排序抽象一点，它的关键点是选择支点值，选最大或者最小，导致快速排序一边倒，性能会大打折扣。回顾一下前面提到的 3
+种排序。冒泡排序，需要每次找到最大元素放到最后；插入排序，需要把待排序序列分组，把未排序序列插入到已排序序列；希尔排序，分多组让待排序序列逐渐变得有序，从而达到优化插入排序的目的。快速排序也是把待排序序列分组，不过它需要找到一个合适的支点。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;代码实现请前往 GitHub 项目&lt;a href=&quot;https://github.com/lefex/LeetCodeGraphically&quot;&gt;LeetCodeGraphically&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;推荐阅读&quot;&gt;推荐阅读：&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483806&amp;amp;idx=1&amp;amp;sn=b85f43e846e96433755c7dc6adc1d033&amp;amp;chksm=fabb010dcdcc881b242ad387e6da4ea4174b99f5423d7bed11cc07dcd2af92f3ac00ebfc4ee8&amp;amp;scene=21#wechat_redirect&quot;&gt;编程的背后&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&quot;border-radius: 30px&quot; src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/images/cyjs_qr.png?raw=true&quot; title=&quot;lefex&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">本文首次发表于超越技术公众号图解排序 4/10 - 快速排序</summary></entry><entry><title type="html">图解排序 3/10 - 希尔排序</title><link href="http://localhost:4000/jekyll/update/2019/04/03/%E5%B8%8C%E5%B0%94markdown.html" rel="alternate" type="text/html" title="图解排序 3/10 - 希尔排序" /><published>2019-04-03T09:28:47+08:00</published><updated>2019-04-03T09:28:47+08:00</updated><id>http://localhost:4000/jekyll/update/2019/04/03/%E5%B8%8C%E5%B0%94markdown</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2019/04/03/%E5%B8%8C%E5%B0%94markdown.html">&lt;blockquote&gt;
+  &lt;p&gt;本文首次发表于超越技术公众号 &lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483834&amp;amp;idx=1&amp;amp;sn=d91d9d354d765da8bece9c06510f3a5d&amp;amp;chksm=fabb0129cdcc883f5c48e76a7690b4fe698415827c82c8ef4c8482a8618fdff05258f13eff03&amp;amp;token=623725354&amp;amp;lang=zh_CN#rd&quot;&gt;图解排序 3/10 - 希尔排序&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;希尔排序，它是由 D.L.Shell 于1959 年提出而得名。根据它的名字很难想象算法的核心思想。[ 所以只能死记硬背了，面试官问：希尔排序的思想是什么？]。它的核心思想是把一个序列分组，对分组后的内容进行&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483828&amp;amp;idx=1&amp;amp;sn=d8f0675f4e54e3b273c90c59be54eaeb&amp;amp;chksm=fabb0127cdcc883158bb0791f26cae1ea8494b496744f802b22babb4c03eaaef25e98dfbff57&amp;amp;scene=21#wechat_redirect&quot;&gt;&lt;strong&gt;插入排序&lt;/strong&gt;&lt;/a&gt;，这里的分组只是逻辑上的分组，不会重新开辟存储空间。它其实是插入排序的优化版，插入排序对基本有序的序列性能好，希尔排序利用这一特性把原序列分组，对每个分组进行排序，逐步完成排序。&lt;/p&gt;
+
+&lt;h2 id=&quot;希尔排序&quot;&gt;希尔排序&lt;/h2&gt;
+
+&lt;p&gt;以 arr = [ 8, 1, 4, 6, 2, 3, 5, 7 ] 为例，通过 floor(8/2) 来分为 4 组，8 表示数组中元素的个数。分完组后，对组内元素进行插入排序。&lt;/p&gt;
+
+&lt;p&gt;「 第1次分组 」&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/3-shell/all.020.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;「 利用第 1 次分组结果进行第 2 次分组 」&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/3-shell/all.021.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;「 利用第 2 次分组结果进行最后一次分组 」&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/3-shell/all.022.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;特点&quot;&gt;特点&lt;/h2&gt;
+
+&lt;p&gt;稳定性：它可能会把相同元素分到不同的组中，那么两个相同的元素就有可能调换相对位置，故不稳定。&lt;/p&gt;
+
+&lt;p&gt;空间复杂度：由于整个排序过程是在原数据上进行操作，故为 O(1);&lt;/p&gt;
+
+&lt;p&gt;时间复杂度：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;希尔排序的时间复杂度与增量序列的选取有关，例如希尔增量时间复杂度为O(n²)，而Hibbard增量的希尔排序的时间复杂度为O(log n的3/2)，希尔排序时间复杂度的下界是n*log2n&lt;/p&gt;
+
+  &lt;p&gt;百度百科&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;感想&quot;&gt;感想&lt;/h2&gt;
+
+&lt;p&gt;希尔排序在整个过程中，分组方式为：group = length/2,  group/2 …… 1，直到只能分一组，在整个分组过程中使元素逐渐变得有序，这样使用插入排序的时候就不需要移动大量元素，比如一个逆序序列 arr = [6, 5, 4, 4, 2, 1]，采用插入排序每次需要移动大量元素，如果换成希尔排序移动次数就会减少。希尔排序一个有意思的点是采用不同方式进行分组（上面提到的是采用的希尔增量分组），时间复杂度会有所不同，有兴趣的读者可以了解下其它分组方式。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;代码实现请前往 GitHub 项目&lt;a href=&quot;https://github.com/lefex/LeetCodeGraphically&quot;&gt;LeetCodeGraphically&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;推荐阅读&quot;&gt;推荐阅读：&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483806&amp;amp;idx=1&amp;amp;sn=b85f43e846e96433755c7dc6adc1d033&amp;amp;chksm=fabb010dcdcc881b242ad387e6da4ea4174b99f5423d7bed11cc07dcd2af92f3ac00ebfc4ee8&amp;amp;scene=21#wechat_redirect&quot;&gt;编程的背后&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&quot;border-radius: 30px&quot; src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/images/cyjs_qr.png?raw=true&quot; title=&quot;lefex&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">本文首次发表于超越技术公众号 图解排序 3/10 - 希尔排序</summary></entry><entry><title type="html">图解排序 2/10 - 插入排序</title><link href="http://localhost:4000/jekyll/update/2019/04/02/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.html" rel="alternate" type="text/html" title="图解排序 2/10 - 插入排序" /><published>2019-04-02T09:28:47+08:00</published><updated>2019-04-02T09:28:47+08:00</updated><id>http://localhost:4000/jekyll/update/2019/04/02/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2019/04/02/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.html">&lt;blockquote&gt;
+  &lt;p&gt;本文首次发表于超越技术公众号 &lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483828&amp;amp;idx=1&amp;amp;sn=d8f0675f4e54e3b273c90c59be54eaeb&amp;amp;chksm=fabb0127cdcc883158bb0791f26cae1ea8494b496744f802b22babb4c03eaaef25e98dfbff57&amp;amp;scene=21#wechat_redirect&quot;&gt;图解排序 2/10 - 插入排序&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这是图解排序的第 2 篇。选择排序的核心思想是把一个待排序序列，分成 2 部分，前半部分为有序序列，后半部分为无序序列，遍历后半部分数据，插入到前半部分已经排序好的序列，最终得到一个有序序列。&lt;/p&gt;
+
+&lt;h2 id=&quot;插入排序&quot;&gt;插入排序&lt;/h2&gt;
+
+&lt;p&gt;在整个排序过程如图所示，以 arr = [ 8, 1, 4, 6, 2, 3, 5, 7] 为例，它会把 arr 分成两组 A = [ 8 ] 和 B = [ 1, 4, 6, 2, 3, 5, 7] ，逐步遍历 B 中元素插入到 A 中，最终构成一个有序序列：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/assets/images/10-insert/all.015.jpeg?raw=true&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;特点&quot;&gt;特点&lt;/h2&gt;
+
+&lt;p&gt;稳定性：它是从后往前遍历已排序好的序列，相同元素不会改变位置，故为稳定排序；
+空间复杂度：它是在原序列进行排序，故为 O ( 1 );&lt;/p&gt;
+
+&lt;p&gt;时间复杂度：排序的过程中，首先要遍历所有的元素，然后在已排序序列中找到合适的位置并插入。共需要 2 层循环，故为 O ( n * n );&lt;/p&gt;
+
+&lt;h2 id=&quot;感想&quot;&gt;感想&lt;/h2&gt;
+
+&lt;p&gt;插入排序的特点是把一个序列分成 2 组，开始的时候把第1个元素作为一组（有序），剩余元素作为另一组（无序）。这种方式如同打扑克，每次抓取一张牌插入到手里已经排序好的牌中。这种排序方式更适合某个序列本身已经有序或基本有序，插入几个元素。想优化这种排序可以在查找插入位置的时候选择一种更高效的算法，比如折半查找。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;代码实现请前往 GitHub 项目&lt;a href=&quot;https://github.com/lefex/LeetCodeGraphically&quot;&gt;LeetCodeGraphically&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;推荐阅读&quot;&gt;推荐阅读：&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&amp;amp;mid=2247483806&amp;amp;idx=1&amp;amp;sn=b85f43e846e96433755c7dc6adc1d033&amp;amp;chksm=fabb010dcdcc881b242ad387e6da4ea4174b99f5423d7bed11cc07dcd2af92f3ac00ebfc4ee8&amp;amp;scene=21#wechat_redirect&quot;&gt;编程的背后&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img style=&quot;border-radius: 30px&quot; src=&quot;https://github.com/lefex/LeetCodeGraphically/blob/master/images/cyjs_qr.png?raw=true&quot; title=&quot;lefex&quot; width=&quot;200&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">本文首次发表于超越技术公众号 图解排序 2/10 - 插入排序</summary></entry></feed>
