@@ -186,10 +186,24 @@ table {
  * Site header
  */
 .site-header {
-  border-top: 5px solid #424242;
-  border-bottom: 1px solid #e8e8e8;
-  min-height: 55.95px;
+  padding-top: 100px;
+  background-image: radial-gradient(circle, #99CCCC, #7171B7);
+  height: 250px;
   position: relative; }
+
+.header-title {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 60px; }
+
+.header-subtitle {
+  padding-top: 20px;
+  text-align: center;
+  color: white;
+  font-weight: normal;
+  font-size: 30px; }
 
 .site-title {
   font-size: 26px;

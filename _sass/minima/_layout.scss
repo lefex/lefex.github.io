@@ -2,12 +2,31 @@
  * Site header
  */
 .site-header {
-  border-top: 5px solid $grey-color-dark;
-  border-bottom: 1px solid $grey-color-light;
-  min-height: $spacing-unit * 1.865;
+  padding-top: 100px;
+  background-image: radial-gradient(circle,#99CCCC, #7171B7);
+  height: 250px;
+  // border-top: 5px solid $grey-color-dark;
+  // border-bottom: 1px solid $grey-color-light;
+  // min-height: $spacing-unit * 1.865;
 
   // Positioning context for the mobile navigation icon
   position: relative;
+}
+
+.header-title {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 60px;
+}
+
+.header-subtitle {
+  padding-top: 20px;
+  text-align: center;
+  color: white;
+  font-weight: normal;
+  font-size: 30px;
 }
 
 .site-title {
