@@ -3,32 +3,101 @@ layout: default
 ---
 
 <div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
+  <div class="site-content">
+    <div class="site-item-box">
+      <div class="site-item-top">
+        <div class="site-item-left">
+          <img src="../assets/0.png" class="site-item-cover">
+        </div>
+        <div class="site-item-right">
+          <p class="site-item-title">数据结构</p>
+          <p class="site-item-subtitle">图解数据结构主要包含了链表、二叉树、AVL
+            树、二分搜索树、红黑树、线段树、B树、数组、HashMap、堆、队列、优先队列等数据结构。通过图解的方式，使得学习数据结构更简单。</p>
+        </div>
+      </div>
+      <div class="site-item-bottom">
+        <p class="site-item-btn">查看数据结构内容</p>
+      </div>
+    </div>
+    <!-- end -->
 
-  {{ content }}
+    <div class="site-item-box">
+      <div class="site-item-top">
+        <div class="site-item-left">
+          <img src="../assets/1.png" class="site-item-cover">
+        </div>
+        <div class="site-item-right">
+          <p class="site-item-title">算法&LeetCode</p>
+          <p class="site-item-subtitle">图解算法部分包含了常用的算法，比如 10 大排序算法，以及算法思想，比如回朔法、分治法等。同时包含了 LeetCode 上的题目。</p>
+        </div>
+      </div>
+      <div class="site-item-bottom">
+        <p class="site-item-btn">查看算法内容</p>
+      </div>
+    </div>
+    <!-- end -->
 
-  {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
+    <div class="site-item-box">
+        <div class="site-item-top">
+          <div class="site-item-left">
+            <img src="../assets/2.png" class="site-item-cover">
+          </div>
+          <div class="site-item-right">
+            <p class="site-item-title">前端</p>
+            <p class="site-item-subtitle">前端部分是作学习路径帮助你入门前端，并在实际工作中使用前端。</p>
+          </div>
+        </div>
+        <div class="site-item-bottom">
+          <p class="site-item-btn">查看前端内容</p>
+        </div>
+    </div>
+    <!-- end -->
 
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-  {%- endif -%}
+    <div class="site-item-box">
+        <div class="site-item-top">
+          <div class="site-item-left">
+            <img src="../assets/3.png" class="site-item-cover">
+          </div>
+          <div class="site-item-right">
+            <p class="site-item-title">计算机通用技术</p>
+            <p class="site-item-subtitle">包括计算机网络、字符编码、编程思想、语言、编译原理、设计模式、代码重构等内容。</p>
+          </div>
+        </div>
+        <div class="site-item-bottom">
+          <p class="site-item-btn">查看计算机通用技术</p>
+        </div>
+    </div>
+    <!-- end -->
 
+        <div class="site-item-box">
+        <div class="site-item-top">
+          <div class="site-item-left">
+            <img src="../assets/4.png" class="site-item-cover">
+          </div>
+          <div class="site-item-right">
+            <p class="site-item-title">工具</p>
+            <p class="site-item-subtitle">编程常用到的工具绘制，Json 解析、二维码、Bas64、MD5 等。</p>
+          </div>
+        </div>
+        <div class="site-item-bottom">
+          <p class="site-item-btn">查看工具</p>
+        </div>
+    </div>
+    <!-- end -->
+
+    <div class="site-item-box">
+        <div class="site-item-top">
+          <div class="site-item-left">
+            <img src="../assets/5.png" class="site-item-cover">
+          </div>
+          <div class="site-item-right">
+            <p class="site-item-title">iOS</p>
+            <p class="site-item-subtitle">我的本质工作，汇总了iOS技术相关的内容，包含 Swift 和平时写过的文章。</p>
+          </div>
+        </div>
+        <div class="site-item-bottom">
+          <p class="site-item-btn">查看 iOS 内容</p>
+        </div>
+    </div>
+    <!-- end -->
 </div>
