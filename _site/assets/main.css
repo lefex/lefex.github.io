@@ -77,12 +77,12 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: #2a7ae2;
+  color: #777777;
   text-decoration: none; }
   a:visited {
     color: #1756a9; }
   a:hover {
-    color: #111;
+    color: #2a7ae2;
     text-decoration: underline; }
   .social-media-list a:hover {
     text-decoration: none; }
