@@ -343,6 +343,18 @@ site content
   width: 80%;
   padding: 8px; }
 
+.site-item-btn:hover {
+  background-color: #157ABC;
+  color: white; }
+
+.site-item-btn:active {
+  background-color: white;
+  color: #157ABC; }
+
+.site-item-btn:focus {
+  background-color: #157ABC;
+  color: white; }
+
 /**
 item
 */
@@ -550,6 +562,24 @@ item
 .page-top-box {
   padding-top: 20px;
   padding-bottom: 20px; }
+
+.about-title {
+  font-size: 24px;
+  color: #157ABC;
+  border-bottom: #157ABC 1px solid;
+  width: 100px; }
+
+.about-des {
+  font-size: 18px;
+  color: #555555; }
+
+.about-qrcode {
+  width: 180px;
+  height: 180px; }
+
+.about-link {
+  color: #0077FF;
+  text-decoration: underline; }
 
 /**
  * Syntax highlighting styles
