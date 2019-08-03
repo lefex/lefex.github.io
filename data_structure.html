@@ -1,0 +1,22 @@
+---
+layout: nav-page
+title:
+permalink: /data_structure/
+---
+
+<div class="page-top-box">
+    <p class="site-item-title">{{site.data_structures.title}}</p>
+    <p class="site-item-subtitle">{{site.data_structures.des}}</p>
+</div>
+
+<div class="site-list-box">
+
+    {%- for item in site.data_structures.datas -%}
+    <div class="site-list-item">
+        <p class="site-list-item-title"><a href="{{item.href}}">{{item.title}}</a><span class="site-list-item-tag">
+            {{item.tag}}
+        </span></p>
+        <p class="site-list-item-des"> {{item.des}}</p>
+    </div>
+    {%- endfor -%}
+</div>

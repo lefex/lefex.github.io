@@ -14,9 +14,5 @@ Hi，大家好！
 
 关注公众号“超越技术”，和我一起学算法
 
-<img style="border-radius: 30px" src="https://github.com/lefex/LeetCodeGraphically/blob/master/images/cyjs_qr.png?raw=true" title="lefex" width="200"/>
-
-**文章中所有的算法实现代码都在这里：[LeetCodeGraphically](https://github.com/lefex/LeetCodeGraphically)**
-
 
 

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>超越技术 | 图解LeectCode算法和数据结构，一名会”说人话“的技术人。</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="超越技术" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="图解LeectCode算法和数据结构，一名会”说人话“的技术人。" />
+<meta property="og:description" content="图解LeectCode算法和数据结构，一名会”说人话“的技术人。" />
+<link rel="canonical" href="http://localhost:4000/data_structure/" />
+<meta property="og:url" content="http://localhost:4000/data_structure/" />
+<meta property="og:site_name" content="超越技术" />
+<script type="application/ld+json">
+{"description":"图解LeectCode算法和数据结构，一名会”说人话“的技术人。","@type":"WebPage","url":"http://localhost:4000/data_structure/","headline":"超越技术","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="超越技术" /></head>
+<body><header class="site-header">
+  <div class="site-nav-box">
+    <p class="site-nav-item"><a href="/">超越技术</a></p>
+    <p class="site-nav-item"><a href="/data_structure/">数据结构</a></p>
+    <p class="site-nav-item"><a href="/algorithm/">算法</a></p>
+    <p class="site-nav-item"><a href="/fe/">前端</a></p>
+    <p class="site-nav-item"><a href="/ios/">iOS</a></p>
+    <p class="site-nav-item"><a href="/about/">关于我</a></p>
+  </div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper-content">
+        <div class="page-top-box">
+    <p class="site-item-title">图解数据结构专题 —— 用最通俗易懂的方式来学习</p>
+    <p class="site-item-subtitle">链表、二叉树、AVL 树、二分搜索树、红黑树、线段树、B树、数组、HashMap、堆、队列、优先队列等数据结构</p>
+</div>
+
+<div class="site-list-box"><div class="site-list-item">
+        <p class="site-list-item-title"><a href="https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484371&idx=1&sn=8d1058a4c92781c4273ded7315180965&chksm=fabb0340cdcc8a56eae8736a8b17f2b6dd7c43fc8387623e12df582f72ad32ef6e75d7867d8d&token=263194275&lang=zh_CN#rd">图解红黑树的 5 大特征</a><span class="site-list-item-tag">
+            红黑树
+        </span></p>
+        <p class="site-list-item-des"> 红黑树其实是一颗平衡二叉树，与 AVL 树类似，只是它实现平衡的的规则不同。解释下这 5 个特征：1. 节点要么是红色的要么是黑色的，图中只有红色和黑色的节点；2. 根节点是黑色的；3. 所有的叶子节点都是黑色的（图中标记为 NIL 的节点）；4. 每个红色节点的孩子节点是黑色的，这里并没有强调黑色节点的孩子节点的颜色；5. 给定一个节点，从这个节点到其任意的叶子节点都包含了同样个数的黑色节点。图中从根节点 26 出发，到达叶子节点，经过的黑色节点的个数都是 2。</p>
+    </div><div class="site-list-item">
+        <p class="site-list-item-title"><a href="https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484359&idx=1&sn=a55e6e1a2a2449809c1a21fcb442cd11&chksm=fabb0354cdcc8a42a37d539d09eeaf7f6a03afb1502b6546ea3704d31ca89830c4d84a5681b4&token=263194275&lang=zh_CN#rd"> 画一颗 Trie 树 </a><span class="site-list-item-tag">
+            Trie 树
+        </span></p>
+        <p class="site-list-item-des"> Trie 树也称前缀树、字典树。它主要为了解决字符串查找效率问题，与数据量大小无关，只与字符串长度有关。也就是从 20 个字符串中和 100万个字符串中查找某个字符串的效率是一样的。我们以英文单词 lefe、love、leetcode、cat、leet、dog 为例一起画一颗 Trie 树，画完后，你就会完全理解 Trie 树。</p>
+    </div><div class="site-list-item">
+        <p class="site-list-item-title"><a href="https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484302&idx=1&sn=b4bb91a3c6749ebe5da299329811a64e&chksm=fabb031dcdcc8a0b41cb0615d1332a8a4bd3410dfd2077f49968aa7b0d46b546dbfade264a64&scene=21#wechat_redirect">图解线段树（segment tree） </a><span class="site-list-item-tag">
+            线段树
+        </span></p>
+        <p class="site-list-item-des"> 有些「区间问题」使用线段树这种数据结构，可以使得算法的时间复杂度从 O( n ) 降低到 O（log n），但是它会需要额外的存储空间。线段树的作用其实就是解决一些「区间问题」，通过使用额外的空间来记录某个区间的值，通过「平衡二叉树」存储对应的数据，使得查询时间复杂度降低到 O（logn）。线段树可以使用数组来实现，你还记得堆的实现吗？</p>
+    </div><div class="site-list-item">
+        <p class="site-list-item-title"><a href="https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484315&idx=1&sn=492031c65fb39b83b6ce77c1c4178392&chksm=fabb0308cdcc8a1efa42355d68a46711d8b03a53c5c60b6d554ec77e5f062175c3b353da19d8&token=263194275&lang=zh_CN#rd">今天不学数据结构，学画画 </a><span class="site-list-item-tag">
+            线段树
+        </span></p>
+        <p class="site-list-item-des"> 昨天我们简单介绍了下什么是线段树，以及线段树的作用，但是我直接画了一颗线段树，并没有告诉你这个线段树是咋么「画」的。今天，突发奇想，我们一起画一画这颗线段树吧，画完你就会理解线段树的创建过程了。</p>
+    </div><div class="site-list-item">
+        <p class="site-list-item-title"><a href="https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484325&idx=1&sn=1f9c429e749e76da83efc5adcba33c25&chksm=fabb0336cdcc8a2003d642a33530b75801f9d2cf5d40ea324acfa2edef3686870af98b1aea2c&token=263194275&lang=zh_CN#rd">画一画线段树的更新操作 </a><span class="site-list-item-tag">
+            线段树
+        </span></p>
+        <p class="site-list-item-des"> 昨天我们一起画了线段树的创建过程 今天不学数据结构，学画画，今天我们一起画一画线段树的更新操作。</p>
+    </div><div class="site-list-item">
+        <p class="site-list-item-title"><a href="https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484357&idx=1&sn=9742dd278655c840bf369f41621364eb&chksm=fabb0356cdcc8a403e4029d1446957824692ec8daf71f5cd3495bf5415e6757352b3f97a8d82&token=263194275&lang=zh_CN#rd">用代码实现一颗线段树</a><span class="site-list-item-tag">
+            线段树
+        </span></p>
+        <p class="site-list-item-des"> 前面连续三篇文章，我们介绍了线段树的创建、查找和更新操作 图解线段树（segment tree），今天不学数据结构学画画, 画一画线段树的更新操作。今天我们一起用 Swift 来实现一颗线段树。线段树可以使用「数组」表示。</p>
+    </div><div class="site-list-item">
+        <p class="site-list-item-title"><a href="https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484263&idx=1&sn=db0d7bef0d1bb6aa27b364f33272dce0&chksm=fabb03f4cdcc8ae2c58ec5d394909d451535f648cba1598dd6316b8261e83a327539ba59aba0&token=263194275&lang=zh_CN#rd">什么是 AVL 树？</a><span class="site-list-item-tag">
+            AVL 树
+        </span></p>
+        <p class="site-list-item-des"> 前面我们有学过 BST（二分搜索树），它唯一的不足是，当数据像 1-2-3-4-5 这样的时候，查询性能与单链表一致，无法发挥出 BST 的优势。在下面的 BST 中查找 4 这个节点，只能逐个查找。为了解决 BST 性能问题。1962 年 G. M. Adelson-Velsky 和 E. M. Landis 在他们的论文《An algorithm for the organization of information》中提到了一种方法可以解决这个问题。</p>
+    </div><div class="site-list-item">
+        <p class="site-list-item-title"><a href="https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484278&idx=1&sn=75691eba182cf50c6ef1cf0e528ad9c3&chksm=fabb03e5cdcc8af340159e49915c3c2d5fd99105265b5de4eb9d599ed363c87e8ac29925ab20&token=263194275&lang=zh_CN#rd">用 Swift 实现 AVL 树 </a><span class="site-list-item-tag">
+            AVL 树
+        </span></p>
+        <p class="site-list-item-des"> 文章 什么是 AVL 树？ 和 AVL 树的左旋转、右旋转 介绍了什么是 AVL 树和它的左、右旋转  。原理介绍完后，今天我们使用 Swift 来实现一颗 AVL 树，思路与 BST 基本一致，阅读 使用 Swift 实现一颗二分搜索树 这篇文章有助于理解今天的内容。总体来说，AVL 树的实现和 BST 的实现基本一样，不同的是需要维护节点的高度，保证树的平衡性。</p>
+    </div><div class="site-list-item">
+        <p class="site-list-item-title"><a href="https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484269&idx=1&sn=4e7befc7af3e8135fa056801fe29978d&chksm=fabb03fecdcc8ae895194fc1e3f0d2a168889722744eadb8c93f2b5985e4e9d39d993a09e4d9&token=263194275&lang=zh_CN#rd">AVL 树的左旋转、右旋转</a><span class="site-list-item-tag">
+            AVL 树
+        </span></p>
+        <p class="site-list-item-des"> 在文章 什么是 AVL 树？中，我们讲解了 AVL 树的基本概念，以及它存在的意义。这篇文章，我们来讲解如何维护 AVL 树的平衡性。AVL树是一棵「自平衡」的 BST（二分搜索树），也就说，它需要一种机制来维护 BST 的平衡性。这种机制就是左旋转和右旋转。</p>
+    </div><div class="site-list-item">
+        <p class="site-list-item-title"><a href="https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484223&idx=1&sn=e8f95a4afbc34d7c343dc274d6c80258&chksm=fabb03accdcc8abaa466c860197869729012a5da4885036169d39e24a37425290cf513af2def&token=263194275&lang=zh_CN#rd">自己动手实现一个“优先队列” </a><span class="site-list-item-tag">
+            优先队列
+        </span></p>
+        <p class="site-list-item-des"> 优先队列也是一种队列，不过它的出队顺序与入队顺序毫无关系，出队顺序由「优先级」决定，优先级是「动态」的，根据队列中元素不断的变化，优先级也在变化。学习完「堆」这种数据结构后，实现一个优先队列非常简单。只需调用堆中的 API 即可。C++ 中本身提供了这种数据结构：priority_queue 。</p>
+    </div><div class="site-list-item">
+        <p class="site-list-item-title"><a href="https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484257&idx=1&sn=fa83b010c2508bddf16b819d4309b2d0&chksm=fabb03f2cdcc8ae46bcc2e7b1dc266f663024e6eb2653e8114b549647bd67f33e74bd42b7404&token=263194275&lang=zh_CN#rd">与“优先队列”相关的LeetCode题目（215、347） </a><span class="site-list-item-tag">
+            优先队列
+        </span></p>
+        <p class="site-list-item-des"> 215. Kth Largest Element in an Array。和 347. Top K Frequent Elements。题目要求找出无序数组中第 k 个最大元素，k的取值范围为1 ≤ k ≤ length，比如 [3,2,1,5,6,4] 第 2 个最大元素为 5。</p>
+    </div><div class="site-list-item">
+        <p class="site-list-item-title"><a href="https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484254&idx=1&sn=375f919dd036411b6f607b9556b38d27&chksm=fabb03cdcdcc8adb87ea02c6813e6320b1dc75638100910a7c4397dc7857f6dcd260a50d228f&token=263194275&lang=zh_CN#rd">使用 Swift 实现一颗二分搜索树 </a><span class="site-list-item-tag">
+            二分搜索树
+        </span></p>
+        <p class="site-list-item-des"> 在这篇 二分搜索树 BST（Binary Search Tree）文章中，我们学习了什么是二分搜索树。这一节我们一起实现一颗 BST。今天，我们换种“口味”，看看用 Swift 如何来实现。</p>
+    </div><div class="site-list-item">
+        <p class="site-list-item-title"><a href="https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484178&idx=1&sn=522cd40b2c673e79ffb48ab49dff27d8&chksm=fabb0381cdcc8a97529cc2aa8dfbff6c9894731528bd34aea03ae1f14b3a779a588c5c5985d2&token=263194275&lang=zh_CN#rd">二分搜索树 BST（Binary Search Tree） </a><span class="site-list-item-tag">
+            二分搜索树
+        </span></p>
+        <p class="site-list-item-des"> 递归学完后就可以愉快地使用递归来求解递归相关的算法题了。对递归不熟悉的朋友，看：我原来不懂递归。「二分搜索树」是一颗二叉树，需要满足 2 个条件（暂不讨论节点值相等的情况）：1.每个节点的值需要大于左子树所有节点的值；2.每个节点的值需要小于右子树所有节点的值；</p>
+    </div><div class="site-list-item">
+        <p class="site-list-item-title"><a href="https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484185&idx=1&sn=0d1d43b565c73e7f1db0311edbe0834b&chksm=fabb038acdcc8a9cfd41954d3ab880d4a93e9756527a5ff331cf340e49c1ee4466626531da78&token=263194275&lang=zh_CN#rd">使用 BST 实现 Set </a><span class="site-list-item-tag">
+            二分搜索树
+        </span></p>
+        <p class="site-list-item-des"> 上一篇文章我们学习了 BST（二分查找树）二分搜索树 BST（Binary Search Tree），它不允插入重复的元素，也就是说如果插入相同的元素时，直接 return，什么也不处理。我们可以利用这个特点来实现 Set。Set 是一个容器，几乎所有语言中都会存在这种数据结构，它的特点就是保证同一元素只能出现一次。我们完全可以使用上一节提到的 BST 来实现一个 Set。</p>
+    </div><div class="site-list-item">
+        <p class="site-list-item-title"><a href="https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484222&idx=1&sn=c1f958285a62bdf7bb2a94ee8448603c&chksm=fabb03adcdcc8abb77c0cfb003bb6434ac8a681f631eb9944e2a08fe4cfc72d9eb7e7dd59739&token=263194275&lang=zh_CN#rd">动手写个“堆” </a><span class="site-list-item-tag">
+            堆
+        </span></p>
+        <p class="site-list-item-des"> 前面的内容我们已经详细介绍过“堆”这个数据结构了，回顾一下堆的定义，下面提到的都是「大根堆」：1.是一颗完全二叉树；2.某个节点的值不大于其父节点的值；可以通过数组表示一个堆，利用这个特性我们使用C++中的向量实现一个堆。</p>
+    </div><div class="site-list-item">
+        <p class="site-list-item-title"><a href="https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484145&idx=1&sn=cf521f586f470ccf3230eebbc3cf450a&chksm=fabb0262cdcc8b74ec58700adce176d9832967d2a215607ca3dc49837a8b2bee5c38041f7d48&token=263194275&lang=zh_CN#rd">图解设计一个 HashMap</a><span class="site-list-item-tag">
+            HashMap
+        </span></p>
+        <p class="site-list-item-des"> 706. Design HashMap。Design a HashMap without using any built-in hash table libraries.To be specific, your design should include these functions:。题目要求设计一个 HashMap，不能使用语言提供的类似哈希表的库，比如HashMap，dict，map</p>
+    </div><div class="site-list-item">
+        <p class="site-list-item-title"><a href="https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484116&idx=1&sn=454885c3746bfa8b1e9b1a7cc36ae8c3&chksm=fabb0247cdcc8b51940991c9eb030645e98109a78f8d60e9fd479f7b32a855c054e9198a588f&scene=21#wechat_redirect">图解设计一个循环队列 </a><span class="site-list-item-tag">
+             循环队列
+        </span></p>
+        <p class="site-list-item-des"> 641. Design Circular Deque。Design your implementation of the circular queue. The circular queue is a linear data structure in which the operations are performed based on FIFO (First In First Out) principle and the last position is connected back to the first position to make a circle. It is also called "Ring Buffer".</p>
+    </div><div class="site-list-item">
+        <p class="site-list-item-title"><a href="https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484117&idx=1&sn=70e30052ce22b5512124dec1ea2be5c0&chksm=fabb0246cdcc8b504da351237ca5315dfa8127029caa064698266ea7f2396d816cbbb36f52cf&token=263194275&lang=zh_CN#rd">图解设计一个双端队列</a><span class="site-list-item-tag">
+            双端队列
+        </span></p>
+        <p class="site-list-item-des"> Design your implementation of the circular double-ended queue (deque).Your implementation should support following operations。题目的答题意思是要求设计一个双端队列，支持在队首和队尾插入和删除元素。</p>
+    </div><div class="site-list-item">
+        <p class="site-list-item-title"><a href="https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484115&idx=1&sn=757ac8cf2e6f3f5d40755599ebe4956f&chksm=fabb0240cdcc8b56887c298bcc46ffae500fabc23d422a66cb72153635a214f5adea53b5524f&token=263194275&lang=zh_CN#rd">图解最小栈</a><span class="site-list-item-tag">
+            栈
+        </span></p>
+        <p class="site-list-item-des"> 155. Min Stack。Design a stack that supports push, pop, top, and retrieving the minimum element in constant time. 栈是一种「先进后出」的数据结构。今天的题目要求设计一个最小栈，也就是说可以从栈中直接获取当前栈中最小的元素，时间复杂度为 O（1）。除此之外还需要支持栈的基本操作，push：向栈中插入元素、pop：移除栈顶元素、top： 获取栈顶元素。</p>
+    </div><div class="site-list-item">
+        <p class="site-list-item-title"><a href="https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247483852&idx=1&sn=e9068173df1e17c0c92647d9a9d8adcf&chksm=fabb015fcdcc8849a5525cc8b1d458607c987e4feef582678ad10933fc335c34f86b7017f354&token=263194275&lang=zh_CN#rd">图解堆排序数据结构 </a><span class="site-list-item-tag">
+            堆
+        </span></p>
+        <p class="site-list-item-des"> 二叉树、满二叉树、完全二叉树、堆</p>
+    </div><div class="site-list-item">
+        <p class="site-list-item-title"><a href="https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484031&idx=1&sn=b025a7b084c32bb2a13c14277365ee6f&chksm=fabb02eccdcc8bfa68a5b83adef493994b0c08d023782f692114d695a0dd988b7921dcfb91bb&token=263194275&lang=zh_CN#rd">12 张图搞懂链表相关算法 </a><span class="site-list-item-tag">
+            链表
+        </span></p>
+        <p class="site-list-item-des"> 这一阶段共完成了 12 道链表相关的算法题，这 12 道题足以让你理解链表这种数据结构，以及对链表的操作。总的来说链表相关算法题主要分为：链表指针操作，排序，环等。在总结之前，先说说我做图解算法的初衷。</p>
+    </div></div>
+      </div>
+    </main><footer>
+  <div class="site-footer">
+    <div class="site-footer-item-box">
+      <p class="site-footer-item site-footer-item-title">合作伙伴</p>
+      <p class="site-footer-item site-footer-item-subtitle">知识小集</p>
+    </div>
+    <div class="site-footer-item-line"></div>
+    <div class="site-footer-item-box">
+        <p class="site-footer-item site-footer-item-title">致谢</p>
+        <p class="site-footer-item site-footer-item-subtitle">主题来自objccn</p>
+    </div>
+    <div class="site-footer-item-line"></div>
+    <div class="site-footer-item-box">
+        <p class="site-footer-item site-footer-item-title">联系我</p>
+        <p class="site-footer-item site-footer-item-subtitle">扫码关注超越技术联系我</p>
+    </div>
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -24,6 +24,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background-color: #F6F8F9;
 }
 
 
@@ -101,11 +102,12 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: #777777;
+  color: #222222;
   text-decoration: none;
 
   &:visited {
-    color: darken($brand-color, 15%);
+    // color: darken($brand-color, 15%);
+    color: #222222;
   }
 
   &:hover {
@@ -188,6 +190,26 @@ pre {
     padding-left: $spacing-unit / 2;
   }
 }
+
+.wrapper-content {
+  width: 85%;
+  margin: 0 auto;
+  max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+  max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $spacing-unit;
+  padding-left: $spacing-unit;
+  @extend %clearfix;
+
+  @include media-query($on-laptop) {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+    padding-right: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+  }
+}
+
 
 
 
