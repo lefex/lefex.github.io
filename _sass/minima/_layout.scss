@@ -2,7 +2,7 @@
  * Site header - nav andd banner
  */
 .site-header {
-  height: 290px;
+  height: 90px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -34,6 +34,7 @@
   display: flex;
   justify-items: center;
   align-items: center;
+  height: 200px;
 }
 
 // 标题
@@ -53,11 +54,14 @@ site content
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, minmax(300px, auto));
   gap: 20px;
+  width: 85%;
+  margin: 40px auto;
 }
 .site-content > div {
   padding: 10px;
   /*background-color: rgb(207,232,220);*/
-  border: 1px solid rgba(216, 216, 216, 0.5);
+  // border: 1px solid rgba(216, 216, 216, 0.5);
+  // border-right: 1px solid rgba(216, 216, 216, 0.5); 
 }
 .site-item-box {
   display: flex;;
@@ -311,7 +315,7 @@ item
  * Page content
  */
 .page-content {
-  padding: $spacing-unit 0;
+  padding: 0;
   flex: 1;
 }
 
