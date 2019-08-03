@@ -9,100 +9,21 @@ permalink: /home/
 </div>
 <div>
   <div class="site-content">
-    <div class="site-item-box">
-      <div class="site-item-top">
-        <div class="site-item-left">
-          <img src="../assets/0.png" class="site-item-cover">
+      {%- for item in site.home.datas -%}
+      <div class="site-item-box">
+          <div class="site-item-top">
+            <div class="site-item-left">
+              <img src="{{item.img}}" class="site-item-cover">
+            </div>
+            <div class="site-item-right">
+              <p class="site-item-title">{{item.title}}</p>
+              <p class="site-item-subtitle">{{item.des}}</p>
+            </div>
+          </div>
+          <div class="site-item-bottom">
+            <a class="site-item-btn" href="{{item.href}}">{{item.link-title}}</a>
+          </div>
         </div>
-        <div class="site-item-right">
-          <p class="site-item-title">数据结构</p>
-          <p class="site-item-subtitle">图解数据结构主要包含了链表、二叉树、AVL
-            树、二分搜索树、红黑树、线段树、B树、数组、HashMap、堆、队列、优先队列等数据结构。通过图解的方式，使得学习数据结构更简单。</p>
-        </div>
-      </div>
-      <div class="site-item-bottom">
-        <p class="site-item-btn">查看数据结构内容</p>
-      </div>
-    </div>
-    <!-- end -->
-
-    <div class="site-item-box">
-      <div class="site-item-top">
-        <div class="site-item-left">
-          <img src="../assets/1.png" class="site-item-cover">
-        </div>
-        <div class="site-item-right">
-          <p class="site-item-title">算法&LeetCode</p>
-          <p class="site-item-subtitle">图解算法部分包含了常用的算法，比如 10 大排序算法，以及算法思想，比如回朔法、分治法等。同时包含了 LeetCode 上的题目。</p>
-        </div>
-      </div>
-      <div class="site-item-bottom">
-        <p class="site-item-btn">查看算法内容</p>
-      </div>
-    </div>
-    <!-- end -->
-
-    <div class="site-item-box">
-      <div class="site-item-top">
-        <div class="site-item-left">
-          <img src="../assets/2.png" class="site-item-cover">
-        </div>
-        <div class="site-item-right">
-          <p class="site-item-title">前端</p>
-          <p class="site-item-subtitle">前端部分是作学习路径帮助你入门前端，并在实际工作中使用前端。</p>
-        </div>
-      </div>
-      <div class="site-item-bottom">
-        <p class="site-item-btn">查看前端内容</p>
-      </div>
-    </div>
-    <!-- end -->
-
-    <div class="site-item-box">
-      <div class="site-item-top">
-        <div class="site-item-left">
-          <img src="../assets/3.png" class="site-item-cover">
-        </div>
-        <div class="site-item-right">
-          <p class="site-item-title">计算机通用技术</p>
-          <p class="site-item-subtitle">包括计算机网络、字符编码、编程思想、语言、编译原理、设计模式、代码重构等内容。</p>
-        </div>
-      </div>
-      <div class="site-item-bottom">
-        <p class="site-item-btn">查看计算机通用技术</p>
-      </div>
-    </div>
-    <!-- end -->
-
-    <div class="site-item-box">
-      <div class="site-item-top">
-        <div class="site-item-left">
-          <img src="../assets/4.png" class="site-item-cover">
-        </div>
-        <div class="site-item-right">
-          <p class="site-item-title">工具集</p>
-          <p class="site-item-subtitle">总结了编程中常用的工具，比如：Json 解析、二维码、Bas64、MD5 等。还有一些开发资源。</p>
-        </div>
-      </div>
-      <div class="site-item-bottom">
-        <p class="site-item-btn">查看工具集</p>
-      </div>
-    </div>
-    <!-- end -->
-
-    <div class="site-item-box">
-      <div class="site-item-top">
-        <div class="site-item-left">
-          <img src="../assets/5.png" class="site-item-cover">
-        </div>
-        <div class="site-item-right">
-          <p class="site-item-title">iOS 技术</p>
-          <p class="site-item-subtitle">我的本质工作是 iOS，这个专题总结了平时开发种遇到的问题，主要涉及源码和一些技术文章，另外还有 Swift 相关的内容。</p>
-        </div>
-      </div>
-      <div class="site-item-bottom">
-        <p class="site-item-btn">查看 iOS 内容</p>
-      </div>
-    </div>
+      {%- endfor -%}
     <!-- end -->
   </div>

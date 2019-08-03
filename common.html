@@ -1,0 +1,22 @@
+---
+layout: nav-page
+title:
+permalink: /common/
+---
+
+<div class="page-top-box">
+    <p class="site-item-title">{{site.common.title}}</p>
+    <p class="site-item-subtitle">{{site.common.des}}</p>
+</div>
+
+<div class="site-list-box">
+
+    {%- for item in site.common.datas -%}
+    <div class="site-list-item">
+        <p class="site-list-item-title"><a href="{{item.href}}">{{item.title}}</a><span class="site-list-item-tag">
+            {{item.tag}}
+        </span></p>
+        <p class="site-list-item-des"> <a href="{{item.href}}">{{item.des}}</a></p>
+    </div>
+    {%- endfor -%}
+</div>

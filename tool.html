@@ -1,0 +1,22 @@
+---
+layout: nav-page
+title:
+permalink: /tool/
+---
+
+<div class="page-top-box">
+    <p class="site-item-title">{{site.tool.title}}</p>
+    <p class="site-item-subtitle">{{site.tool.des}}</p>
+</div>
+
+<div class="site-list-box">
+
+    {%- for item in site.tool.datas -%}
+    <div class="site-list-item">
+        <p class="site-list-item-title"><a href="{{item.href}}">{{item.title}}</a><span class="site-list-item-tag">
+            {{item.tag}}
+        </span></p>
+        <p class="site-list-item-des"> <a href="{{item.href}}">{{item.des}}</a></p>
+    </div>
+    {%- endfor -%}
+</div>

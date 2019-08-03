@@ -1,10 +1,7 @@
 <header class="site-header">
   <div class="site-nav-box">
-    <p class="site-nav-item"><a href="/">超越技术</a></p>
-    <p class="site-nav-item"><a href="/data_structure/">数据结构</a></p>
-    <p class="site-nav-item"><a href="/algorithm/">算法</a></p>
-    <p class="site-nav-item"><a href="/fe/">前端</a></p>
-    <p class="site-nav-item"><a href="/ios/">iOS</a></p>
-    <p class="site-nav-item"><a href="/about/">关于我</a></p>
+      {%- for item in site.nav.datas -%}
+      <p class="site-nav-item"><a href="{{item.href}}">{{item.title}}</a></p>
+      {%- endfor -%}
   </div>
 </header>

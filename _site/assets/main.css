@@ -345,15 +345,18 @@ site content
 
 .site-item-btn:hover {
   background-color: #157ABC;
-  color: white; }
+  color: white;
+  text-decoration: none; }
 
 .site-item-btn:active {
   background-color: white;
-  color: #157ABC; }
+  color: #157ABC;
+  text-decoration: none; }
 
 .site-item-btn:focus {
   background-color: #157ABC;
-  color: white; }
+  color: white;
+  text-decoration: none; }
 
 /**
 item
