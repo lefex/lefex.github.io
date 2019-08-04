@@ -309,7 +309,7 @@ site content
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(6, minmax(300px, 1fr));
-    gap: 40px;
+    gap: 10px;
     width: 100%;
     margin: 20px auto; } }
 @media screen and (min-device-width: 500px) {
@@ -317,7 +317,7 @@ site content
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, minmax(300px, auto));
-    gap: 20px;
+    gap: 10px;
     width: 85%;
     margin: 40px auto; } }
 .site-content > div {
@@ -326,7 +326,8 @@ site content
 
 .site-item-box {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  background-color: white; }
 
 .site-item-top {
   display: flex;
@@ -374,7 +375,8 @@ site content
   border-style: solid;
   text-align: center;
   width: 80%;
-  padding: 8px; }
+  padding: 8px;
+  margin-bottom: 20px; }
 
 .site-item-btn:hover {
   background-color: #157ABC;

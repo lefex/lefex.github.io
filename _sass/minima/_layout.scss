@@ -133,7 +133,7 @@ site content
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(6, minmax(300px, 1fr));
-    gap: 40px;
+    gap: 10px;
     width: 100%;
     margin: 20px auto;
   }
@@ -145,7 +145,7 @@ site content
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, minmax(300px, auto));
-    gap: 20px;
+    gap: 10px;
     width: 85%;
     margin: 40px auto;
   }
@@ -160,6 +160,11 @@ site content
 .site-item-box {
   display: flex;;
   flex-direction: column;
+  background-color: white;
+  // border-radius: 4px;
+  // border-width: 1px;
+  // border-color:white;
+  // border-style: solid;
 }
 .site-item-top {
   display: flex;
@@ -204,10 +209,11 @@ site content
   border-radius: 4px;
   border-width: 1px;
   border-color: #157ABC;
-  border-style: solid;;
+  border-style: solid;
   text-align: center;
   width: 80%;
   padding: 8px;
+  margin-bottom: 20px;
 }
 
 .site-item-btn:hover {
