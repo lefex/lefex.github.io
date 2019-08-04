@@ -15,10 +15,10 @@
 # in the templates via {{ site.myvariable }}.
 title: 超越技术
 description: >- # this means to ignore newlines until "baseurl:"
-  图解LeectCode算法和数据结构，一名会”说人话“的技术人。
+  图解算法，图解数据结构，LeectCode。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://lefex.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  lefex
+github_username:  lefe
 
 # Build settings
 markdown: kramdown
@@ -89,7 +89,7 @@ home: {
     {
         title: "数据结构",
         img: "../assets/0.png",
-        href: "/",
+        href: "/data_structure/",
         link-title: "查看数据结构内容",
         des: "图解数据结构主要包含了链表、二叉树、AVL 树、二分搜索树、红黑树、线段树、B树、数组、HashMap、堆、队列、优先队列等数据结构。通过图解的方式，使得学习数据结构更简单。"
     },

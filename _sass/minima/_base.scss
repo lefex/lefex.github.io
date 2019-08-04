@@ -197,7 +197,6 @@ pre {
 }
 
 .wrapper-content {
-  width: 85%;
   margin: 0 auto;
   max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
   max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
@@ -207,11 +206,25 @@ pre {
   padding-left: $spacing-unit;
   @extend %clearfix;
 
-  @include media-query($on-laptop) {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+  // @include media-query($on-laptop) {
+  //   max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+  //   max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+  //   padding-right: $spacing-unit / 2;
+  //   padding-left: $spacing-unit / 2;
+  // }
+
+  @media screen and (max-device-width: $iphone-with) {
+    max-width: 100%;
     padding-right: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
+    padding-left: 0;
+    width: 90%;
+  }
+
+  @media screen and (min-device-width: $iphone-with) {
+    max-width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    width: 80%;
   }
 }
 

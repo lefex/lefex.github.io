@@ -139,7 +139,6 @@ pre {
     padding-left: 0; } }
 
 .wrapper-content {
-  width: 85%;
   margin: 0 auto;
   max-width: -webkit-calc(100% - (30px * 2));
   max-width: calc(100% - (30px * 2));
@@ -147,12 +146,18 @@ pre {
   margin-left: auto;
   padding-right: 30px;
   padding-left: 30px; }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-device-width: 500px) {
     .wrapper-content {
-      max-width: -webkit-calc(100% - (30px));
-      max-width: calc(100% - (30px));
+      max-width: 100%;
       padding-right: 15px;
-      padding-left: 15px; } }
+      padding-left: 0;
+      width: 90%; } }
+  @media screen and (min-device-width: 500px) {
+    .wrapper-content {
+      max-width: 100%;
+      padding-right: 0;
+      padding-left: 0;
+      width: 80%; } }
 
 /**
  * Clearfix
@@ -382,8 +387,8 @@ site content
   text-decoration: none; }
 
 .site-item-btn:focus {
-  background-color: #157ABC;
-  color: white;
+  background-color: white;
+  color: #157ABC;
   text-decoration: none; }
 
 /**
