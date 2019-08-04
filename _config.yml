@@ -69,14 +69,14 @@ nav: {
       title: "前端",
       href: "/fe/"
     },
-        {
-      title: "工具",
-      href: "/tool/"
-    },
-    {
-      title: "iOS",
-      href: "/ios/"
-    },
+    #     {
+    #   title: "工具",
+    #   href: "/tool/"
+    # },
+    # {
+    #   title: "iOS",
+    #   href: "/ios/"
+    # },
     {
       title: "关于我",
       href: "/about/"
