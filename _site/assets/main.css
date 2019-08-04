@@ -127,12 +127,16 @@ pre {
 /**
  * Wrapper
  */
-@media screen and (max-width: 800px) {
+@media screen and (max-device-width: 500px) {
   .wrapper {
-    max-width: -webkit-calc(100% - (30px));
-    max-width: calc(100% - (30px));
-    padding-right: 15px;
-    padding-left: 15px; } }
+    max-width: 100%;
+    padding-right: 0;
+    padding-left: 0; } }
+@media screen and (min-device-width: 500px) {
+  .wrapper {
+    max-width: 100%;
+    padding-right: 0;
+    padding-left: 0; } }
 
 .wrapper-content {
   width: 85%;
@@ -194,24 +198,42 @@ table {
     border: 1px solid #e8e8e8; }
 
 /**
- * Site header - nav andd banner
+ * 顶部的 banner
  */
-.site-header {
-  height: 90px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  background-color: white; }
+@media screen and (max-device-width: 500px) {
+  .site-header {
+    height: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white;
+    overflow: hidden;
+    width: 100%; }
 
-.site-nav-box {
-  padding-top: 20px;
-  display: flex;
-  flex-direction: row;
-  height: 70px;
-  justify-content: space-around;
-  padding-left: 40px;
-  padding-right: 40px; }
+  .site-nav-box {
+    padding-top: 0px;
+    display: flex;
+    flex-direction: row;
+    height: 0px;
+    justify-content: space-around;
+    padding-left: 0px;
+    padding-right: 0px; } }
+@media screen and (min-device-width: 500px) {
+  .site-header {
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white; }
 
+  .site-nav-box {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    height: 70px;
+    justify-content: space-around;
+    padding-left: 40px;
+    padding-right: 40px; } }
 .site-nav-item {
   flex: 1;
   text-align: center;
@@ -223,8 +245,6 @@ table {
   flex: 1;
   background-image: url("/assets/banner_bg.png");
   display: flex;
-  justify-items: center;
-  align-items: center;
   height: 200px; }
 
 .site-banner-title {
@@ -279,14 +299,22 @@ site content
 /**
 site content
 */
-.site-content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, minmax(300px, auto));
-  gap: 20px;
-  width: 85%;
-  margin: 40px auto; }
-
+@media screen and (max-device-width: 500px) {
+  .site-content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, minmax(300px, 1fr));
+    gap: 40px;
+    width: 100%;
+    margin: 20px auto; } }
+@media screen and (min-device-width: 500px) {
+  .site-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, minmax(300px, auto));
+    gap: 20px;
+    width: 85%;
+    margin: 40px auto; } }
 .site-content > div {
   padding: 10px;
   /*background-color: rgb(207,232,220);*/ }
@@ -423,7 +451,7 @@ item
           margin-right: 0; } }
 
 /**
- * Site footer
+ * Site footer ======================= footer
  */
 .site-footer {
   display: flex;
@@ -436,8 +464,12 @@ item
   width: 33%;
   height: 80%; }
 
-.site-footer-item {
-  padding-left: 80px; }
+@media screen and (max-device-width: 500px) {
+  .site-footer-item {
+    padding-left: 20px; } }
+@media screen and (min-device-width: 500px) {
+  .site-footer-item {
+    padding-left: 80px; } }
 
 .site-footer-item-title {
   color: white;

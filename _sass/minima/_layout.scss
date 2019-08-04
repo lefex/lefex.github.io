@@ -1,23 +1,51 @@
 /**
- * Site header - nav andd banner
+ * 顶部的 banner
  */
-.site-header {
-  height: 90px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  background-color: white;
+
+
+// 手机屏幕
+@media screen and (max-device-width: $iphone-with) {
+  .site-header {
+    height: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white;
+    overflow: hidden;
+    width: 100%;
+  }
+  .site-nav-box {
+    padding-top: 0px;
+    display: flex;
+    flex-direction: row;
+    height: 0px;
+    justify-content: space-around;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+// 电脑屏幕
+@media screen and (min-device-width: $iphone-with) {
+  .site-header {
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white;
+  }
+  .site-nav-box {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    height: 70px;
+    justify-content: space-around;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
 
-.site-nav-box {
-  padding-top: 20px;
-  display: flex;
-  flex-direction: row;
-  height: 70px;
-  justify-content: space-around;
-  padding-left: 40px;
-  padding-right: 40px;
-}
+
+
 
 .site-nav-item {
   flex: 1;
@@ -29,11 +57,8 @@
 
 .site-banner {
   flex: 1;
-  // background-color: #374CB2;
   background-image: url("/assets/banner_bg.png");
   display: flex;
-  justify-items: center;
-  align-items: center;
   height: 200px;
 }
 
@@ -101,14 +126,31 @@ site content
 /**
 site content
 */ 
-.site-content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, minmax(300px, auto));
-  gap: 20px;
-  width: 85%;
-  margin: 40px auto;
+
+// 在移动端布局只需要 1 列
+@media screen and (max-device-width: $iphone-with) {
+  .site-content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, minmax(300px, 1fr));
+    gap: 40px;
+    width: 100%;
+    margin: 20px auto;
+  }
 }
+
+// 在电脑端布局只需要 2 列
+@media screen and (min-device-width: $iphone-with) {
+  .site-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, minmax(300px, auto));
+    gap: 20px;
+    width: 85%;
+    margin: 40px auto;
+  }
+}
+
 .site-content > div {
   padding: 10px;
   /*background-color: rgb(207,232,220);*/
@@ -280,7 +322,7 @@ item
 
 
 /**
- * Site footer
+ * Site footer ======================= footer
  */
 .site-footer {
   display: flex;
@@ -294,9 +336,18 @@ item
   width: 33%;
   height: 80%;
 }
+
 .site-footer-item {
+  // 手机屏幕
+@media screen and (max-device-width: $iphone-with) {
+  padding-left: 20px;
+}
+
+@media screen and (min-device-width: $iphone-with) {
   padding-left: 80px;
 }
+}
+
 .site-footer-item-title {
   color: white;
   font-size: 16px;
@@ -321,6 +372,8 @@ item
   @include relative-font-size(1.125);
   margin-bottom: $spacing-unit / 2;
 }
+
+////////////////// end footer
 
 .contact-list,
 .social-media-list {
