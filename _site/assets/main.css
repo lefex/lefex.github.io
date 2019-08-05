@@ -247,6 +247,9 @@ table {
   padding-top: 8px; }
 
 .site-banner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   flex: 1;
   background-image: url("/assets/banner_bg.png");
   display: flex;
@@ -258,6 +261,16 @@ table {
   text-align: center;
   align-self: center;
   flex: 1; }
+
+.site-banner-img {
+  width: 120px;
+  height: 120px;
+  margin-right: 40px; }
+  @media screen and (max-device-width: 500px) {
+    .site-banner-img {
+      width: 0px;
+      height: 0px;
+      margin-right: 0px; } }
 
 /**
 site content

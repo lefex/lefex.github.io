@@ -56,6 +56,9 @@
 }
 
 .site-banner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   flex: 1;
   background-image: url("/assets/banner_bg.png");
   display: flex;
@@ -69,6 +72,18 @@
   text-align: center;
   align-self: center;
   flex: 1;
+}
+
+.site-banner-img {
+  width: 120px;
+  height: 120px;
+  margin-right: 40px;
+  @media screen and (max-device-width: $iphone-with) {
+    width: 0px;
+    height: 0px;
+    margin-right: 0px;
+  }
+  
 }
 
 /**
@@ -107,6 +122,7 @@ site content
   font-size: 17px;
   color: #444444;
   letter-spacing: 1.5px;
+  // text-align: justify;
   // -webkit-line-clamp: 2;
   // display: -webkit-box;
   // -webkit-box-orient: vertical;
