@@ -144,7 +144,7 @@ site content
   .site-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, minmax(300px, auto));
+    grid-template-rows: repeat(3, minmax(340px, auto));
     gap: 10px;
     width: 85%;
     margin: 40px auto;
@@ -152,7 +152,7 @@ site content
 }
 
 .site-content > div {
-  padding: 10px;
+  padding: 20px;
   /*background-color: rgb(207,232,220);*/
   // border: 1px solid rgba(216, 216, 216, 0.5);
   // border-right: 1px solid rgba(216, 216, 216, 0.5); 
@@ -166,6 +166,7 @@ site content
   // border-color:white;
   // border-style: solid;
 }
+
 .site-item-top {
   display: flex;
   flex-direction: row;
@@ -187,6 +188,7 @@ site content
 }
 /*图标*/
 .site-item-cover {
+  padding-top: 8px;
   width: 65px;
   height: 65px;
 }
@@ -198,9 +200,10 @@ site content
 /*内容*/
 .site-item-subtitle {
   margin-top: 10px;
-  font-size: 18px;
+  font-size: 20px;
   color: #4A4A4A;
-  line-height: 28px;
+  letter-spacing: 1.5px;
+  line-height: 30px;
 }
 /*按钮*/
 .site-item-btn {
