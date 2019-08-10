@@ -78,10 +78,10 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: #222222;
+  color: #2a7ae2;
   text-decoration: none; }
   a:visited {
-    color: #222222; }
+    color: #2a7ae2; }
   a:hover {
     color: #2a7ae2;
     text-decoration: underline; }
@@ -287,13 +287,13 @@ table {
 /**
 site content
 */
-.site-list-box {
+.site-list-box, .site-list-recommend-box {
   display: flex;
   flex-direction: column;
   margin-top: 0px;
   margin-bottom: 100px; }
 
-.site-list-item {
+.site-list-item, .site-list-recommend-item {
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -307,15 +307,15 @@ site content
   background-color: white;
   padding: 10px; }
 
-.site-list-item-title {
+.site-list-item-title, .site-list-recomend-item-title {
   font-size: 20px;
   font-weight: 900;
-  color: #2e3135;
+  color: #2e3135 !important;
   margin-top: 15px; }
 
-.site-list-item-des {
+.site-list-item-des, .site-list-recomend-item-des {
   font-size: 17px;
-  color: #444444;
+  color: #444444 !important;
   letter-spacing: 1.5px; }
 
 .site-list-item-tag {
@@ -325,6 +325,18 @@ site content
   border: #FE7235 1px solid;
   padding: 4px 4px;
   margin: 0px 10px; }
+
+.site-list-recomend-item-title {
+  color: white  !important; }
+
+.site-list-recomend-item-des {
+  color: white !important; }
+
+.site-list-recommend-box {
+  margin-bottom: 0; }
+
+.site-list-recommend-item {
+  background-color: #157ABC; }
 
 /**
 site content
@@ -600,6 +612,7 @@ item
  * Posts
  */
 .post-header {
+  margin-top: 30px;
   margin-bottom: 30px; }
 
 .post-title {

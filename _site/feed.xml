@@ -1,1 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-10T20:18:59+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">超越技术</title><subtitle>图解算法，图解数据结构，LeectCode。</subtitle></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-08-10T22:32:19+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">超越技术</title><subtitle>图解算法，图解数据结构，LeectCode。</subtitle><entry><title type="html">前端学习资源汇总</title><link href="http://localhost:4000/wsy/2019/08/03/fe_res.html" rel="alternate" type="text/html" title="前端学习资源汇总" /><published>2019-08-03T09:50:51+08:00</published><updated>2019-08-03T09:50:51+08:00</updated><id>http://localhost:4000/wsy/2019/08/03/fe_res</id><content type="html" xml:base="http://localhost:4000/wsy/2019/08/03/fe_res.html">&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;超越技术&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;welcome&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;欢迎关注&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;公众号&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;welcome&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// 欢迎关注超越技术公众号&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p style=&quot;color: red;font-size: 20px&quot;&gt;关注超越技术，回复资源，即可获得电子书&lt;/p&gt;
+
+&lt;h3 id=&quot;入门需要逛的网站&quot;&gt;入门需要逛的网站&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web&quot;&gt;Web 开发技术 MDN&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.w3.org/2002/03/tutorials.html#webdesign_htmlcss&quot;&gt;W3C&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;框架&quot;&gt;框架&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://baidu.github.io/san/&quot;&gt;san&lt;/a&gt;，是一个 MVVM 的组件框架。它体积小巧（&amp;lt; 15K），兼容性好（IE6），性能卓越，是一个可靠、可依赖的实现响应式用户界面的解决方案。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cn.vuejs.org/&quot;&gt;vue&lt;/a&gt;，渐进式JavaScript 框架。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://reactjs.org/&quot;&gt;react&lt;/a&gt;，A JavaScript library for building user interfaces。&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">var name = &quot;超越技术&quot;; var welcome = &quot;欢迎关注&quot; + name + &quot;公众号&quot;; console.log(welcome); // 欢迎关注超越技术公众号</summary></entry></feed>

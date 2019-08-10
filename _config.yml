@@ -46,23 +46,3 @@ plugins:
 #         href: "",
 #         des: ""
 # },
-
-tool: {
-  title: "资源 —— 提升效率的武器",
-  des: "好用的工具汇总，比较好的资源推荐",
-  datas: [
-     {
-        title: "在线工具 VIP",
-        tag: "好多好多工具",
-        href: "https://atool.vip/#/",
-        des: "看了不后悔，很多很多工具"
-    },
-  ]
-}
-
-
-
-
-
-
-

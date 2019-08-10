@@ -1,6 +1,13 @@
 list: {
   title: "前端从 0 - 1",
   des: "如何自学前端，总结我学习前端的经历",
+  recommends: [ {
+        title: "吐血推荐学习前端资源汇总",
+        tag: "资源",
+        href: "/wsy/2019/08/03/fe_res.html",
+        des: "各种资源推荐"
+    },
+   ],
   datas: [
     {
         title: "深入 jekyll 中的布局样式 sass",

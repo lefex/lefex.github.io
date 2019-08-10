@@ -1,0 +1,24 @@
+---
+layout: post
+title:  "前端学习资源汇总"
+date:   2019-08-03 09:50:51 +0800
+categories: wsy
+---
+
+{% highlight javascript %}
+var name = "超越技术";
+var welcome = "欢迎关注" + name + "公众号";
+console.log(welcome);
+// 欢迎关注超越技术公众号
+{% endhighlight %}
+
+<p style="color: red;font-size: 20px">关注超越技术，回复资源，即可获得电子书</p>
+
+### 入门需要逛的网站
+- [Web 开发技术 MDN](https://developer.mozilla.org/zh-CN/docs/Web)
+- [W3C](https://www.w3.org/2002/03/tutorials.html#webdesign_htmlcss)
+
+### 框架
+- [san](https://baidu.github.io/san/)，是一个 MVVM 的组件框架。它体积小巧（< 15K），兼容性好（IE6），性能卓越，是一个可靠、可依赖的实现响应式用户界面的解决方案。
+- [vue](https://cn.vuejs.org/)，渐进式JavaScript 框架。
+- [react](https://reactjs.org/)，A JavaScript library for building user interfaces。

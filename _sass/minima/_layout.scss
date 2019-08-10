@@ -129,20 +129,14 @@ site content
 .site-list-item-title {
   font-size: 20px;
   font-weight: 900;
-  color: #2e3135;
+  color: #2e3135 !important;
   margin-top: 15px;
 }
 
 .site-list-item-des {
   font-size: 17px;
-  color: #444444;
+  color: #444444 !important;
   letter-spacing: 1.5px;
-  // text-align: justify;
-  // -webkit-line-clamp: 2;
-  // display: -webkit-box;
-  // -webkit-box-orient: vertical;
-  // overflow: hidden;
-  // text-overflow: ellipsis;
 }
 
 .site-list-item-tag {
@@ -154,6 +148,22 @@ site content
   margin: 0px 10px;
 }
 
+.site-list-recomend-item-title {
+  @extend .site-list-item-title;
+  color:white  !important;
+}
+.site-list-recomend-item-des {
+  @extend .site-list-item-des;
+  color: white !important;
+}
+.site-list-recommend-box {
+  @extend .site-list-box;
+  margin-bottom: 0;
+}
+.site-list-recommend-item {
+  @extend .site-list-item;
+  background-color: $theme-color;
+}
 /**
 site content
 */ 
@@ -513,6 +523,7 @@ item
  * Posts
  */
 .post-header {
+  margin-top: $spacing-unit;
   margin-bottom: $spacing-unit;
 }
 
