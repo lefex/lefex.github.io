@@ -5,13 +5,13 @@ permalink: /data_structure/
 ---
 
 <div class="page-top-box">
-    <p class="site-item-title">{{site.data_structures.title}}</p>
-    <p class="site-item-subtitle">{{site.data_structures.des}}</p>
+    <p class="site-item-title">{{site.data.data_structure.list.title}}</p>
+    <p class="site-item-subtitle">{{site.data.data_structure.list.des}}</p>
 </div>
 
 <div class="site-list-box">
 
-    {%- for item in site.data_structures.datas -%}
+    {%- for item in site.data.data_structure.list.datas -%}
     <div class="site-list-item">
         <p class="site-list-item-title"><a target="_black" href="{{item.href}}">{{item.title}}</a><span class="site-list-item-tag">
             {{item.tag}}

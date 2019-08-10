@@ -5,13 +5,13 @@ permalink: /algorithm/
 ---
 
 <div class="page-top-box">
-    <p class="site-item-title">{{site.algorithm.title}}</p>
-    <p class="site-item-subtitle">{{site.algorithm.des}}</p>
+    <p class="site-item-title">{{site.data.algorithm.list.title}}</p>
+    <p class="site-item-subtitle">{{site.data.algorithm.list.des}}</p>
 </div>
 
 <div class="site-list-box">
 
-    {%- for item in site.algorithm.datas -%}
+    {%- for item in site.data.algorithm.list.datas -%}
     <div class="site-list-item">
         <p class="site-list-item-title"><a target="_black" href="{{item.href}}">{{item.title}}</a><span class="site-list-item-tag">
             {{item.tag}}

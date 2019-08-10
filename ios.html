@@ -5,13 +5,13 @@ permalink: /ios/
 ---
 
 <div class="page-top-box">
-    <p class="site-item-title">{{site.ios.title}}</p>
-    <p class="site-item-subtitle">{{site.ios.des}}</p>
+    <p class="site-item-title">{{site.data.ios.list.title}}</p>
+    <p class="site-item-subtitle">{{site.data.ios.list.des}}</p>
 </div>
 
 <div class="site-list-box">
 
-    {%- for item in site.ios.datas -%}
+    {%- for item in site.data.ios.list.datas -%}
     <div class="site-list-item">
         <p class="site-list-item-title"><a target="_black" href="{{item.href}}">{{item.title}}</a><span class="site-list-item-tag">
             {{item.tag}}

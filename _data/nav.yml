@@ -1,0 +1,28 @@
+list: {
+  datas: [
+    {
+      title: "超越技术",
+      href: "/"
+    },
+    {
+      title: "数据结构",
+      href: "/data_structure/"
+    },
+    {
+      title: "通用技术",
+      href: "/common/"
+    },
+    {
+      title: "算法",
+      href: "/algorithm/"
+    },
+    {
+      title: "前端",
+      href: "/fe/"
+    },
+    {
+      title: "关于我",
+      href: "/about/"
+    },
+  ]
+}

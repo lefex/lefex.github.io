@@ -247,30 +247,42 @@ table {
   padding-top: 8px; }
 
 .site-banner {
+  background-color: #483BB9;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   flex: 1;
   background-image: url("/assets/banner_bg.png");
   display: flex;
-  height: 200px; }
+  height: 260px; }
 
 .site-banner-title {
-  font-size: 50px;
+  font-size: 46px;
   color: white;
   text-align: center;
   align-self: center;
-  flex: 1; }
+  flex: 1;
+  margin-top: 40px; }
 
-.site-banner-img {
-  width: 120px;
-  height: 120px;
-  margin-right: 40px; }
-  @media screen and (max-device-width: 500px) {
-    .site-banner-img {
-      width: 0px;
-      height: 0px;
-      margin-right: 0px; } }
+.site-banner-btn {
+  font-size: 20px;
+  color: #157ABC !important;
+  background-color: white;
+  border-radius: 4px;
+  border-width: 1px;
+  border-color: gray;
+  border-style: solid;
+  text-align: center;
+  width: 300px;
+  padding: 8px;
+  margin-bottom: 40px;
+  font-weight: 400; }
+  .site-banner-btn:hover {
+    text-decoration: underline; }
+  .site-banner-btn:active {
+    text-decoration: none; }
+  .site-banner-btn:focus {
+    text-decoration: none; }
 
 /**
 site content

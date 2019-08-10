@@ -1,0 +1,46 @@
+list: {
+  datas: [
+    {
+        title: "数据结构",
+        img: "../assets/0.png",
+        href: "/data_structure/",
+        link-title: "查看数据结构内容",
+        des: "图解数据结构主要包含了链表、二叉树、AVL 树、二分搜索树、红黑树、线段树、B树、数组、HashMap、堆、队列、优先队列等数据结构。以图解的方式，使得学习数据结构更简单。"
+    },
+    {
+        title: "算法&LeetCode",
+        img: "../assets/1.png",
+        href: "/algorithm/",
+        link-title: "查看算法内容",
+        des: "以图解的方式让算法活起来，比如 10 大排序算法、算法思想、LeetCode 题目，这部分内容与数据结构会有一定的关联。"
+    },
+    {
+        title: "前端",
+        img: "../assets/2.png",
+        href: "/fe/",
+        link-title: "查看前端内容",
+        des: "前端从 0 - 1，记录了我从 iOS 开发转向前端经历过的路程。从 HTML、CSS、JS 出发，逐步过渡到框架中，从中提取编程思想。"
+    },
+    {
+        title: "计算机通用技术",
+        img: "../assets/3.png",
+        href: "/common/",
+        link-title: "查看计算机通用技术内容",
+        des: "包括计算机网络、字符编码、编程思想、语言、编译原理、设计模式、代码重构等内容，总之会从 iOS 和前端中提炼出编程中共用的编程思想。"
+    },
+    {
+        title: "资源集",
+        img: "../assets/4.png",
+        href: "/tool/",
+        link-title: "查看资源",
+        des: "总结了编程中常用的工具和学习资源，比如：Json 解析、二维码生成、Bas64 转码、图片压缩 、比较好的学习资料。"
+    },
+    {
+        title: "iOS 技术",
+        img: "../assets/5.png",
+        href: "/ios/",
+        link-title: "查看 iOS 内容",
+        des: "我的本职工作是 iOS，这个专题总结了平时开发种遇到的问题，以及源码分析和一些技术文章。"
+    },    
+]
+}

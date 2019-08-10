@@ -1,0 +1,48 @@
+list: {
+  title: "计算机通用技术 —— 那些不变的技术",
+  des: "很多技术思想是一样的",
+  datas: [
+     {
+        title: " 分析一个App需要的技术手段 ",
+        tag: "逆序",
+        href: "https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484391&idx=1&sn=7684c851bc3a9f9ebd234014baffe706&chksm=fabb0374cdcc8a62b1ae5f469e9aac5a1a35853627296f47da18e24216036cbc56887bf12cfb&token=2045356700&lang=zh_CN#rd",
+        des: "通过逆序技术分析微信"
+    },
+    {
+        title: "程序中如何更好地处理状态",
+        tag: "设计模式",
+        href: "https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484358&idx=1&sn=3937392ae19589f6dfcd3ffc36a41735&chksm=fabb0355cdcc8a4333f6e5efa6f06bb2ebfe5ad761d41bc1bfa50c3b741963706d9984b6913d&token=2045356700&lang=zh_CN#rd",
+        des: "最近看了《JavaScript设计模式与开发实践》这本书，它是我看过把设计模式讲的最好的书，书中通过具体的业务来讲解「设计模式」，好多时候都会与作者产生共鸣。今天我们的目的是如何通过「状态模式」来实现一个下载状态的管理。"
+    },
+    {
+        title: "2019 年新开源的 JavaScript 引擎 QuickJS ",
+        tag: "QuickJS",
+        href: "https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484354&idx=1&sn=00688645ad4dc5a96778f1918aa51d33&chksm=fabb0351cdcc8a4779346925e4344d375b901bf892ddf2b47b7b2ffc3c30c9fb9bb123620fa9&token=2045356700&lang=zh_CN#rd",
+        des: "QuickJS 2019年7月9日 Fabrice Bellard 开源了一款 JavaScript 引擎，使用 MIT 协议。Fabrice Bellard 是一位计算机奇才，著名的多媒体播放器 FFmpeg 就是由他发起，一生中开源了很多项目，比如 QEMU 等。"
+    },
+    {
+        title: "如何学懂正则表达式 ",
+        tag: "正则表达式",
+        href: "https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484289&idx=1&sn=6692ffd18e4e5f4cf010aeb500518c5e&chksm=fabb0312cdcc8a0425b3519be14fd2082b7c24b8c965c08ad475738789eee6a3c39cb84c3175&token=2045356700&lang=zh_CN#rd",
+        des: "有时候一个正则表达式能「少写100行代码」，工作中经常会用到，我们需要学懂它，本文介绍如何「学懂」正则表达式，并推荐GitHub上最火的正则表达式项目和可视化正则表达式。"
+    },
+    {
+        title: "我原来不懂递归",
+        tag: "递归",
+        href: "https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484175&idx=1&sn=97c2c47f12cd6c9ab0f280290f6eab4f&chksm=fabb039ccdcc8a8a876558ed96ca2e1370bcebe756fe6b349b56cd0fbdaaa08d973c03a09b21&token=2045356700&lang=zh_CN#rd",
+        des: "理解递归可以通过画图的方式把整个流程画出来，理解起来就会清晰很多，也可以通过打印的方式，打印每一步执行的值。"
+    },
+    {
+        title: "你知道 Base64 编码中的 64 指的是什么吗？",
+        tag: "Base64",
+        href: "https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484215&idx=1&sn=3e9348a291fc4c04ab042223e504eb82&chksm=fabb03a4cdcc8ab29b5869945eb7bef0fd9104617baaa8acca6944698745147617806d759c11&token=2045356700&lang=zh_CN#rd",
+        des: "base64 编码总位数为 4 的倍数，若不够用以 “=” 补全。这就是为什么总会看到base64编码后有时会多出几个“=”号的原因。满足 3*8 = 4*6 原则。"
+    },
+    {
+        title: "8D85-8D8A-6280-672F ？ ",
+        tag: "UTF8 Unicode",
+        href: "https://mp.weixin.qq.com/s?__biz=MzUzMTk3ODc0OA==&mid=2247484176&idx=1&sn=b710a3947595838e765b5e678852afa2&chksm=fabb0383cdcc8a956b84f5b8d815c0c7b8d84b70e6f97767e7306857b27bd75069f5e31c8be9&token=2045356700&lang=zh_CN#rd",
+        des: "计算机能够很容易理解 8D85-8D8A-6280-672F 这串数字的含义，而对于人类却很难知道其具体意义。这串编码是 Unicode 编码，转换成汉子就是本公众号的名字：超越技术。"
+    },
+  ]
+}
