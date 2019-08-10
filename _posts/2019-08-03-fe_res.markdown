@@ -22,3 +22,9 @@ console.log(welcome);
 - [san](https://baidu.github.io/san/)，是一个 MVVM 的组件框架。它体积小巧（< 15K），兼容性好（IE6），性能卓越，是一个可靠、可依赖的实现响应式用户界面的解决方案。
 - [vue](https://cn.vuejs.org/)，渐进式JavaScript 框架。
 - [react](https://reactjs.org/)，A JavaScript library for building user interfaces。
+
+### 博客推荐
+- [zhangxinxu](https://www.zhangxinxu.com/)
+- [FEX 百度前端团队](http://fex.baidu.com/)
+- [AlloyTeam 腾讯](http://www.alloyteam.com/)
+- [FED 淘宝前端团队](https://fed.taobao.org/)
