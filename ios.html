@@ -1,6 +1,6 @@
 ---
 layout: nav-page
-title: 
+title:
 permalink: /ios/
 ---
 
@@ -9,14 +9,27 @@ permalink: /ios/
     <p class="site-item-subtitle">{{site.data.ios.list.des}}</p>
 </div>
 
+<div class="site-list-recommend-box">
+    {%- for item in site.data.ios.list.recommends -%}
+    <div class="site-list-recommend-item">
+        <p class="site-list-recomend-item-title"><a class="site-list-recomend-item-title" target="_black"
+                href="{{item.href}}">{{item.title}}</a></p>
+        <p class="site-list-recomend-item-des"> <a class="site-list-recomend-item-des" target="_black"
+                href="{{item.href}}">{{item.des}}</a></p>
+    </div>
+    {%- endfor -%}
+</div>
+
 <div class="site-list-box">
 
     {%- for item in site.data.ios.list.datas -%}
     <div class="site-list-item">
-        <p class="site-list-item-title"><a class="site-list-item-title" target="_black" href="{{item.href}}">{{item.title}}</a><span class="site-list-item-tag">
-            {{item.tag}}
-        </span></p>
-        <p class="site-list-item-des"> <a class="site-list-item-des" target="_black" href="{{item.href}}">{{item.des}}</a></p>
+        <p class="site-list-item-title"><a class="site-list-item-title" target="_black"
+                href="{{item.href}}">{{item.title}}</a><span class="site-list-item-tag">
+                {{item.tag}}
+            </span></p>
+        <p class="site-list-item-des"> <a class="site-list-item-des" target="_black"
+                href="{{item.href}}">{{item.des}}</a></p>
     </div>
     {%- endfor -%}
 </div>

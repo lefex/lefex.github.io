@@ -6,13 +6,13 @@ categories: wsy
 ---
 
 {% highlight javascript %}
-var name = "超越技术";
+var name = "素燕";
 var welcome = "欢迎关注" + name + "公众号";
 console.log(welcome);
-// 欢迎关注超越技术公众号
+// 欢迎关注素燕公众号
 {% endhighlight %}
 
-<p style="color: red;font-size: 20px">关注超越技术，回复资源，即可获得电子书</p>
+<p style="color: red;font-size: 20px">关注<strong>素燕</strong>公众号，回复资源，即可获得电子书</p>
 
 ### 入门需要逛的网站
 - [Web 开发技术 MDN](https://developer.mozilla.org/zh-CN/docs/Web)

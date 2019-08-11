@@ -1,6 +1,13 @@
 list: {
   title: "iOS —— 过去5年走过的路",
   des: "iOS是我的本职工作，这里记录我以往经验",
+    recommends: [ {
+        title: "前往知识小集查看更多iOS内容>",
+        tag: "知识小集",
+        href: "https://awesome-tips.github.io/",
+        des: "知识小集拥有更多iOS学习专题"
+    },
+    ],
   datas: [
      {
         title: "一本走心的 JS-Native 交互电子书",
