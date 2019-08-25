@@ -9,6 +9,24 @@ list: {
     },
    ],
   datas: [
+      {
+        title: "图解CSS - 搞懂基本布局 position",
+        tag: "position",
+        href: "https://mp.weixin.qq.com/s/9zKKshCQdt8mXTjeFYsrPw",
+        des: "前面几篇文章「简单」地介绍了 CSS 布局，但是讲的太浅，发现真正在项目中使用的时候「力不从心」，今天再次学习 position 布局，争取搞懂它。"
+   },
+   {
+        title: "图解CSS - margin collapsing（外边距折叠）",
+        tag: "margin collapsing",
+        href: "https://mp.weixin.qq.com/s/7kzUI4MQZKbNqN0yxUdFuQ",
+        des: "有一种情况，设置子元素的 margin-top 后，发现子元素没有效果，父元素反而发生了偏移。"
+   },
+   {
+        title: "图解CSS - 实现悬停效果",
+        tag: "悬停",
+        href: "https://mp.weixin.qq.com/s/6FLyMwUolFbcwEp_RmgStQ",
+        des: "在端开发中，iOS 中有一种独特的效果「悬停」，当滚动到某个位置时，某个 view 会悬停到某个位置不动，比如微信通讯录的字母标签当滑动的时候字母标签会悬停。"
+   },
     {
         title: "深入 jekyll 中的布局样式 sass",
         tag: "sass",
@@ -81,5 +99,11 @@ list: {
         href: "https://mp.weixin.qq.com/s?__biz=MzI5MTY0ODAwNQ==&mid=2247483760&idx=1&sn=cd00fb857f857f5434e1db75828346e6&chksm=ec0c261adb7baf0ca08c8456d4a7c1e503edaf4f7f781e0cb56f6cce36e7517e0ab8c2d17354&token=244677597&lang=zh_CN#rd",
         des: "最近业余时间在学习数据结构、算法和前端，学习前端的原因在前面我有提到过，感兴趣的同学可以看看 开启我的前端之路。我本身是做 iOS 的，对移动端比较了解。"
     },
+    {
+        title: "深入 jekyll 中的布局样式 sass",
+        tag: "sass",
+        href: "https://mp.weixin.qq.com/s/6FLyMwUolFbcwEp_RmgStQ",
+        des: "sass 能够更「便捷」地使用 CSS，也方便维护，更好地复用，带来的不足就是需要学习成本和 sass 转换到 css 的时间成本。为了效率和更方便地维护代码，sass 成为了 css 的替代品。"
+   },
 ]
 }
