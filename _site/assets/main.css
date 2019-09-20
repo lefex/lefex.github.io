@@ -264,6 +264,9 @@ table {
   flex: 1;
   margin-top: 40px; }
 
+@media screen and (max-device-width: 500px) {
+  .site-banner-title {
+    font-size: 30px; } }
 .site-banner-btn {
   font-size: 20px;
   color: #157ABC !important;
@@ -318,6 +321,9 @@ site content
   color: #444444 !important;
   letter-spacing: 1.5px; }
 
+@media screen and (max-device-width: 500px) {
+  .site-list-item-des, .site-list-recomend-item-des {
+    font-size: 15px; } }
 .site-list-item-tag {
   color: #F04A4D;
   font-size: 14px;

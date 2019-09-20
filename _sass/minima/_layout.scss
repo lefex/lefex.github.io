@@ -77,6 +77,12 @@
   margin-top: 40px;
 }
 
+@media screen and (max-device-width: $iphone-with) {
+  .site-banner-title {
+    font-size: 30px;
+  }
+}
+
 .site-banner-btn {
   font-size: 20px;
   color: $theme-color !important;
@@ -137,6 +143,12 @@ site content
   font-size: 17px;
   color: #444444 !important;
   letter-spacing: 1.5px;
+}
+
+@media screen and (max-device-width: $iphone-with) {
+  .site-list-item-des  {
+    font-size: 15px;
+  }
 }
 
 .site-list-item-tag {
