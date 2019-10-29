@@ -216,26 +216,19 @@ table {
     width: 100%; }
 
   .site-nav-box {
-    padding-top: 0px;
     display: flex;
     flex-direction: row;
-    height: 0px;
-    justify-content: space-around;
-    padding-left: 0px;
-    padding-right: 0px; } }
+    justify-content: space-around; } }
 @media screen and (min-device-width: 500px) {
   .site-header {
-    height: 90px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     background-color: white; }
 
   .site-nav-box {
-    padding-top: 20px;
     display: flex;
     flex-direction: row;
-    height: 70px;
     justify-content: space-around;
     padding-left: 40px;
     padding-right: 40px; } }
@@ -244,7 +237,13 @@ table {
   text-align: center;
   color: #777777;
   font-size: 24px;
-  padding-top: 8px; }
+  padding: 15px 0; }
+  .site-nav-item:visited {
+    color: #777777;
+    text-decoration: none; }
+  .site-nav-item:hover {
+    color: #2a7ae2;
+    text-decoration: underline; }
 
 .site-banner {
   background-color: #483BB9;

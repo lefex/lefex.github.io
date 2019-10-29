@@ -15,44 +15,43 @@
     width: 100%;
   }
   .site-nav-box {
-    padding-top: 0px;
     display: flex;
     flex-direction: row;
-    height: 0px;
     justify-content: space-around;
-    padding-left: 0px;
-    padding-right: 0px;
   }
 }
 // 电脑屏幕
 @media screen and (min-device-width: $iphone-with) {
   .site-header {
-    height: 90px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     background-color: white;
   }
   .site-nav-box {
-    padding-top: 20px;
     display: flex;
     flex-direction: row;
-    height: 70px;
     justify-content: space-around;
     padding-left: 40px;
     padding-right: 40px;
   }
 }
 
-
-
-
+// 导航菜单样式
 .site-nav-item {
   flex: 1;
   text-align: center;
-  color: #777777;
+  color: $nav-nomal-color;
   font-size: 24px;
-  padding-top: 8px;
+  padding: 15px 0;
+  &:visited {
+    color: $nav-nomal-color;
+    text-decoration: none;
+  }
+  &:hover {
+    color: $brand-color;
+    text-decoration: underline;
+  }
 }
 
 // Banner
