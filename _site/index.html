@@ -2,7 +2,9 @@
 <html lang="en"><head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.0 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+    <script src="https://unpkg.com/swiper/js/swiper.js"></script><!-- Begin Jekyll SEO tag v2.6.0 -->
 <title>超越技术 | 图解算法，图解数据结构，LeectCode。</title>
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="超越技术" />
@@ -21,10 +23,26 @@
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="site-banner">
-    <p class="site-banner-title">关注素燕公众号，及时获得更新</p>
-    <a  class="site-banner-btn" href="/about/">立即关注 ></a>
+        <!-- 首页轮播图 -->
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+      <div class="swiper-slide" style="background-image:url('../assets/banner-1.png')"></div>
+      <div class="swiper-slide" style="background-image:url('../assets/banner-2.png')"></div>
+      <div class="swiper-slide" style="background-image:url('../assets/banner-3.png')"></div>
+      <div class="swiper-slide" style="background-image:url('../assets/banner-4.png')"></div>
+      <div class="swiper-slide" style="background-image:url('../assets/banner-5.png')"></div>
+      <div class="swiper-slide" style="background-image:url('../assets/banner-6.png')"></div>
+      <div class="swiper-slide" style="background-image:url('../assets/banner-7.png')"></div>
+      <div class="swiper-slide" style="background-image:url('../assets/banner-8.png')"></div>
+      <div class="swiper-slide" style="background-image:url('../assets/banner-9.png')"></div>
+  </div>
+  <!-- Add Pagination -->
+  <div class="swiper-pagination swiper-pagination-white"></div>
+  <!-- Add Arrows -->
+  <div class="swiper-button-next swiper-button-white"></div>
+  <div class="swiper-button-prev swiper-button-white"></div>
 </div>
+
 <div>
   <div class="site-content"><div class="site-item-box">
           <div class="site-item-top">
@@ -106,6 +124,26 @@
           </div>
         </div><!-- end -->
   </div>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper('.swiper-container', {
+      spaceBetween: 30,
+      effect: 'fade',
+      autoplay: {
+          delay: 4500,
+          disableOnInteraction: false,
+      },
+      pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+      },
+      navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+      },
+  });
+</script>
       </div>
     </main><footer>
   <div class="site-footer">

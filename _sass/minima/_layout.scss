@@ -54,16 +54,16 @@
   }
 }
 
-// Banner
-.site-banner {
-  background-color: #483BB9;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1;
-  background-image: url("/assets/banner_bg.png");
-  display: flex;
-  height: 260px;
+// 首页轮播图Banner
+.swiper-container {
+  width: 100%;
+  height: 300px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  background-color: white;
 }
 
 // 标题
