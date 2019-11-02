@@ -22,7 +22,7 @@ list: {
       list:  [{
           img: './assets/rm-1.png',
           title: '图解FlexBox布局，不一样的体验',
-          link: ''
+          link: '/wsy/2019/11/01/flexbox.html'
       },{
           img: './assets/rm-2.png',
           title: '图解Grid布局，一起来盖别墅',

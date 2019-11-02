@@ -1,0 +1,580 @@
+---
+layout: post
+title:  "图解 FlexBox 布局(非常详细)"
+date:   2019-11-01 09:50:51 +0800
+author: lefex
+categories: wsy
+---
+
+本文首次发表于公众号素燕，《前端小课》专题，3 篇文章合并为一篇。建议阅读原文：
+
+- [图解 FlexBox 布局（上）](https://mp.weixin.qq.com/s/T-Z_8he9UxBBfL8Jb3zwtA)
+
+- [图解 FlexBox 布局（下）](https://mp.weixin.qq.com/s/uct9apWqgznde1m2IMVgwA)
+
+- [深入理解 FlexBox 布局的弹性](https://mp.weixin.qq.com/s/XG5QeIUF-qkBAqd_jlUV9g)
+
+## 前言
+
+今天介绍一种非常重要的布局方式 FlexBox，它不仅在前端中应用广泛，同时在移动端也占有非常重要的地位，比如 iOS 中的UIStackView，Facebook 的 Yoga 库；微信小程序和 RN 都支持这种布局方式。各大浏览器对 FlexBox 支持比较完善，尤其对于移动 Web，iOS 和 Android 在很早的版本中就支持了这种布局。所有我建议无论是移动端，还是泛前端的同学都应该学习一下这种布局方式。
+
+很早以前，做小程序的时候我便开始接触这种布局方式，开始时主要看了网上几篇关于 FlexBox 布局的讲解，但是看完还是比较模糊，我一直寻找比较官方的介绍，直到学前端的时候才找到了 MDN，看完 MDN 上的介绍使我对 FlexBox有了深刻的理解。学习这种布局方式建议以官方文档为主，其它教程为辅。
+这是我第 3 次写 FlexBox 布局教程，希望这次能把它写的更通俗易懂。理解 FlexBox 布局的关键点是理解它的「弹性」，它可以通过父元素来控制子元素如何布局。比如通过一个 400*100 的flex容器（上文中的父元素），控制 3 个子元素的不同显示方式，如果使用其它布局方式，会有这么简单吗？
+
+![7-1.png](/images/flexbox/7-1.png)
+
+而且代码很简单：
+
+```css
+.main {
+    background-color: antiquewhite;
+    display: flex;
+    width: 400px;
+    height: 60px;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+.space-around {
+    justify-content: space-around;
+}
+.center {
+    justify-content: center;
+}
+.end {
+    justify-content: flex-end;
+}
+```
+
+```html
+<div class="main">
+    <div>前端小课</div>
+    <div>FlexBox布局</div>
+    <div>公众号：素燕</div>
+</div>
+```
+
+如果某个元素想采用 FlexBox 布局，需要通过 display: flex 来指定，一旦指定这个 CSS 属性，它将变成 Flex 容器（flex container），它的「直接子元素」即可通过 flex 布局属性来控制其显示方式，这些「直接子元素」被称为 flex-item。
+
+## 基本概念
+
+网上流传盛广的一张图：
+
+![7-2.png](/images/flexbox/7-2.png)
+
+这张图没问题，但是读者往往会忽略这张图的一个前提条件：`布局方向`。FlexBox
+布局可以通过 flex-direction 来控制 flex-item 
+的布局方向。在不同的布局方向下，这张图的表现形式是不一样的，以至于“我”以前一直以为主轴是水平方向，纵轴是垂直方向，后来我发现我被误导了。这张图完全可以改善一下：
+
+![7-3.png](/images/flexbox/7-3.png)
+
+需要解释几个概念：
+
+- `flex-container`：布局容器，使用 display：flex 的标签；
+- `flex-item`: 容器中的直接子元素；
+- `main-axis`：主轴，布局方向为 row 或者 row-reverse 时它是水平方向。布局方向为 column 或者 column-reverse 时它是垂直方向。
+- `cross-axis`: 纵轴，与主轴垂直的轴；
+- `main-start`: 主轴的起点，布局方向为 row 时它的起点在左侧，row-reverse 为右侧。布局方向为 column 时起点在顶部，column-reverse 时起点为底部。
+- `main-end`: 主轴结束的点，与 main-start 相反；
+- `cross-start`: 纵轴的起点；
+- `cross-end`：纵轴的结束点，与 cross-start 相反；
+
+flex-container 和 flex-item 都有自己的属性，容器的属性是用来控制所有 flex-item 的布局，以「组」的形式来控制 item 的排列方式。而 item 的属性是用来「单独」控制自己该如何显示。常用的属性：
+
+![7-4.png](/images/flexbox/7-4.png)
+
+## 容器属性
+
+#### 1.flex-direction: 布局方向
+
+它决定 flex-item 是从左到右、从右到左、从上到下、还是从下到上进行布局，它会影响主轴的方向，以及items 的布局起点位置。它主要包含 4 个值：
+
+- row（默认）：从水平方向的左侧开始布局；
+- row-reverse：从水平方向的右侧开始布局；
+- column：从垂直方向的顶部开始布局；
+- column-reverse: 从垂直方向的底部开始布局；
+
+```css
+.main {
+    display: flex;
+    flex-direction: row;
+}
+```
+
+![7-5.png](/images/flexbox/7-5.png)
+
+#### 2.justify-content: 它决定「主轴」items 的对齐方式
+
+flex-direction 会影响主轴的方向，这一点需要注意，主轴不一定是水平方向，不能把 justify-content 看做是控制水平方向的对齐方式。它主要有以下几个值：
+
+- flex-start（默认）：与主轴的起始位置（main start）对齐；
+- flex-end：与主轴的结束位置（main end）对齐；
+- center：居中于主轴；
+- space-around: 左右边距是中间的 1/2；
+- space-evenly: 每个 item 的间距相等；
+- space-between: 左右无边距；
+
+下图是 flex-direction: row 的情况：
+
+![7-6.png](/images/flexbox/7-6.png)
+
+
+
+把 flex-direction 改为 column 后主轴发生了变化，需要容器的高度大于所有 item 的高度才能看出效果，把所有的 item 进行垂直对齐，效果如下：
+
+![7-7.png](/images/flexbox/7-7.png)
+
+#### 3.align-items: 它决定「纵轴」items 的对齐方式
+
+flex-direction 会影响纵轴的方向，这一点需要注意，纵轴不一定是垂直方向，不能把 align-items 看做是控制垂直方向的对齐方式。它主要有以下几个值：
+
+- flex-start（默认）：与纵轴的起始位置（cross start）对齐；
+- flex-end：与纵轴的结束位置（cross end）对齐；
+- center：居中与纵轴；
+- baseline：与基线对齐；
+- stretch：扩展满纵轴；
+
+![7-8.png](/images/flexbox/7-8.png)
+
+#### 4.flex-wrap: items 超出容器后该如何显示，是否要多行显示
+
+如果为多行显示，可以把每行看做是一个容器，图中主轴对齐方式为 space-around，每行对齐方式都为 space-around。它有以下几个值：
+
+- nowrap（默认）：单行显示；
+- wrap：多行显示；
+- wrap-reverse：多行显示；
+
+![7-9.png](/images/flexbox/7-9.png)
+
+#### 5.flex-flow
+
+它是 flex-direction 和 flex-wrap 的简写，比如 flex-flow: row nowrap，表示 flex-direction 为 row，flex-wrap 为 nowrap。
+
+#### 6.align-content
+
+如果为「多行」时，它表示在「纵轴」方向的对齐方式。它的值与 justify-content 值相同。
+
+![7-10.png](/images/flexbox/7-10.png)
+
+## flex-item 相关的属性
+
+flex-item 最重要的 3 个属性是 `flex-grow`（扩展比例）、`flex-shrink`（收缩比例）、`flex-basis`（伸缩基准），它们决定了 item 在「主轴」上的尺寸，只有彻底理解了这 3 个属性，才能彻底理解 FlexBox 布局。下面以 flex-direction 为 row（主轴为水平方向） 进行说明 3 个属性是如何计算布局的。
+
+#### 1.flex-grow（扩展比例）：占剩余空间的比例
+
+由于 flex-grow 会受 flex-basis 的影响，所有下面的例子假如 flex-basis 的值为 auto。它的作用就是，当所有的  item 未占满容器的宽度时，item 该如何扩充自己以填满容器的剩余空间。理解这个属性前关键要理解剩余空间，在 flex 容器中，如果所有  item 的宽度和小于容器的宽度，那么容器的剩余空间等于容器宽度减去所有item宽度的和。每个 item 的宽度为 150px，容器宽度为  600 px，剩余空间为 600 - 3*150 = 150px， 一图胜千言：
+
+![7-11.png](/images/flexbox/7-11.png)
+
+如果给每个 item 设置 flex-grow 为 1，它表示每个 item 占用相同比例的剩余空间，这样每个 item 增加的宽度为 150 * 1/3  = 50px。最终效果变成：
+
+![7-12.png](/images/flexbox/7-12.png)
+
+flex-grow 的默认值为 0，表示即使有剩余空间，item 也不会扩充。它不能为负数，但是可以为小数，如果上面的例子中，给每个 item 设置 flex-grow 为 0.2，这样每个 item 增加的宽度为 150 * 0.2  = 30px，最终还会有 60px 的剩余空间未被占用。
+
+总之 flex-grow 的值可以理解成比例，总剩余空间可以看成 1，剩余空间会受 flex-basis 影响，下面会提到这个属性的使用。还有一点需要明确，item 增长会受 max-width 的影响，增长后的最大长度只能是 max-width。
+
+#### 2.flex-shrink（收缩比例）：占缺少空间的比例（比例计算后面有详细讲解）
+
+当所有的 item 的宽度和大于容器的宽度，就会出现容器空间不足的情况，这时可以通过缩放比例来缩放每个 item 的宽度。假如每个 item 的宽度为 250px，容器宽度为 600 px，缺少空间为 600 - 3*250 = -150px， 一图胜千言：
+
+![7-13.png](/images/flexbox/7-13.png)
+
+一旦出现空间不足，可以通过 flex-shrink 控制每个 item 是否要进行缩放，缩放的比例是多少。如果设置 flex-shrink：1，每个 item 将缩放同样的宽度，其值为 150 * 1/3 = 50px，效果如下：
+
+![7-14.png](/images/flexbox/7-14.png)
+
+flex-shrink 的默认值是 1，也就是说当空间不足的时候，item 会以同样的尺寸进行缩放。但是这个属性和 flex-grow 
+在极端的情况下表现并不相同，因为在缩小的过程中，不会把 item 的尺寸缩小到 0，它会受 min-content 的影响，也会受 
+min-width 的影响，缩到一定尺寸后它就不再进行缩放了。
+
+#### 3.flex-basis（伸缩基准）
+
+它表示item 未扩展或收缩之前的宽度，可以理解为 item 未放入容器时该有的尺寸，默认值是 auto。它会影响剩余空间和不足空间的计算，它对 flex-grow 和 flex-shrink 有很大的影响。为了更容易说明问题，写了个 demo，下面关于不同属性值的介绍会根据这个 demo 来说明。主要代码：
+
+```css
+.main {
+    margin: 20px;
+    background-color: #eeeeee;
+    display: flex;
+    width: 600px;
+    height: 200px;
+}
+div div {
+    height: 40px;
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+}
+
+div div:nth-child(1) {
+    background-color: red;
+}
+
+div div:nth-child(2) {
+    background-color: black;
+}
+
+div div:nth-child(3) {
+    background-color: purple;
+}
+```
+
+最外层的 div（main选择器） 为 FlexBox 容器，它的直接子元素为 flex-item，共有 3 个：
+
+```html
+<div class="main">
+    <div>前端小课</div>
+    <div>FlexBox World</div>
+    <div>Layout For CSS</div>
+</div>
+```
+
+效果如下，这个时候 flex-item 的属性都是默认属性。
+flex-grow：0，表示即使有剩余空间也不会扩展；
+flex-shink：1，如果空间不足将会缩小；
+flex-basis：auto，自动计算 item 的初始宽度，浏览器首先会看是否给 item 设置了宽度，代码中未设置则使用的是内容的宽度；
+
+![7-15.png](/images/flexbox/7-15.png)
+
+- 修改第一个 item 的选择器，设置它的宽度为 160px，发现 flex-basis 的值变为了 160px。也就说如果 item 设置了宽度（width: 160px），那么 flex-basis 的值就是 item 的宽度：
+
+```css
+div div:nth-child(1) {
+    background-color: red;
+    width: 160px;
+}
+```
+
+![7-16.png](/images/flexbox/7-16.png)
+
+- 再次修改第一个 item 的选择器，设置它的 flex-basis 属性值为 120px，发现 item 的宽度变成了 120px：
+
+```css
+div div:nth-child(1) {
+    background-color: red;
+    width: 160px;
+    flex-basis: 120px;
+}
+```
+
+![7-17.png](/images/flexbox/7-17.png)
+
+- 再次修改第一个 item 的选择器，设置它的 max-size 属性值为 110px，发现 item 的宽度变成了 110px：
+
+![7-18.png](/images/flexbox/7-18.png)
+
+- 设置 item 的 flex-basis：0，flex-grow：1，最终效果是所有的 item 的尺寸都是一样，设置 flex-basis 为 0 时相当于所有的空间都可以进行分配，每个 item 的初始宽度为 0，这样就达到了所有的 item 宽度一样：
+
+```css
+div div {
+    height: 40px;
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+```
+
+![7-19.png](/images/flexbox/7-19.png)
+
+总的来说 flex-basis 最终的值会以 flex-basis -> content size -> width 的属性依次确定它的值。
+
+#### 4.flex：它是 flex-grow、flex-shrink 和 flex-basis 的缩写。
+
+- flex：initial（默认值），等同于 flex：0 1 auto；
+- flex：auto，等同于 flex: 1 1 auto;
+- flex：none，等同于 flex: 0 0 auto;
+- flex：1，等同于 flex: 1 1 0;
+
+#### 5.order：默认值为 0
+
+设置 item 的值可以改变它在 FlexBox 容器中的位置，它的值可以是负数也可以是整数。上面的代码修改第一个和最后一个 item，添加 order 属性，初始 item 的顺序：
+
+![7-20.png](/images/flexbox/7-20.png)
+
+```css
+div div:nth-child(1) {
+    background-color: red;
+    order: 3;
+}
+div div:nth-child(3) {
+    background-color: purple;
+    order: -1;
+}
+```
+
+修改order后item的顺序：
+
+![7-21.png](/images/flexbox/7-21.png)
+
+
+
+## 深入理解 flex-item 属性
+
+MJ 老师关于 [第4天：图解 FlexBox 布局（下）](http://mp.weixin.qq.com/s?__biz=MzI5MTY0ODAwNQ==&mid=2247484263&idx=1&sn=8ec438ec2ab6a14f5d6c9c083db47929&chksm=ec0c240ddb7bad1bb5a5944fd088e24b38d0333c164c73243aedc6bd5bcd2e6ce85d3a65f507&scene=21#wechat_redirect) 这节课程中对 flex-shink 属性提出了疑问，原话是这样的：
+
+![7-22.png](/images/flexbox/7-22.png)
+
+看到这个疑问，我写了一个 demo 测试了下，果然我理解错了。然后我到 MDN 上找关于 flex-shrink 的介绍：
+
+> The  flex-shrink CSS property sets the flex shrink factor of a flex item. If  the size of all flex items is larger than the flex container, items  shrink to fit according to flex-shrink.
+> In  use, flex-shrink is used alongside the other flex properties flex-grow  and flex-basis, and normally defined using the flex shorthand.
+
+英文的意思是：CSS属性  flex-shrink 用来设置 flex item 的收缩因子。如果 所有 item 的 size 之和大于容器的 size，item  会按照 flex-shrink 缩放到合适的尺寸。使用时，flex-shrink 和其它 flex item 属性  flex-grow、flex-basis 一起使用，通常使用 flex 简写来定义。
+
+MDN 上完全没有明说 flex-shrink 表示的是收缩比例，我又看了下阮老师关于 FlexBox 布局的介绍，内容很少，没找到有用的信息：
+
+> `flex-shrink`属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。如果所有项目的`flex-shrink`属性都为1，当空间不足时，都将等比例缩小。如果一个项目的`flex-shrink`属性为0，其他项目都为1，则空间不足时，前者不缩小。
+
+最后在网上看到了一组关于 flex-item 计算公式，[原文](https://codepen.io/airen/full/YREoPq/)
+
+![7-23.png](/images/flexbox/7-23.png)
+
+以 flex-shrink 为例说明上面的公式：
+
+假设容器的宽度为 800，容器中包含 3 个item，每个item的flex-shrink的值依次是1，2，3，宽度分别为 200，300，400，那么最终每个item的宽度是多少？
+
+初始的时候：
+
+```html
+<div class="box">
+     <div></div>
+     <div></div>
+     <div></div>
+</div>
+```
+
+```css
+.box {
+    display: flex;
+    width: 800px;
+    height: 100px;
+    background-color: hotpink;
+}
+div div {
+    height: 60px;
+    flex-shrink: 0;
+}
+div div:nth-child(1) {
+    background-color: antiquewhite;
+    width: 200px;
+}
+div div:nth-child(2) {
+    background-color: red;
+    width: 300px;
+}
+div div:nth-child(3) {
+    background-color: green;
+    width: 400px;
+}
+```
+
+效果如下，由于每个 item 的 flex-shrink 的值为0，故超出容器后，item不会收缩，它的不足空间为 100px。
+
+![7-24.png](/images/flexbox/7-24.png)
+
+修改每个item的flex-shrink的值依次是1，2，3：
+
+```css
+div div:nth-child(1) {
+    background-color: antiquewhite;
+    width: 200px;
+    flex-shrink: 1;
+}
+div div:nth-child(2) {
+    background-color: red;
+    width: 300px;
+    flex-shrink: 2;
+}
+div div:nth-child(3) {
+    background-color: green;
+    width: 400px;
+    flex-shrink: 3;
+}
+```
+
+item收缩后的最终效果如下：
+
+![7-25.png](/images/flexbox/7-25.png)
+
+根据上面的公式可以推导：
+
+```js
+freeSpace = 800 - （200 + 300 + 400）= -100；
+
+sum = 2001 + 3002 + 400*3 = 2000;
+
+item0 = 200 + (-100)(2001)/ sum = 200-10=190;
+
+item1 = 300 + (-100)(3002)/ sum = 300-30=270;
+
+item0 = 400 + (-100)(4003)/ sum = 400-60=340;
+```
+
+
+
+在这节课程 [第4天：图解 FlexBox 布局（下）](http://mp.weixin.qq.com/s?__biz=MzI5MTY0ODAwNQ==&mid=2247484263&idx=1&sn=8ec438ec2ab6a14f5d6c9c083db47929&chksm=ec0c240ddb7bad1bb5a5944fd088e24b38d0333c164c73243aedc6bd5bcd2e6ce85d3a65f507&scene=21#wechat_redirect)中，为什么我会认为是按比例计算？因为在我举的例子中，每个 item 的宽度是一样的，导致恰好可以按照比例计算。
+
+MJ 老师同时还提出了一个问题：
+
+![7-26.png](/images/flexbox/7-26.png)
+
+MJ 老师的意思是如果，所有 item 的收缩因子 flex-shrink 的和小于 1 时，上面的公式将不适用。我们测试下这种情况，设置收缩比例分别是 0.1，0.2，0.3，也就是把收缩因子  flex-shrink 均缩小 10 倍；
+
+```css
+div div:nth-child(1) {
+    background-color: antiquewhite;
+    flex-shrink: 0.1;
+    width: 200px;
+}
+div div:nth-child(2) {
+    background-color: red;
+    flex-shrink: 0.2;
+    width: 300px;
+}
+div div:nth-child(3) {
+    background-color: green;
+    flex-shrink: 0.3;
+    width: 400px;
+}
+```
+
+根据上面的公式可以推导：
+
+```js
+freeSpace = 800 - （200 + 300 + 400）= -100；
+
+sum = 2000.1 + 3000.2 + 400*0.3 = 200;
+
+item0 = 200 + (-100)(2000.1)/ sum = 200-10=190;
+
+item1 = 300 + (-100)(3000.2)/ sum = 300-30=270;
+
+item0 = 400 + (-100)(4000.3)/ sum = 400-60=340;
+
+```
+
+
+
+如果按照这个公式计算出的结果应该和以前算出的结果一致，但是在浏览器中发现效果并不是这样的。其实你应该也能想到因为收缩因子的和小于 1，容器空间还没有所有item和的空间大。
+
+![7-27.png](/images/flexbox/7-27.png)
+
+按照 MJ 老师提到的公式计算一下：
+
+```js
+space = 800 - （200 + 300 + 400）= -100；
+
+sum = 0.1 + 0.2 + 0.3 = 0.6;
+
+factor1 = 0.1 * 200 = 20;
+factor2 = 0.2 * 300 = 60;
+factor3 = 0.3 * 400 = 120;
+
+sumFactor = 20 + 60 + 120 = 200;
+
+ratio1 = factor1 / 200 = 20 / 200 = 1/10;
+ratio2 = factor3 / 300 = 60 / 200 = 3/10;
+ratio3 = factor3 / 400 = 120 / 200 = 6/10;
+
+item1 = 200 + (-100) * 0.6 * 1/10 = 200-6 = 194;
+
+item2 = 300 + (-100) * 0.6 * 3/10 = 300-18 = 282;
+
+item3 = 400 + (-100) * 0.6 * 6/10 = 400-36 = 364;
+
+```
+
+
+
+结果与浏览器计算的结果一致。其实对比 flex-shrink 之和大于等于 1
+和 flex-shrink 之和小于 1，你会发现这两者惊人的相似之处，只是小于 1 的时候乘以了 flex-shrink 之和。
+
+`sum(flex-shrink) >= 1:`
+
+```js
+item1 = 200 + (-100)  * 1/10 = 200-10 = 190;
+
+item2 = 300 + (-100)  * 3/10 = 300-30 = 270;
+
+item3 = 400 + (-100) * 6/10 = 400-60 = 340;
+
+```
+
+`sum(flex-shrink) < 1:`
+
+```js
+item1 = 200 + (-100)  * 1/10 * 0.6 = 200-6 = 194;
+
+item2 = 300 + (-100)  * 3/10*  0.6 = 300-18 = 282;
+
+item3 = 400 + (-100)  * 6/10* 0.6 = 400-36 = 364;
+```
+
+#### flex-grow 的计算：
+
+同理在计算  flex-grow 的时候，如果每个 item 的 flex-grow 之和大于 等于1，每个item的扩展宽度按照比例计算，如果每个  item 的 flex-grow 之和小于1，将不能按照比例计算，需要把扩展量乘以每个 item 的 flex-grow 之和。我们举个例子：
+
+假设容器宽度为 800，每个 item 的宽度分别为 100、200、300，flex-grow 分别为 1、2、3。那么剩余空间为 800 - 600 = 200，代码如下：
+
+````css
+.box {
+    display: flex;
+    width: 800px;
+    height: 100px;
+    background-color: hotpink;
+}
+div div:nth-child(1) {
+    background-color: antiquewhite;
+    width: 100px;
+    flex-grow: 1;
+}
+div div:nth-child(2) {
+    background-color: red;
+    width: 200px;
+    flex-grow: 2;
+}
+div div:nth-child(3) {
+    background-color: green;
+    width: 300px;
+    flex-grow: 3;
+}
+````
+
+每个 item 伸缩后的宽度为：
+
+```js
+item1 = 100 + 200 * 1/6 = 100 + 33.3 = 133.3;
+
+item1 = 200 + 200 * 2/6 = 100 + 66.6 = 166.6;
+
+item1 = 300 + 200 * 3/6 = 100 + 99.9 = 199.9;
+
+```
+
+当把每个 item 的 flex-grow 分别改为 0.1、0.2、0.3，计算方式如下：
+
+```js
+item1 = 100 + 200 * 1/6 * 0.6 = 100 + 20 = 120;
+
+item1 = 200 + 200 * 2/6  * 0.6= 200 + 40 = 240;
+
+item1 = 300 + 200 * 3/6  * 0.6= 300 + 60 = 360;
+```
+
+![7-28.png](/images/flexbox/7-28.png)
+
+最终的公式：
+
+![7-29.png](/images/flexbox/7-29.png)
+
+
+
+## 最后
+
+本文篇由 《前端小课》3天的内容合并而成，内容比较多。如果你喜欢我的文章可以订阅我的公众号，如果对本文有疑问也可以在公众号中留言。
+
+![素燕公众号二维码](/assets/suyan-qrcode.png)
