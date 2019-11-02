@@ -1,46 +1,98 @@
 list: {
-  datas: [
-    {
-        title: "数据结构",
-        img: "../assets/0.png",
-        href: "/data_structure/",
-        link-title: "查看数据结构内容",
-        des: "图解数据结构主要包含了链表、二叉树、AVL 树、二分搜索树、红黑树、线段树、B树、数组、HashMap、堆、队列、优先队列等数据结构。以图解的方式，使得学习数据结构更简单。"
+  banners: [
+      {
+          img: './assets/banner-4.png',
+          title: '前端小课，每日一课',
+          link: '/about/'
+      },
+      {
+          img: './assets/bg-1.jpeg',
+          title: '图解数据结构和算法',
+          link: '/about/'
+      },
+      {
+          img: './assets/banner-8.png',
+          title: 'GitHub 代码合集',
+          link: '/about/'
+    }],
+  recommend: {
+      title: "精心推荐",
+      des: '这期主要推荐《前端小课》中的 FlexBox 和 Grid 布局，这两篇文章通俗易懂。一图胜千言，文章关键概念通过图示来说明。
+      另外一篇是关于 CSS 选择器的文章，值得一读。',
+      list:  [{
+          img: './assets/rm-1.png',
+          title: '图解FlexBox布局，不一样的体验',
+          link: ''
+      },{
+          img: './assets/rm-2.png',
+          title: '图解Grid布局，一起来盖别墅',
+          link: ''
+      },{
+          img: './assets/rm-3.png',
+          title: 'CSS选择器',
+          link: ''
+      }]
+  },
+  fe: {
+    title: "前端小课",
+    des: '一本帮助你学习前端的多媒体电子书。每天一小课，分阶段、系统地学习前端知识。关注“素燕"公众号，每天打卡学习。前端从0-1，
+    和我一样自学前端，从移动端转向前端。',
+    list: [{
+          img: './assets/fe-1.png',
+          title: '公众号合集',
+          link: ''
+      },{
+          img: './assets/fe-10.png',
+          title: 'HTML+CSS',
+          link: ''
+      },{
+          img: './assets/fe-11.png',
+          title: '死磕CSS布局',
+          link: ''
+      },{
+          img: './assets/fe-4.png',
+          title: 'Demo合集',
+          link: ''
+      },{
+          img: './assets/fe-5.png',
+          title: '加入打卡学习',
+          link: ''
+      },{
+          img: './assets/fe-12.png',
+          title: 'CSS选择器',
+          link: '获取电子书'
+      },{
+          img: './assets/fe-14.png',
+          title: '关于前端小课',
+          link: ''
+      },{
+          img: './assets/fe-8.png',
+          title: '正在进行中...',
+          link: ''
+      }]
     },
-    {
-        title: "算法&LeetCode",
-        img: "../assets/1.png",
-        href: "/algorithm/",
-        link-title: "查看算法内容",
-        des: "以图解的方式让算法活起来，比如 10 大排序算法、算法思想、LeetCode 题目，这部分内容与数据结构会有一定的关联。"
+    more: {
+        title: '周边设施',
+        list: [{
+          img: './assets/more-2.png',
+          title: '知识小集',
+          link: ''
+      },{
+          img: './assets/more-3.png',
+          title: '数据结构与算法',
+          link: ''
+      },{
+          img: './assets/more-4.png',
+          title: '骚扰作者',
+          link: ''
+      },{
+          img: './assets/more-5.png',
+          title: '工具集',
+          link: ''
+      },{
+          img: './assets/more-6.png',
+          title: '公众号推荐',
+          link: ''
+      }]
     },
-    {
-        title: "前端",
-        img: "../assets/2.png",
-        href: "/fe/",
-        link-title: "查看前端内容",
-        des: "前端从 0 - 1，记录了我从 iOS 开发转向前端经历过的路程。从 HTML、CSS、JS 出发，逐步过渡到框架中，从中提取编程思想。"
-    },
-    {
-        title: "计算机通用技术",
-        img: "../assets/3.png",
-        href: "/common/",
-        link-title: "查看计算机通用技术内容",
-        des: "包括计算机网络、字符编码、编程思想、语言、编译原理、设计模式、代码重构等内容，总之会从 iOS 和前端中提炼出编程中共用的编程思想。"
-    },
-    {
-        title: "资源集",
-        img: "../assets/4.png",
-        href: "/tool/",
-        link-title: "查看资源",
-        des: "总结了编程中常用的工具和学习资源，比如：Json 解析、二维码生成、Bas64 转码、图片压缩 、比较好的学习资料。"
-    },
-    {
-        title: "iOS 技术",
-        img: "../assets/5.png",
-        href: "/ios/",
-        link-title: "查看 iOS 内容",
-        des: "我的本职工作是 iOS，这个专题总结了平时开发种遇到的问题，以及源码分析和一些技术文章。"
-    },    
-]
 }

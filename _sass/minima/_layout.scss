@@ -58,29 +58,193 @@
 .swiper-container {
   width: 100%;
   height: 300px;
+  .swiper-slide {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-color: white;
+    .swiper-title {
+      width: 80%;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      font-size: 50px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.9;
+      }
+      &:active, &:focus {
+        opacity: 1;
+      }
+    }
+  }
 }
 
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
+.home-content {
+  margin: 20px 50px;
   background-color: white;
+  padding-bottom: 10px;
 }
 
 // 标题
-.site-banner-title {
-  font-size: 46px;
-  color: white;
-  text-align: center;
-  align-self: center;
-  flex: 1;
-  margin-top: 40px;
-}
-
-@media screen and (max-device-width: $iphone-with) {
-  .site-banner-title {
+.home-title-container {
+  background-color: white;
+  padding: 20px;
+  padding-bottom: 0;
+  .title {
+    display: inline-block;
+    margin-top: 10px;
     font-size: 30px;
+    color: $title-color;
+    text-align: left;
+    border-bottom: 1px solid $title-color;
+  }
+  .des {
+    font-size: 24px;
+    color: $text-color;
   }
 }
+
+// 过渡动画
+.home-active-transition {
+  transition-property: all;
+  transition-duration: 0.25s;
+  transition-delay: 0;
+  transition-timing-function: linear;
+}
+
+// 推荐
+.recomend-container {
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 240px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .item {
+    position: relative;
+    width: 32%;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.4;
+    }
+    &:active {
+      opacity: 1;
+    }
+    &:focus {
+      opacity: 1;
+    }
+    .img {
+      border-radius: 6px;
+      width: 100%;
+      height: 100%;
+    }
+    .title {
+      background-color: black;
+      position: absolute;
+      padding: 0 8px;
+      text-align: center;
+      font-size: 24px;
+      color: white;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+// 前端小课
+.fe-container {
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .item {
+    flex-shrink: 0;
+    width: 23%;
+    height: 200px;
+    position: relative;
+    margin-bottom: 20px;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.4;
+    }
+    &:active {
+      opacity: 1;
+    }
+    &:focus {
+      opacity: 1;
+    }
+    .img {
+      border-radius: 6px;
+      width: 100%;
+      height: 100%;
+    }
+    .title {
+      position: absolute;
+      margin: 0;
+      text-align: center;
+      font-size: 24px;
+      line-height: 40px;
+      color: white;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+// 周边设施
+.more-container {
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: space-between;
+  .item {
+    position: relative;
+    width: 19%;
+    height: 140px;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.4;
+    }
+    &:active {
+      opacity: 1;
+    }
+    &:focus {
+      opacity: 1;
+    }
+    .img {
+      border-radius: 4px;
+      width: 100%;
+      height: 100%;
+    }
+    .title {
+      margin: 0;
+      position: absolute;
+      text-align: center;
+      font-size: 24px;
+      line-height: 40px;
+      color: white;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+
+
+
 
 .site-banner-btn {
   font-size: 20px;

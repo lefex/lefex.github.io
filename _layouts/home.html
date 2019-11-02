@@ -7,15 +7,11 @@ permalink: /home/
 <!-- 首页轮播图 -->
 <div class="swiper-container">
   <div class="swiper-wrapper">
-      <div class="swiper-slide" style="background-image:url('../assets/banner-1.png')"></div>
-      <div class="swiper-slide" style="background-image:url('../assets/banner-2.png')"></div>
-      <div class="swiper-slide" style="background-image:url('../assets/banner-3.png')"></div>
-      <div class="swiper-slide" style="background-image:url('../assets/banner-4.png')"></div>
-      <div class="swiper-slide" style="background-image:url('../assets/banner-5.png')"></div>
-      <div class="swiper-slide" style="background-image:url('../assets/banner-6.png')"></div>
-      <div class="swiper-slide" style="background-image:url('../assets/banner-7.png')"></div>
-      <div class="swiper-slide" style="background-image:url('../assets/banner-8.png')"></div>
-      <div class="swiper-slide" style="background-image:url('../assets/banner-9.png')"></div>
+      {%- for item in site.data.home.list.banners -%}
+      <div class="swiper-slide" style="background-image:url('{{ item.img }}')" onclick="itemClick('{{item.link}}')">
+        <p class="swiper-title">{{item.title}}</p>
+      </div>
+      {%- endfor -%}
   </div>
   <!-- Add Pagination -->
   <div class="swiper-pagination swiper-pagination-white"></div>
@@ -24,26 +20,52 @@ permalink: /home/
   <div class="swiper-button-prev swiper-button-white"></div>
 </div>
 
-<div>
-  <div class="site-content">
-      {%- for item in site.data.home.list.datas -%}
-      <div class="site-item-box">
-          <div class="site-item-top">
-            <div class="site-item-left">
-              <img src="{{item.img}}" class="site-item-cover">
-            </div>
-            <div class="site-item-right">
-              <p class="site-item-title">{{item.title}}</p>
-              <p class="site-item-subtitle">{{item.des}}</p>
-            </div>
-          </div>
-          <div class="site-item-bottom">
-            <a class="site-item-btn" href="{{item.href}}">{{item.link-title}}</a>
-          </div>
-        </div>
-      {%- endfor -%}
-    <!-- end -->
+<div class="home-content">
+  <!-- 强烈推荐 -->
+  <div class="home-title-container">
+    <p class="title">{{ site.data.home.list.recommend.title }}</p>
+    <p class="des">{{ site.data.home.list.recommend.des }}</p>
   </div>
+  
+  <div class="recomend-container">
+      {%- for item in site.data.home.list.recommend.list -%}
+      <div class="item home-active-transition" onclick="itemClick('{{item.link}}')">
+        <img class="img" src="{{ item.img }}" alt="">
+        <p class="title">{{ item.title }}</p>
+      </div>
+      {%- endfor -%}
+  </div>
+
+  <!-- 前端小课 -->
+  <div class="home-title-container">
+      <p class="title">{{ site.data.home.list.fe.title }}</p>
+      <p class="des">{{ site.data.home.list.fe.des }}</p>
+  </div>
+    
+    <div class="fe-container">
+        {%- for item in site.data.home.list.fe.list -%}
+        <div class="item home-active-transition" onclick="itemClick('{{item.link}}')">
+          <img class="img" src="{{ item.img }}" alt="">
+          <p class="title">{{ item.title }}</p>
+        </div>
+        {%- endfor -%}
+    </div>
+
+      <!-- 周边设施 -->
+    <div class="home-title-container">
+      <p class="title">{{ site.data.home.list.more.title }}</p>
+    </div>
+    
+    <div class="more-container">
+        {%- for item in site.data.home.list.more.list -%}
+        <div class="item home-active-transition" onclick="itemClick('{{item.link}}')">
+          <img class="img" src="{{ item.img }}" alt="">
+          <p class="title">{{ item.title }}</p>
+        </div>
+        {%- endfor -%}
+    </div>
+</div>
+
 
 <!-- Initialize Swiper -->
 <script>
@@ -51,7 +73,7 @@ permalink: /home/
       spaceBetween: 30,
       effect: 'fade',
       autoplay: {
-          delay: 4500,
+          delay: 8500,
           disableOnInteraction: false,
       },
       pagination: {
@@ -63,4 +85,11 @@ permalink: /home/
           prevEl: '.swiper-button-prev',
       },
   });
+</script>
+
+<script>
+  function itemClick(link) {
+    console.log(link);
+    window.open(link, '_blank');
+  }
 </script>
