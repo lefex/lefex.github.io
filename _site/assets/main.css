@@ -271,9 +271,14 @@ table {
         opacity: 1; }
 
 .home-content {
-  margin: 20px 50px;
   background-color: white;
   padding-bottom: 10px; }
+  @media screen and (min-device-width: 500px) {
+    .home-content {
+      margin: 20px 50px; } }
+  @media screen and (max-device-width: 500px) {
+    .home-content {
+      margin: 20px 0; } }
   .home-content .des {
     font-size: 20px;
     line-height: 36px;
@@ -397,6 +402,34 @@ table {
       bottom: 0;
       left: 0;
       right: 0; }
+
+.gzh-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between; }
+  .gzh-container .item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border: 1px solid #0077FF;
+    border-radius: 2px;
+    width: 30%;
+    padding: 10px; }
+    .gzh-container .item .title {
+      font-size: 18px;
+      line-height: 25px;
+      color: black;
+      border-bottom: 1px solid #0077FF; }
+    .gzh-container .item .des, .gzh-container .item p {
+      font-size: 16px;
+      line-height: 25px; }
+    .gzh-container .item .img {
+      width: 160px;
+      height: 160px;
+      margin-bottom: 10px; }
 
 .site-banner-btn {
   font-size: 20px;

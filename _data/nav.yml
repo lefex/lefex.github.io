@@ -9,12 +9,12 @@ list: {
       href: "/data_structure/"
     },
     {
-      title: "通用技术",
-      href: "/common/"
+      title: "iOS",
+      href: "/ios/"
     },
     {
-      title: "算法",
-      href: "/algorithm/"
+      title: "通用技术",
+      href: "/common/"
     },
     {
       title: "前端",

@@ -1,0 +1,15 @@
+---
+layout: post
+title: 推荐好的公众号
+permalink: /gzh/
+---
+
+<div class="gzh-container">
+    {%- for item in site.data.gzh.list.datas -%}
+    <div class="item">
+        <p class="title">{{ item.title }}</p>
+        <img class="img" src="{{ item.img }}" alt="">
+        <p class="des">{{ item.des }}</p>
+    </div>
+    {%- endfor -%}
+</div>

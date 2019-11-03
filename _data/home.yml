@@ -89,11 +89,11 @@ list: {
       },{
           img: './assets/more-5.png',
           title: '工具集',
-          link: '/wsy/2019/10/04/runing.html'
+          link: '/tool/'
       },{
           img: './assets/more-6.png',
           title: '公众号推荐',
-          link: '/wsy/2019/10/04/runing.html'
+          link: '/gzh/'
       }]
     },
 }

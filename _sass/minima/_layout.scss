@@ -86,7 +86,14 @@
 }
 
 .home-content {
-  margin: 20px 50px;
+  // 电脑
+  @media screen and (min-device-width: $iphone-with) {
+    margin: 20px 50px;
+  }
+  // 手机
+  @media screen and (max-device-width: $iphone-with) {
+    margin: 20px 0;
+  }
   background-color: white;
   padding-bottom: 10px;
   .des {
@@ -244,7 +251,38 @@
   }
 }
 
-
+.gzh-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  .item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border: 1px solid #0077FF;
+    border-radius: 2px;
+    width: 30%;
+    padding: 10px;
+    .title {
+      font-size: 18px;
+      line-height: 25px;
+      color: black;
+      border-bottom: 1px solid #0077FF;
+    }
+    .des, p {
+      font-size: 16px;
+      line-height: 25px;
+    }
+    .img {
+      width: 160px;
+      height: 160px;
+      margin-bottom: 10px;
+    }
+  }
+}
 
 
 
