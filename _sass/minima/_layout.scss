@@ -89,6 +89,12 @@
   margin: 20px 50px;
   background-color: white;
   padding-bottom: 10px;
+  .des {
+    font-size: 20px;
+    line-height: 36px;
+    letter-spacing: 1px;
+    color: $text-color;
+  }
 }
 
 // 标题
@@ -103,10 +109,6 @@
     color: $title-color;
     text-align: left;
     border-bottom: 1px solid $title-color;
-  }
-  .des {
-    font-size: 24px;
-    color: $text-color;
   }
 }
 
@@ -698,6 +700,8 @@ item
 }
 
 .post-header {
+  border-left: 4px solid #D0021B;
+  border-right: 4px solid #D0021B;
   background-color: white;
   margin-top: 20px;
   margin-bottom: 10px;

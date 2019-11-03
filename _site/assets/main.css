@@ -274,6 +274,11 @@ table {
   margin: 20px 50px;
   background-color: white;
   padding-bottom: 10px; }
+  .home-content .des {
+    font-size: 20px;
+    line-height: 36px;
+    letter-spacing: 1px;
+    color: #555; }
 
 .home-title-container {
   background-color: white;
@@ -286,9 +291,6 @@ table {
     color: #157ABC;
     text-align: left;
     border-bottom: 1px solid #157ABC; }
-  .home-title-container .des {
-    font-size: 24px;
-    color: #555; }
 
 .home-active-transition {
   transition-property: all;
@@ -748,6 +750,8 @@ item
   font-size: 24px; }
 
 .post-header {
+  border-left: 4px solid #D0021B;
+  border-right: 4px solid #D0021B;
   background-color: white;
   margin-top: 20px;
   margin-bottom: 10px;

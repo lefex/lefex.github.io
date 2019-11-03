@@ -21,12 +21,12 @@ list: {
       另外一篇是关于 CSS 选择器的文章，值得一读。',
       list:  [{
           img: './assets/rm-1.png',
-          title: '图解FlexBox布局，不一样的体验',
+          title: '图解FlexBox布局',
           link: '/wsy/2019/11/01/flexbox.html'
       },{
           img: './assets/rm-2.png',
-          title: '图解Grid布局，一起来盖别墅',
-          link: ''
+          title: '图解Grid布局',
+          link: '/wsy/2019/11/02/grid.html'
       },{
           img: './assets/rm-3.png',
           title: 'CSS选择器',
@@ -73,6 +73,7 @@ list: {
     },
     more: {
         title: '周边设施',
+        des: '汇总了大量的资源，总有一个是你喜欢的',
         list: [{
           img: './assets/more-2.png',
           title: '知识小集',

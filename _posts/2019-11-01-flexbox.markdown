@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "图解 FlexBox 布局(非常详细)"
+title:  "图解 FlexBox 布局 (非常详细)"
 date:   2019-11-01 09:50:51 +0800
 author: lefex
 categories: wsy
