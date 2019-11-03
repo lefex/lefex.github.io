@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "前端小课第 3 阶段：DOM、BOM、事件"
+date:   2019-11-02 14:00:51 +0800
+author: lefex
+categories: wsy
+---
+
+## 前言
+
+第一、二阶段我们分别学习 HTML、CSS 和 布局，通过这两阶段的学习，我们可以轻松地实现一个静态页面。但是如何能够让页面动起来呢？这是地三阶段要学习的内容。
+
+第三阶段主要包含以下内容：
+- DOM 结构与操作 DOM（Document Object Model）；
+- BOM（Browser Object Model），浏览器对象；
+- 各种事件；
+- JQuery 与 zepto；
+
+这阶段内容正在进行中，欢迎通过微信扫码关注公众号，和我一起`免费`学习
+
+![素燕公众号二维码](/assets/suyan-qrcode.png)

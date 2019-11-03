@@ -1,0 +1,405 @@
+---
+layout: post
+title:  "Postion 布局详解"
+date:   2019-11-03 09:50:51 +0800
+author: lefex
+categories: wsy
+---
+
+本文首次发表于公众号素燕，《前端小课》专题，3 篇文章合并为一篇。建议阅读原文：
+
+- [position 布局之相对布局 relative](https://mp.weixin.qq.com/s/RFlSDGIq7ERm2CWCzpQCJQ)
+- [position 布局之绝对布局 absolute](https://mp.weixin.qq.com/s/UJZTjsKUC-aOo0zrNrryiQ)
+- [position 布局之 fixed、sticky](https://mp.weixin.qq.com/s/OOOrutqFKvOsY_Td-cpi4w)
+
+
+## 前言
+
+今天的内容是关于 position 布局，这种布局以前使用的比较多，现在逐步进入了衰退期，但是有些需求使用它实现非常便捷。使用 css 中的 position 属性可以让元素脱离流式布局，使其按照自己特有的方式进行布局，比如让某个元素始终停到可视区域的顶部，让某个元素停靠在某个元素的右边。我认为 position 的作用就是要把某个元素放到特定的位置，为了更方便地把某个元素放到指定的位置，它提供了多个值 relative、absolute、fixed、sticky。
+
+刚开始的时候，我看到很多人在乱用 position，不管需不需要都加一个 position: relative 或  position: absolute，而且 relative 和 absolute 分不清。利用这次机会要学懂 position 的使用。今天主要学习 relative 的使用。
+
+## 相对布局 relative
+
+relative
+是相对布局，它的关键点是「相对谁」，通过 top、left、right、bottom 来修改元素的偏移位置，这 4 
+个属性在流式布局中并不会起作用，首先要确定元素的起点坐标是什么，top、left、right、bottom 
+就是要告诉元素它距离起点坐标的位置。相对谁？相对的是元素在流式布局中的起始位置，起始位置就是元素在流式布局的位置。属性 top 和 bottom，left 和 right 不能同时使用，那么同时使用这两个属性会有什么后果呢？
+
+```html
+<body>
+    <div class="box">
+        <p>前端小课，每日一课</p>
+        <p>素燕，公众号</p>
+        <p>前端从0-1</p>
+    </div>
+</body>
+```
+
+```css
+p:nth-child(2) {
+    background-color: blue;
+    position: relative;
+    right: 20px;
+    left: 10px;
+}
+```
+
+结果发现如果同时使用 left 和 right ，left 的优先级会更高，right 不起作用。同样看一看  top 和 bottom：
+
+```css
+p:nth-child(2) {
+    background-color: blue;
+    position: relative;
+    bottom: 10px;
+    top: 20px;
+}
+```
+
+top 的优先级会高于 bottom 的，同时设置 top 和 bottom，bottom 会会起作用。其实按照正常思维考虑，这种设计非常合理，既设置了 left 又设置了 right，浏览器会说：“你究竟让我从那边移动？”。relative 的坐标系如下，上边为正，下边为负；左边为负，右边为正：
+
+![1.png](/images/position/1.png)
+
+其实 top 和 bottom 可以达到同样的效果，比如向上移动 20px，可以使用 top: 20px，也可以使用 bottom: -20px; relative 的一大特点就是「不会破坏」默认的流式布局，也就是说，你可以让某个元素移动到指定位置，但是你在流式布局中的「坑位」还会保留，如果你想回来，不会没有你的位置，这个位置永远为你保留。举个例子：
+
+```css
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+.box {
+    margin: 10px;
+    height: 400px;
+    background-color: #eeeeee;
+}
+p {
+    color: white;
+    font-size: 18px;
+    line-height: 40px;
+}
+p:nth-child(1) {
+    background-color: red;
+}
+p:nth-child(2) {
+    background-color: blue;
+    position: relative;
+    top: 20px;
+    left: 30px;
+}
+p:nth-child(3) {
+    background-color:black;
+}
+</style>
+```
+
+```css
+<body>
+    <div class="box">
+        <p>前端小课，每日一课</p>
+        <p>素燕，公众号</p>
+        <p>前端从0-1</p>
+    </div>
+</body>
+```
+
+上面的代码使用了：
+
+```css
+p:nth-child(2) {
+    background-color: blue;
+    position: relative;
+    top: 20px;
+    left: 30px;
+}
+```
+
+使第二个孩子 p 元素向上移动了 20px，向左移动了 30px，但是原先的流式布局任然保留。预览效果如下：
+
+![2.png](/images/position/2.png)
+
+## 绝对布局 absolute
+
+absolute 被称为绝对布局。在大部分同学眼中，绝对布局就是把某个元素固定在页面中某个位置，其实 absolute 并没有我们想象的那么简单。先看几个例子，代码如下，通过修改某个选择器来看看元素的具体变化。
+
+```css
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        height: 1000px;
+    }
+
+    .box {
+        margin: 10px;
+        height: 400px;
+        background-color: #eeeeee;
+    }
+
+    p {
+        color: white;
+        font-size: 18px;
+        line-height: 40px;
+    }
+
+    p:nth-child(1) {
+        background-color: red;
+    }
+
+    p:nth-child(2) {
+        background-color: green;
+    }
+
+    p:nth-child(3) {
+        background-color: black;
+    }
+</style>
+```
+
+```html
+<body>
+    <div class="box">
+        <p>前端小课，每日一课</p>
+        <p>素燕，公众号</p>
+        <p>前端从0-1</p>
+    </div>
+</body>
+```
+
+上面的代码按照默认的布局方式（流式布局）效果是这样的：
+
+![3.png](/images/position/3.png)
+
+修改选择器 `p:nth-child(2)` 为：
+
+```css
+p:nth-child(2) {
+    background-color: green;
+    position: absolute;
+}
+```
+
+![4.png](/images/position/4.png)
+
+效果发生了很大变化：
+
+- 1.绿色的标签宽度变窄了，恰好是文字内容的宽度；
+
+- 2.黑色的标签移到了红色的底部，绿色标签破坏了流式布局，不会占用流式布局的「坑位」；
+
+修改选择器 `p:nth-child(2)` 为：
+
+```css
+p:nth-child(2) {
+    background-color: green;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+```
+
+![5.png](/images/position/5.png)
+
+效果有很大的变化：
+
+top、bottom、left、right 可以同时使用，如果都设置为 0，此元素所有的父元素没有设置 position 属性时，它会填充满可视区域。如果它的父元素设置了 position 属性，它会填满父元素；
+
+修改选择器 `p:nth-child(2)` 为：
+
+```css
+p:nth-child(2) {
+    background-color: green;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+```
+
+```css
+p:nth-child(2) {
+    background-color: green;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+```
+
+```css
+p:nth-child(2) {
+    background-color: green;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+```
+
+```css
+p:nth-child(2) {
+    background-color: green;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+```
+
+预览效果如下（绿色的小方块的位置），绿色的小方块会落在左上角、右上角、左下角、右下角的位置：
+
+![6.png](/images/position/6.png)
+
+坐标系如下，顶点均为 （0、0）：
+
+![7.png](/images/position/7.png)
+
+absolute 布局的关键点选择哪一个元素作为布局区域，如果元素的所有父元素均未设置 position 属性（值为 
+static），布局区域会选择可视区域。如果某个父元素使用了  position 属性（值不为 static），布局区域会选择这个父元素作为布局区域。这种效果有一种约束的感觉，会把子元素限制在父元素内部，不让其“乱跑”。修改上面代码中的选择器：
+
+```css
+.box {
+    position: relative;
+    margin: 10px;
+    height: 400px;
+    background-color: #eeeeee;
+}
+```
+
+修改后发现小绿块被限制在了 div 标签中：
+
+![8.png](/images/position/8.png)
+
+总之，absolute 的作用是控制某个元素在「布局区域」的位置，通常对某个元素使用 position 属性（值不为 
+static）来限制子元素的活动范围。它会破坏流式布局，并从流失布局中脱离出来，流式布局中不会再为 position：absolute  的元素留有位置。
+
+## 固定在某个位置 fixed
+
+fixed 的作用是把某个元素固定在「可视区域」的某个位置，即使发生滚动，它仍然会固定在某个位置，比如常见的导航栏会一直固定在页面顶部。它与使用 
+position：absolute 的元素表现形式都相同，除了它的布局区域只能是可视区域。下面的代码，红色区域会一直固定在顶部，无论如何滑动。
+
+```css
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        height: 1000px;
+    }
+
+    .box {
+        margin: 10px;
+        height: 400px;
+        background-color: #eeeeee;
+    }
+
+    p {
+        color: white;
+        font-size: 18px;
+        line-height: 40px;
+    }
+
+    p:nth-child(1) {
+        background-color: red; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    p:nth-child(2) {
+        background-color: green;
+    }
+
+    p:nth-child(3) {
+        background-color: black;
+    }
+</style>
+```
+
+```html
+<body>
+    <div class="box">
+        <p>前端小课，每日一课</p>
+        <p>前端从0-1</p>
+        <p>我们今天学习 position：absolute 布局</p>
+    </div>
+</body>
+```
+
+![9.png](/images/position/9.png)
+
+## sticky
+
+在端开发中，iOS 中有一种独特的效果「悬停」，当滚动到某个位置时，某个 view 会悬停到某个位置不动，比如微信通讯录的字母标签当滑动的时候字母标签会悬停。
+
+![10.png](/images/position/10.png)
+
+在 web 中通过 position: sticky 来实现这种效果。我觉得下面这段英文更能让你理解 sticky 的作用：
+
+> This  is basically a hybrid between relative and fixed position, which allows  a positioned element to act like it is relatively positioned until it  is scrolled to a certain threshold point (e.g. 10px from the top of the  viewport), after which it becomes fixed.This can be used to for example  cause a navigation bar to scroll with the page until a certain point,  and then stick to the top of the page.---- MDN
+
+我们通过 sticky 实现一个悬停效果，当滑动到某个位置时，用户信息会悬停在顶部：
+
+![11.png](/images/position/11.png)
+
+滑动时悬停：
+
+![12.png](/images/position/12.png)
+
+代码实现：
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sticky</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            width: 100%;
+            height: 200px;
+            background-color: yellow;
+        }
+
+        .user {
+            width: 100%;
+            height: 64px;
+            background-color: cornflowerblue;
+            position: sticky;
+            top: 0px;
+        }
+
+        .con {
+            width: 100%;
+            height: 1800px;
+            background-color: bisque;
+        }
+</style>
+</head>
+
+<body>
+    <div class="header">头部</div>
+    <div class="user">用户信息</div>
+    <div class="con">内容</div>
+</body>
+
+</html>
+```
+
+## 最后
+
+本文篇由 《前端小课》3天的内容合并而成，内容比较多。如果你喜欢我的文章可以订阅我的公众号，如果对本文有疑问也可以在公众号中留言。
+
+![素燕公众号二维码](/assets/suyan-qrcode.png)

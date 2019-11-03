@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "免费领取各阶段电子书"
+date:   2019-10-05 09:50:51 +0800
+author: lefex
+categories: wsy
+---
+
+为方便阅读，在每一阶段结束后我会把内容汇总成一本电子书，可以通过下面的链接获取各阶段的电子书。
+
+## 第 1 阶段： HTML + CSS 电子书
+
+第一阶段主要包含 HTML 与 CSS 相关的内容，通过这一阶段你可以创建基本的 HTML 页面。获取电子书： [第 1 阶段 HTML + CSS 电子书](https://mp.weixin.qq.com/s/oN_U1SAm8WJ1CLZQNJtIPA)。
+
+![1-cover.png](/images/ebook/1-cover.png)
+
+## 第 2 阶段： 死磕 CSS 布局
+
+第二阶段主要包含 CSS 布局，流式布局、Position 布局、float 布局、FlexBox 布局 和 grid 布局。获取电子书：[第 2 阶段 死磕 CSS布局](https://mp.weixin.qq.com/s/-js2txXGKUzEFEMUlF8JBg)
+
+![2-cover.png](/images/ebook/2-cover.png)

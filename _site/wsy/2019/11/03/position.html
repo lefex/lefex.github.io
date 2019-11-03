@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+    <script src="https://unpkg.com/swiper/js/swiper.js"></script><!-- Begin Jekyll SEO tag v2.6.0 -->
+<title>Postion 布局详解 | 超越技术</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Postion 布局详解" />
+<meta name="author" content="lefex" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="本文首次发表于公众号素燕，《前端小课》专题，3 篇文章合并为一篇。建议阅读原文：" />
+<meta property="og:description" content="本文首次发表于公众号素燕，《前端小课》专题，3 篇文章合并为一篇。建议阅读原文：" />
+<link rel="canonical" href="http://localhost:4000/wsy/2019/11/03/position.html" />
+<meta property="og:url" content="http://localhost:4000/wsy/2019/11/03/position.html" />
+<meta property="og:site_name" content="超越技术" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-11-03T09:50:51+08:00" />
+<script type="application/ld+json">
+{"description":"本文首次发表于公众号素燕，《前端小课》专题，3 篇文章合并为一篇。建议阅读原文：","author":{"@type":"Person","name":"lefex"},"@type":"BlogPosting","url":"http://localhost:4000/wsy/2019/11/03/position.html","headline":"Postion 布局详解","dateModified":"2019-11-03T09:50:51+08:00","datePublished":"2019-11-03T09:50:51+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/wsy/2019/11/03/position.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="超越技术" /></head>
+<body><header class="site-header">
+    <div class="site-nav-box"><a class="site-nav-item" href="/">超越技术</a><a class="site-nav-item" href="/data_structure/">数据结构</a><a class="site-nav-item" href="/common/">通用技术</a><a class="site-nav-item" href="/algorithm/">算法</a><a class="site-nav-item" href="/fe/">前端</a><a class="site-nav-item" href="/about/">关于我</a></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper-content">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Postion 布局详解</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-11-03T09:50:51+08:00" itemprop="datePublished">Nov 3, 2019
+      </time>• <a href="https://github.com/lefex" target="_black">lefex</a></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>本文首次发表于公众号素燕，《前端小课》专题，3 篇文章合并为一篇。建议阅读原文：</p>
+
+<ul>
+  <li><a href="https://mp.weixin.qq.com/s/RFlSDGIq7ERm2CWCzpQCJQ">position 布局之相对布局 relative</a></li>
+  <li><a href="https://mp.weixin.qq.com/s/UJZTjsKUC-aOo0zrNrryiQ">position 布局之绝对布局 absolute</a></li>
+  <li><a href="https://mp.weixin.qq.com/s/OOOrutqFKvOsY_Td-cpi4w">position 布局之 fixed、sticky</a></li>
+</ul>
+
+<h2 id="前言">前言</h2>
+
+<p>今天的内容是关于 position 布局，这种布局以前使用的比较多，现在逐步进入了衰退期，但是有些需求使用它实现非常便捷。使用 css 中的 position 属性可以让元素脱离流式布局，使其按照自己特有的方式进行布局，比如让某个元素始终停到可视区域的顶部，让某个元素停靠在某个元素的右边。我认为 position 的作用就是要把某个元素放到特定的位置，为了更方便地把某个元素放到指定的位置，它提供了多个值 relative、absolute、fixed、sticky。</p>
+
+<p>刚开始的时候，我看到很多人在乱用 position，不管需不需要都加一个 position: relative 或  position: absolute，而且 relative 和 absolute 分不清。利用这次机会要学懂 position 的使用。今天主要学习 relative 的使用。</p>
+
+<h2 id="相对布局-relative">相对布局 relative</h2>
+
+<p>relative
+是相对布局，它的关键点是「相对谁」，通过 top、left、right、bottom 来修改元素的偏移位置，这 4 
+个属性在流式布局中并不会起作用，首先要确定元素的起点坐标是什么，top、left、right、bottom 
+就是要告诉元素它距离起点坐标的位置。相对谁？相对的是元素在流式布局中的起始位置，起始位置就是元素在流式布局的位置。属性 top 和 bottom，left 和 right 不能同时使用，那么同时使用这两个属性会有什么后果呢？</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>前端小课，每日一课<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>素燕，公众号<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>前端从0-1<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+    <span class="nl">right</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>结果发现如果同时使用 left 和 right ，left 的优先级会更高，right 不起作用。同样看一看  top 和 bottom：</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+    <span class="nl">bottom</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>top 的优先级会高于 bottom 的，同时设置 top 和 bottom，bottom 会会起作用。其实按照正常思维考虑，这种设计非常合理，既设置了 left 又设置了 right，浏览器会说：“你究竟让我从那边移动？”。relative 的坐标系如下，上边为正，下边为负；左边为负，右边为正：</p>
+
+<p><img src="/images/position/1.png" alt="1.png" /></p>
+
+<p>其实 top 和 bottom 可以达到同样的效果，比如向上移动 20px，可以使用 top: 20px，也可以使用 bottom: -20px; relative 的一大特点就是「不会破坏」默认的流式布局，也就是说，你可以让某个元素移动到指定位置，但是你在流式布局中的「坑位」还会保留，如果你想回来，不会没有你的位置，这个位置永远为你保留。举个例子：</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nt">style</span><span class="o">&gt;</span>
+<span class="o">*</span> <span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.box</span> <span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="m">#eeeeee</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">p</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="m">18px</span><span class="p">;</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">p</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">1</span><span class="o">)</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">p</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">30px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">p</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">3</span><span class="o">)</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span><span class="no">black</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nt">body</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nt">div</span> <span class="nt">class</span><span class="o">=</span><span class="s1">"box"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="err">前端小课，每日一课</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="err">素燕，公众号</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span><span class="err">前端从</span><span class="nt">0-1</span><span class="o">&lt;/</span><span class="nt">p</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="nt">div</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nt">body</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>上面的代码使用了：</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">30px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>使第二个孩子 p 元素向上移动了 20px，向左移动了 30px，但是原先的流式布局任然保留。预览效果如下：</p>
+
+<p><img src="/images/position/2.png" alt="2.png" /></p>
+
+<h2 id="绝对布局-absolute">绝对布局 absolute</h2>
+
+<p>absolute 被称为绝对布局。在大部分同学眼中，绝对布局就是把某个元素固定在页面中某个位置，其实 absolute 并没有我们想象的那么简单。先看几个例子，代码如下，通过修改某个选择器来看看元素的具体变化。</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nt">style</span><span class="o">&gt;</span>
+    <span class="o">*</span> <span class="p">{</span>
+        <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+        <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nt">body</span> <span class="p">{</span>
+        <span class="nl">height</span><span class="p">:</span> <span class="m">1000px</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nc">.box</span> <span class="p">{</span>
+        <span class="nl">margin</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+        <span class="nl">height</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
+        <span class="nl">background-color</span><span class="p">:</span> <span class="m">#eeeeee</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nt">p</span> <span class="p">{</span>
+        <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+        <span class="nl">font-size</span><span class="p">:</span> <span class="m">18px</span><span class="p">;</span>
+        <span class="nl">line-height</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nt">p</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">1</span><span class="o">)</span> <span class="p">{</span>
+        <span class="nl">background-color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nt">p</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span> <span class="p">{</span>
+        <span class="nl">background-color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nt">p</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">3</span><span class="o">)</span> <span class="p">{</span>
+        <span class="nl">background-color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>前端小课，每日一课<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>素燕，公众号<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>前端从0-1<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<p>上面的代码按照默认的布局方式（流式布局）效果是这样的：</p>
+
+<p><img src="/images/position/3.png" alt="3.png" /></p>
+
+<p>修改选择器 <code class="highlighter-rouge">p:nth-child(2)</code> 为：</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="/images/position/4.png" alt="4.png" /></p>
+
+<p>效果发生了很大变化：</p>
+
+<ul>
+  <li>
+    <p>1.绿色的标签宽度变窄了，恰好是文字内容的宽度；</p>
+  </li>
+  <li>
+    <p>2.黑色的标签移到了红色的底部，绿色标签破坏了流式布局，不会占用流式布局的「坑位」；</p>
+  </li>
+</ul>
+
+<p>修改选择器 <code class="highlighter-rouge">p:nth-child(2)</code> 为：</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">bottom</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">right</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="/images/position/5.png" alt="5.png" /></p>
+
+<p>效果有很大的变化：</p>
+
+<p>top、bottom、left、right 可以同时使用，如果都设置为 0，此元素所有的父元素没有设置 position 属性时，它会填充满可视区域。如果它的父元素设置了 position 属性，它会填满父元素；</p>
+
+<p>修改选择器 <code class="highlighter-rouge">p:nth-child(2)</code> 为：</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">right</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">bottom</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span> <span class="p">{</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+    <span class="nl">bottom</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">right</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>预览效果如下（绿色的小方块的位置），绿色的小方块会落在左上角、右上角、左下角、右下角的位置：</p>
+
+<p><img src="/images/position/6.png" alt="6.png" /></p>
+
+<p>坐标系如下，顶点均为 （0、0）：</p>
+
+<p><img src="/images/position/7.png" alt="7.png" /></p>
+
+<p>absolute 布局的关键点选择哪一个元素作为布局区域，如果元素的所有父元素均未设置 position 属性（值为 
+static），布局区域会选择可视区域。如果某个父元素使用了  position 属性（值不为 static），布局区域会选择这个父元素作为布局区域。这种效果有一种约束的感觉，会把子元素限制在父元素内部，不让其“乱跑”。修改上面代码中的选择器：</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.box</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span> <span class="m">#eeeeee</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>修改后发现小绿块被限制在了 div 标签中：</p>
+
+<p><img src="/images/position/8.png" alt="8.png" /></p>
+
+<p>总之，absolute 的作用是控制某个元素在「布局区域」的位置，通常对某个元素使用 position 属性（值不为 
+static）来限制子元素的活动范围。它会破坏流式布局，并从流失布局中脱离出来，流式布局中不会再为 position：absolute  的元素留有位置。</p>
+
+<h2 id="固定在某个位置-fixed">固定在某个位置 fixed</h2>
+
+<p>fixed 的作用是把某个元素固定在「可视区域」的某个位置，即使发生滚动，它仍然会固定在某个位置，比如常见的导航栏会一直固定在页面顶部。它与使用 
+position：absolute 的元素表现形式都相同，除了它的布局区域只能是可视区域。下面的代码，红色区域会一直固定在顶部，无论如何滑动。</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nt">style</span><span class="o">&gt;</span>
+    <span class="o">*</span> <span class="p">{</span>
+        <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+        <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nt">body</span> <span class="p">{</span>
+        <span class="nl">height</span><span class="p">:</span> <span class="m">1000px</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nc">.box</span> <span class="p">{</span>
+        <span class="nl">margin</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+        <span class="nl">height</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
+        <span class="nl">background-color</span><span class="p">:</span> <span class="m">#eeeeee</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nt">p</span> <span class="p">{</span>
+        <span class="nl">color</span><span class="p">:</span> <span class="no">white</span><span class="p">;</span>
+        <span class="nl">font-size</span><span class="p">:</span> <span class="m">18px</span><span class="p">;</span>
+        <span class="nl">line-height</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nt">p</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">1</span><span class="o">)</span> <span class="p">{</span>
+        <span class="nl">background-color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span> 
+        <span class="nl">position</span><span class="p">:</span> <span class="nb">fixed</span><span class="p">;</span>
+        <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+        <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+        <span class="nl">right</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nt">p</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span> <span class="p">{</span>
+        <span class="nl">background-color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nt">p</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">3</span><span class="o">)</span> <span class="p">{</span>
+        <span class="nl">background-color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>前端小课，每日一课<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>前端从0-1<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>我们今天学习 position：absolute 布局<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</code></pre></div></div>
+
+<p><img src="/images/position/9.png" alt="9.png" /></p>
+
+<h2 id="sticky">sticky</h2>
+
+<p>在端开发中，iOS 中有一种独特的效果「悬停」，当滚动到某个位置时，某个 view 会悬停到某个位置不动，比如微信通讯录的字母标签当滑动的时候字母标签会悬停。</p>
+
+<p><img src="/images/position/10.png" alt="10.png" /></p>
+
+<p>在 web 中通过 position: sticky 来实现这种效果。我觉得下面这段英文更能让你理解 sticky 的作用：</p>
+
+<blockquote>
+  <p>This  is basically a hybrid between relative and fixed position, which allows  a positioned element to act like it is relatively positioned until it  is scrolled to a certain threshold point (e.g. 10px from the top of the  viewport), after which it becomes fixed.This can be used to for example  cause a navigation bar to scroll with the page until a certain point,  and then stick to the top of the page.—- MDN</p>
+</blockquote>
+
+<p>我们通过 sticky 实现一个悬停效果，当滑动到某个位置时，用户信息会悬停在顶部：</p>
+
+<p><img src="/images/position/11.png" alt="11.png" /></p>
+
+<p>滑动时悬停：</p>
+
+<p><img src="/images/position/12.png" alt="12.png" /></p>
+
+<p>代码实现：</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"ie=edge"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Sticky<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;style&gt;</span>
+        <span class="o">*</span> <span class="p">{</span>
+            <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+            <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="nc">.header</span> <span class="p">{</span>
+            <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+            <span class="nl">height</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+            <span class="nl">background-color</span><span class="p">:</span> <span class="no">yellow</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="nc">.user</span> <span class="p">{</span>
+            <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+            <span class="nl">height</span><span class="p">:</span> <span class="m">64px</span><span class="p">;</span>
+            <span class="nl">background-color</span><span class="p">:</span> <span class="no">cornflowerblue</span><span class="p">;</span>
+            <span class="nl">position</span><span class="p">:</span> <span class="n">sticky</span><span class="p">;</span>
+            <span class="nl">top</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="nc">.con</span> <span class="p">{</span>
+            <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+            <span class="nl">height</span><span class="p">:</span> <span class="m">1800px</span><span class="p">;</span>
+            <span class="nl">background-color</span><span class="p">:</span> <span class="no">bisque</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"header"</span><span class="nt">&gt;</span>头部<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"user"</span><span class="nt">&gt;</span>用户信息<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"con"</span><span class="nt">&gt;</span>内容<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<h2 id="最后">最后</h2>
+
+<p>本文篇由 《前端小课》3天的内容合并而成，内容比较多。如果你喜欢我的文章可以订阅我的公众号，如果对本文有疑问也可以在公众号中留言。</p>
+
+<p><img src="/assets/suyan-qrcode.png" alt="素燕公众号二维码" /></p>
+
+  </div><a class="u-url" href="/wsy/2019/11/03/position.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer>
+  <div class="site-footer">
+    <div class="site-footer-item-box">
+      <p class="site-footer-item site-footer-item-title">合作伙伴</p>
+      <p class="site-footer-item site-footer-item-subtitle"><a class="site-footer-item-subtitle" href="https://github.com/awesome-tips/iOS-Tips">知识小集</a></p>
+    </div>
+    <div class="site-footer-item-line"></div>
+    <div class="site-footer-item-box">
+        <p class="site-footer-item site-footer-item-title">致谢</p>
+        <p class="site-footer-item site-footer-item-subtitle"><a class="site-footer-item-subtitle" href="https://objccn.io/">主题样式来自objccn</a></p>
+    </div>
+    <div class="site-footer-item-line"></div>
+    <div class="site-footer-item-box">
+        <p class="site-footer-item site-footer-item-title">联系我</p>
+        <p class="site-footer-item site-footer-item-subtitle"><a class="site-footer-item-subtitle" href="https://mp.weixin.qq.com/s/0hr2cTnGBBf3hbZFVNlAcg">关注超越技术公众号</a></p>
+    </div>
+  </div>
+
+</footer>
+</body>
+
+</html>

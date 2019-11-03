@@ -1,4 +1,447 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-11-03T09:07:37+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">超越技术</title><subtitle>图解算法，图解数据结构，LeectCode。</subtitle><entry><title type="html">图解 Grid 布局 (非常详细)</title><link href="http://localhost:4000/wsy/2019/11/02/grid.html" rel="alternate" type="text/html" title="图解 Grid 布局 (非常详细)" /><published>2019-11-02T09:50:51+08:00</published><updated>2019-11-02T09:50:51+08:00</updated><id>http://localhost:4000/wsy/2019/11/02/grid</id><content type="html" xml:base="http://localhost:4000/wsy/2019/11/02/grid.html">&lt;p&gt;本文首次发表于公众号素燕，《前端小课》专题，3 篇文章合并为一篇。建议阅读原文：&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-11-03T16:30:52+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">超越技术</title><subtitle>图解算法，图解数据结构，LeectCode。</subtitle><entry><title type="html">前端下课第二阶段：死磕CSS布局</title><link href="http://localhost:4000/wsy/2019/11/03/second.html" rel="alternate" type="text/html" title="前端下课第二阶段：死磕CSS布局" /><published>2019-11-03T10:50:51+08:00</published><updated>2019-11-03T10:50:51+08:00</updated><id>http://localhost:4000/wsy/2019/11/03/second</id><content type="html" xml:base="http://localhost:4000/wsy/2019/11/03/second.html">&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;在我学习前端的时候，被 CSS 布局搞懵了好多次，无数次以为我真的掌握到了布局的本质，但后来发现有些内容还是没有彻底掌握。FlexBox、Position 布局我写过两次文章，即将进入第三次。这次我下了血本，把 MDN 文档都打印出来了，旨在能够理解的更透彻。我想把我对 CSS 布局的理解分享给大家。这一阶段时间比较短，但内容非常重要。在我接触的前端同学中，即使有多年工作经验的，也未必能掌握布局的精华。如果你对 CSS 布局理解的不是很好，不防和我一起系统学习一遍。&lt;/p&gt;
+
+&lt;p&gt;前端小课是一本帮助你学习前端的多媒体电子书。每天一小课，分阶段、系统地学习前端知识，避免 case-by-case 重复学习。参与的同学每天都会打卡，算是对自己的一次监督吧，学习也要有一种仪式感。如果你想参与这一阶段学习，但是没有 CSS 基础，建议在这一阶段还没开始前，学习一下第一阶段的内容。&lt;/p&gt;
+
+&lt;h2 id=&quot;参与方式&quot;&gt;参与方式&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1.关注公众号「素燕」，文末有二维码；&lt;/li&gt;
+  &lt;li&gt;2.在公众号留言区输入打卡指令即可完成打卡，每天文章中会带有不同的打卡指令。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/second/catalog.png&quot; alt=&quot;catalog.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;课程内容-13-天死磕-css-布局&quot;&gt;课程内容 13 天：死磕 CSS 布局&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/oDNuyEdgUPweSZiOWnriQA&quot;&gt;第1天：前端布局概述&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/Ib2AnP47yuMe5HrWRyhTig&quot;&gt;第3天：布局之源 - 流式布局&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/T-Z_8he9UxBBfL8Jb3zwtA&quot;&gt;第2天：图解 FlexBox 布局（上）&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/uct9apWqgznde1m2IMVgwA&quot;&gt;第4天：图解 FlexBox 布局（下）&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/XG5QeIUF-qkBAqd_jlUV9g&quot;&gt;第6天：深入理解 FlexBox 布局的弹性&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/RFlSDGIq7ERm2CWCzpQCJQ&quot;&gt;第5天：position 布局之相对布局 relative&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/UJZTjsKUC-aOo0zrNrryiQ&quot;&gt;第7天: position 布局之绝对布局 absolute&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/OOOrutqFKvOsY_Td-cpi4w&quot;&gt;第9天: position 布局之 fixed、sticky&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/SJ7k23nIgMOcR2fDjOHhGg&quot;&gt;第8天：布局翘楚 - Grid 布局概述&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/ZziZ9jDKGPORnV8Yv5r_lQ&quot;&gt;第10天：买一块地盖一处院子，布局区域&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/9_zPYmfYzhIu-vgnfDGk4g&quot;&gt;第11天：grid布局对齐属性&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/ba8kJOU2a83NBnwG0y8fdQ&quot;&gt;第12天： 靠边站之float&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/fM8DkM9sGAGzu-G3TW_5UA&quot;&gt;第13天：布局的兼容性与两种不常用的布局&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;实践---仿写朋友圈&quot;&gt;实践 - 仿写朋友圈&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/BUMaJXJ2bD0FcZ5kMI_WrA&quot;&gt;用前端仿写朋友圈&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;最后&quot;&gt;最后&lt;/h2&gt;
+
+&lt;p&gt;微信扫码关注公众号，和我一起免费学习&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/suyan-qrcode.png&quot; alt=&quot;素燕公众号二维码&quot; /&gt;&lt;/p&gt;</content><author><name>lefex</name></author><summary type="html">前言</summary></entry><entry><title type="html">Postion 布局详解</title><link href="http://localhost:4000/wsy/2019/11/03/position.html" rel="alternate" type="text/html" title="Postion 布局详解" /><published>2019-11-03T09:50:51+08:00</published><updated>2019-11-03T09:50:51+08:00</updated><id>http://localhost:4000/wsy/2019/11/03/position</id><content type="html" xml:base="http://localhost:4000/wsy/2019/11/03/position.html">&lt;p&gt;本文首次发表于公众号素燕，《前端小课》专题，3 篇文章合并为一篇。建议阅读原文：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/RFlSDGIq7ERm2CWCzpQCJQ&quot;&gt;position 布局之相对布局 relative&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/UJZTjsKUC-aOo0zrNrryiQ&quot;&gt;position 布局之绝对布局 absolute&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/OOOrutqFKvOsY_Td-cpi4w&quot;&gt;position 布局之 fixed、sticky&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;今天的内容是关于 position 布局，这种布局以前使用的比较多，现在逐步进入了衰退期，但是有些需求使用它实现非常便捷。使用 css 中的 position 属性可以让元素脱离流式布局，使其按照自己特有的方式进行布局，比如让某个元素始终停到可视区域的顶部，让某个元素停靠在某个元素的右边。我认为 position 的作用就是要把某个元素放到特定的位置，为了更方便地把某个元素放到指定的位置，它提供了多个值 relative、absolute、fixed、sticky。&lt;/p&gt;
+
+&lt;p&gt;刚开始的时候，我看到很多人在乱用 position，不管需不需要都加一个 position: relative 或  position: absolute，而且 relative 和 absolute 分不清。利用这次机会要学懂 position 的使用。今天主要学习 relative 的使用。&lt;/p&gt;
+
+&lt;h2 id=&quot;相对布局-relative&quot;&gt;相对布局 relative&lt;/h2&gt;
+
+&lt;p&gt;relative
+是相对布局，它的关键点是「相对谁」，通过 top、left、right、bottom 来修改元素的偏移位置，这 4 
+个属性在流式布局中并不会起作用，首先要确定元素的起点坐标是什么，top、left、right、bottom 
+就是要告诉元素它距离起点坐标的位置。相对谁？相对的是元素在流式布局中的起始位置，起始位置就是元素在流式布局的位置。属性 top 和 bottom，left 和 right 不能同时使用，那么同时使用这两个属性会有什么后果呢？&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;box&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;前端小课，每日一课&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;素燕，公众号&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;前端从0-1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:nth-child&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;结果发现如果同时使用 left 和 right ，left 的优先级会更高，right 不起作用。同样看一看  top 和 bottom：&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:nth-child&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;top 的优先级会高于 bottom 的，同时设置 top 和 bottom，bottom 会会起作用。其实按照正常思维考虑，这种设计非常合理，既设置了 left 又设置了 right，浏览器会说：“你究竟让我从那边移动？”。relative 的坐标系如下，上边为正，下边为负；左边为负，右边为正：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/position/1.png&quot; alt=&quot;1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;其实 top 和 bottom 可以达到同样的效果，比如向上移动 20px，可以使用 top: 20px，也可以使用 bottom: -20px; relative 的一大特点就是「不会破坏」默认的流式布局，也就是说，你可以让某个元素移动到指定位置，但是你在流式布局中的「坑位」还会保留，如果你想回来，不会没有你的位置，这个位置永远为你保留。举个例子：&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.box&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;400px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#eeeeee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;18px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;line-height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;40px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:nth-child&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:nth-child&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;30px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:nth-child&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;black&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&quot;box&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;前端小课，每日一课&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;素燕，公众号&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;前端从&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;0-1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;上面的代码使用了：&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:nth-child&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;30px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;使第二个孩子 p 元素向上移动了 20px，向左移动了 30px，但是原先的流式布局任然保留。预览效果如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/position/2.png&quot; alt=&quot;2.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;绝对布局-absolute&quot;&gt;绝对布局 absolute&lt;/h2&gt;
+
+&lt;p&gt;absolute 被称为绝对布局。在大部分同学眼中，绝对布局就是把某个元素固定在页面中某个位置，其实 absolute 并没有我们想象的那么简单。先看几个例子，代码如下，通过修改某个选择器来看看元素的具体变化。&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1000px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nc&quot;&gt;.box&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;400px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#eeeeee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;18px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;line-height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;40px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:nth-child&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:nth-child&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:nth-child&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;black&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;box&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;前端小课，每日一课&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;素燕，公众号&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;前端从0-1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;上面的代码按照默认的布局方式（流式布局）效果是这样的：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/position/3.png&quot; alt=&quot;3.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;修改选择器 &lt;code class=&quot;highlighter-rouge&quot;&gt;p:nth-child(2)&lt;/code&gt; 为：&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:nth-child&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;absolute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/position/4.png&quot; alt=&quot;4.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;效果发生了很大变化：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;1.绿色的标签宽度变窄了，恰好是文字内容的宽度；&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;2.黑色的标签移到了红色的底部，绿色标签破坏了流式布局，不会占用流式布局的「坑位」；&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;修改选择器 &lt;code class=&quot;highlighter-rouge&quot;&gt;p:nth-child(2)&lt;/code&gt; 为：&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:nth-child&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;absolute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/position/5.png&quot; alt=&quot;5.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;效果有很大的变化：&lt;/p&gt;
+
+&lt;p&gt;top、bottom、left、right 可以同时使用，如果都设置为 0，此元素所有的父元素没有设置 position 属性时，它会填充满可视区域。如果它的父元素设置了 position 属性，它会填满父元素；&lt;/p&gt;
+
+&lt;p&gt;修改选择器 &lt;code class=&quot;highlighter-rouge&quot;&gt;p:nth-child(2)&lt;/code&gt; 为：&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:nth-child&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;absolute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:nth-child&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;absolute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:nth-child&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;absolute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:nth-child&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;absolute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;预览效果如下（绿色的小方块的位置），绿色的小方块会落在左上角、右上角、左下角、右下角的位置：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/position/6.png&quot; alt=&quot;6.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;坐标系如下，顶点均为 （0、0）：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/position/7.png&quot; alt=&quot;7.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;absolute 布局的关键点选择哪一个元素作为布局区域，如果元素的所有父元素均未设置 position 属性（值为 
+static），布局区域会选择可视区域。如果某个父元素使用了  position 属性（值不为 static），布局区域会选择这个父元素作为布局区域。这种效果有一种约束的感觉，会把子元素限制在父元素内部，不让其“乱跑”。修改上面代码中的选择器：&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.box&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;400px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#eeeeee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;修改后发现小绿块被限制在了 div 标签中：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/position/8.png&quot; alt=&quot;8.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;总之，absolute 的作用是控制某个元素在「布局区域」的位置，通常对某个元素使用 position 属性（值不为 
+static）来限制子元素的活动范围。它会破坏流式布局，并从流失布局中脱离出来，流式布局中不会再为 position：absolute  的元素留有位置。&lt;/p&gt;
+
+&lt;h2 id=&quot;固定在某个位置-fixed&quot;&gt;固定在某个位置 fixed&lt;/h2&gt;
+
+&lt;p&gt;fixed 的作用是把某个元素固定在「可视区域」的某个位置，即使发生滚动，它仍然会固定在某个位置，比如常见的导航栏会一直固定在页面顶部。它与使用 
+position：absolute 的元素表现形式都相同，除了它的布局区域只能是可视区域。下面的代码，红色区域会一直固定在顶部，无论如何滑动。&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1000px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nc&quot;&gt;.box&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;400px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#eeeeee&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;18px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;line-height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;40px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:nth-child&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+        &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;fixed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:nth-child&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:nth-child&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;black&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;box&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;前端小课，每日一课&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;前端从0-1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;我们今天学习 position：absolute 布局&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/position/9.png&quot; alt=&quot;9.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;sticky&quot;&gt;sticky&lt;/h2&gt;
+
+&lt;p&gt;在端开发中，iOS 中有一种独特的效果「悬停」，当滚动到某个位置时，某个 view 会悬停到某个位置不动，比如微信通讯录的字母标签当滑动的时候字母标签会悬停。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/position/10.png&quot; alt=&quot;10.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在 web 中通过 position: sticky 来实现这种效果。我觉得下面这段英文更能让你理解 sticky 的作用：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This  is basically a hybrid between relative and fixed position, which allows  a positioned element to act like it is relatively positioned until it  is scrolled to a certain threshold point (e.g. 10px from the top of the  viewport), after which it becomes fixed.This can be used to for example  cause a navigation bar to scroll with the page until a certain point,  and then stick to the top of the page.—- MDN&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;我们通过 sticky 实现一个悬停效果，当滑动到某个位置时，用户信息会悬停在顶部：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/position/11.png&quot; alt=&quot;11.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;滑动时悬停：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/position/12.png&quot; alt=&quot;12.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;代码实现：&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;UTF-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;viewport&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;width=device-width, initial-scale=1.0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;http-equiv=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;X-UA-Compatible&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ie=edge&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Sticky&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;style&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+        &lt;span class=&quot;nc&quot;&gt;.header&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;200px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;yellow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+        &lt;span class=&quot;nc&quot;&gt;.user&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;64px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;cornflowerblue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sticky&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+        &lt;span class=&quot;nc&quot;&gt;.con&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1800px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;bisque&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;header&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;头部&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;user&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;用户信息&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;con&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;内容&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;最后&quot;&gt;最后&lt;/h2&gt;
+
+&lt;p&gt;本文篇由 《前端小课》3天的内容合并而成，内容比较多。如果你喜欢我的文章可以订阅我的公众号，如果对本文有疑问也可以在公众号中留言。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/suyan-qrcode.png&quot; alt=&quot;素燕公众号二维码&quot; /&gt;&lt;/p&gt;</content><author><name>lefex</name></author><summary type="html">本文首次发表于公众号素燕，《前端小课》专题，3 篇文章合并为一篇。建议阅读原文：</summary></entry><entry><title type="html">前端小课第 3 阶段：DOM、BOM、事件</title><link href="http://localhost:4000/wsy/2019/11/02/thrid.html" rel="alternate" type="text/html" title="前端小课第 3 阶段：DOM、BOM、事件" /><published>2019-11-02T14:00:51+08:00</published><updated>2019-11-02T14:00:51+08:00</updated><id>http://localhost:4000/wsy/2019/11/02/thrid</id><content type="html" xml:base="http://localhost:4000/wsy/2019/11/02/thrid.html">&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;第一、二阶段我们分别学习 HTML、CSS 和 布局，通过这两阶段的学习，我们可以轻松地实现一个静态页面。但是如何能够让页面动起来呢？这是地三阶段要学习的内容。&lt;/p&gt;
+
+&lt;p&gt;第三阶段主要包含以下内容：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;DOM 结构与操作 DOM（Document Object Model）；&lt;/li&gt;
+  &lt;li&gt;BOM（Browser Object Model），浏览器对象；&lt;/li&gt;
+  &lt;li&gt;各种事件；&lt;/li&gt;
+  &lt;li&gt;JQuery 与 zepto；&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;这阶段内容正在进行中，欢迎通过微信扫码关注公众号，和我一起&lt;code class=&quot;highlighter-rouge&quot;&gt;免费&lt;/code&gt;学习&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/suyan-qrcode.png&quot; alt=&quot;素燕公众号二维码&quot; /&gt;&lt;/p&gt;</content><author><name>lefex</name></author><summary type="html">前言</summary></entry><entry><title type="html">图解 Grid 布局 (非常详细)</title><link href="http://localhost:4000/wsy/2019/11/02/grid.html" rel="alternate" type="text/html" title="图解 Grid 布局 (非常详细)" /><published>2019-11-02T09:50:51+08:00</published><updated>2019-11-02T09:50:51+08:00</updated><id>http://localhost:4000/wsy/2019/11/02/grid</id><content type="html" xml:base="http://localhost:4000/wsy/2019/11/02/grid.html">&lt;p&gt;本文首次发表于公众号素燕，《前端小课》专题，3 篇文章合并为一篇。建议阅读原文：&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/SJ7k23nIgMOcR2fDjOHhGg&quot;&gt;布局翘楚 - Grid 布局概述&lt;/a&gt;&lt;/li&gt;
@@ -1188,30 +1631,110 @@ In  use, flex-shrink is used alongside the other flex properties flex-grow  and 
 
 &lt;p&gt;本文篇由 《前端小课》3天的内容合并而成，内容比较多。如果你喜欢我的文章可以订阅我的公众号，如果对本文有疑问也可以在公众号中留言。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/suyan-qrcode.png&quot; alt=&quot;素燕公众号二维码&quot; /&gt;&lt;/p&gt;</content><author><name>lefex</name></author><summary type="html">本文首次发表于公众号素燕，《前端小课》专题，3 篇文章合并为一篇。建议阅读原文：</summary></entry><entry><title type="html">前端学习资源汇总</title><link href="http://localhost:4000/wsy/2019/08/03/fe_res.html" rel="alternate" type="text/html" title="前端学习资源汇总" /><published>2019-08-03T09:50:51+08:00</published><updated>2019-08-03T09:50:51+08:00</updated><id>http://localhost:4000/wsy/2019/08/03/fe_res</id><content type="html" xml:base="http://localhost:4000/wsy/2019/08/03/fe_res.html">&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;素燕&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;welcome&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;欢迎关注&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;公众号&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;welcome&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// 欢迎关注素燕公众号&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/suyan-qrcode.png&quot; alt=&quot;素燕公众号二维码&quot; /&gt;&lt;/p&gt;</content><author><name>lefex</name></author><summary type="html">本文首次发表于公众号素燕，《前端小课》专题，3 篇文章合并为一篇。建议阅读原文：</summary></entry><entry><title type="html">关于前端小课</title><link href="http://localhost:4000/wsy/2019/10/06/about_fe.html" rel="alternate" type="text/html" title="关于前端小课" /><published>2019-10-06T09:50:51+08:00</published><updated>2019-10-06T09:50:51+08:00</updated><id>http://localhost:4000/wsy/2019/10/06/about_fe</id><content type="html" xml:base="http://localhost:4000/wsy/2019/10/06/about_fe.html">&lt;h4 id=&quot;你好这里是前端小课的起源&quot;&gt;你好，这里是《前端小课》的起源:&lt;/h4&gt;
 
-&lt;p style=&quot;color: red;font-size: 20px&quot;&gt;关注&lt;strong&gt;素燕&lt;/strong&gt;公众号，回复资源，即可获得电子书&lt;/p&gt;
+&lt;p&gt;我是素燕，男（有的小伙伴总以为我是女生），网名 Lefe，我的微博是 &lt;a href=&quot;https://weibo.com/5953150140/profile&quot;&gt;Lefe_x&lt;/a&gt;（因为 Lefe 已经被占用了）。目前在大厂一线做&lt;code class=&quot;highlighter-rouge&quot;&gt;iOS和前端&lt;/code&gt;相关的工作。我这个人最大的特点是不愿意呆在舒适区，总喜欢自己琢磨一些事情，自我驱动能力和自控力比较强。希望通过技术能做一件有意义的事情。&lt;/p&gt;
 
-&lt;h3 id=&quot;入门需要逛的网站&quot;&gt;入门需要逛的网站&lt;/h3&gt;
+&lt;p&gt;前半年，学习了数据结构和算法，学习的时候并没有找到比较好的电子版资料，故我把学到的数据结构和算法通过图解的形式写出来。画完
+了链表、队列、双端队列、循环队列、栈、堆、二叉树、线段树、AVL 树、二分搜索树、红黑树这些数据结构。这部分知识并没有想象的那么难，后续打算用前端的形式把它讲的更通俗易懂。&lt;/p&gt;
+
+&lt;p&gt;学习前端这个想法一直都有，只是一直没找到它对我有什么作用。直到我想建一个网站的时候，才下定决心。最终通过 Jekyll 做了我第一个网站&lt;a href=&quot;https://lefex.github.io/&quot;&gt;超越技术&lt;/a&gt;。做的时候发现前端的思想很超前，很多值得移动端的同学去学习。一次偶然的机会就开始做前端了。在学习的时候，深刻理解到万事开头难，好在有公司同事的帮忙，一路磕磕绊绊也算走过来了。&lt;/p&gt;
+
+&lt;p&gt;我深知自学一个新的方向，会面对各种问题。看书，不太现实，每天忙得几乎没有半点时间，而书本上的内容大多数是从起源讲起，重点难以突出
+，比如我学选择器的时候，看了半天没告诉选择器究竟是干吗用的。既然入门这么难，世面上却没有系统性学习前端的免费课程。那我为何不做呢？有了想法后，说干就干。由于和南大一起做过知识小集，有一些人脉，开始时还算顺利，200人很快就达到了，这不你现在才和我一起学习前端吗！所以要感谢这些帮我分享课程的小伙伴们。&lt;/p&gt;
+
+&lt;p&gt;《前端小课》，我对它的定位是一本前端入门到进阶的多媒体电子书。为什么定义成书呢？因为写书比较系统，质量有保证。写《前端小课》的时候我也是这样，每个知识点都会反复推敲，每篇文章都会反复看3遍以上。我觉得《前端小课》还有一个最大的特点是，它具有一定的活力，因为它融入了读者的思考与行动，每天有数百名同学在打卡，与我互动，互相鼓励。相信后续会有越来越多的同学加入到这个学习队伍中。&lt;/p&gt;
+
+&lt;h2 id=&quot;最后&quot;&gt;最后&lt;/h2&gt;
+
+&lt;p&gt;欢迎通过微信扫码关注公众号，和我一起&lt;code class=&quot;highlighter-rouge&quot;&gt;免费&lt;/code&gt;学习&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/suyan-qrcode.png&quot; alt=&quot;素燕公众号二维码&quot; /&gt;&lt;/p&gt;</content><author><name>lefex</name></author><summary type="html">你好，这里是《前端小课》的起源:</summary></entry><entry><title type="html">免费领取各阶段电子书</title><link href="http://localhost:4000/wsy/2019/10/05/ebook.html" rel="alternate" type="text/html" title="免费领取各阶段电子书" /><published>2019-10-05T09:50:51+08:00</published><updated>2019-10-05T09:50:51+08:00</updated><id>http://localhost:4000/wsy/2019/10/05/ebook</id><content type="html" xml:base="http://localhost:4000/wsy/2019/10/05/ebook.html">&lt;p&gt;为方便阅读，在每一阶段结束后我会把内容汇总成一本电子书，可以通过下面的链接获取各阶段的电子书。&lt;/p&gt;
+
+&lt;h2 id=&quot;第-1-阶段-html--css-电子书&quot;&gt;第 1 阶段： HTML + CSS 电子书&lt;/h2&gt;
+
+&lt;p&gt;第一阶段主要包含 HTML 与 CSS 相关的内容，通过这一阶段你可以创建基本的 HTML 页面。获取电子书： &lt;a href=&quot;https://mp.weixin.qq.com/s/oN_U1SAm8WJ1CLZQNJtIPA&quot;&gt;第 1 阶段 HTML + CSS 电子书&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/ebook/1-cover.png&quot; alt=&quot;1-cover.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;第-2-阶段-死磕-css-布局&quot;&gt;第 2 阶段： 死磕 CSS 布局&lt;/h2&gt;
+
+&lt;p&gt;第二阶段主要包含 CSS 布局，流式布局、Position 布局、float 布局、FlexBox 布局 和 grid 布局。获取电子书：&lt;a href=&quot;https://mp.weixin.qq.com/s/-js2txXGKUzEFEMUlF8JBg&quot;&gt;第 2 阶段 死磕 CSS布局&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/ebook/2-cover.png&quot; alt=&quot;2-cover.png&quot; /&gt;&lt;/p&gt;</content><author><name>lefex</name></author><summary type="html">为方便阅读，在每一阶段结束后我会把内容汇总成一本电子书，可以通过下面的链接获取各阶段的电子书。</summary></entry><entry><title type="html">抱歉</title><link href="http://localhost:4000/wsy/2019/10/04/runing.html" rel="alternate" type="text/html" title="抱歉" /><published>2019-10-04T09:50:51+08:00</published><updated>2019-10-04T09:50:51+08:00</updated><id>http://localhost:4000/wsy/2019/10/04/runing</id><content type="html" xml:base="http://localhost:4000/wsy/2019/10/04/runing.html">&lt;h2 id=&quot;温馨提示&quot;&gt;温馨提示&lt;/h2&gt;
+
+&lt;p&gt;你好，此模块内容正在添加中，使用微信扫描下方二维码，获取更多内容：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/suyan-qrcode.png&quot; alt=&quot;素燕公众号二维码&quot; /&gt;&lt;/p&gt;</content><author><name>lefex</name></author><summary type="html">温馨提示</summary></entry><entry><title type="html">加入打卡学习</title><link href="http://localhost:4000/wsy/2019/10/03/add.html" rel="alternate" type="text/html" title="加入打卡学习" /><published>2019-10-03T09:50:51+08:00</published><updated>2019-10-03T09:50:51+08:00</updated><id>http://localhost:4000/wsy/2019/10/03/add</id><content type="html" xml:base="http://localhost:4000/wsy/2019/10/03/add.html">&lt;p&gt;前端小课会分多个阶段来学习前端知识，每阶段大约 20 天左右的时间。每天早晨 &lt;code class=&quot;highlighter-rouge&quot;&gt;7:55&lt;/code&gt; 会在公众号推送新的内容。直接通过公众号留言进行打卡，打卡的目的是督促自己能够坚持下来。如果你想学习前端，欢迎加入学习。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/add/1.png&quot; alt=&quot;1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;欢迎通过微信扫码关注公众号，和我一起&lt;code class=&quot;highlighter-rouge&quot;&gt;免费&lt;/code&gt;学习&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/suyan-qrcode.png&quot; alt=&quot;素燕公众号二维码&quot; /&gt;&lt;/p&gt;</content><author><name>lefex</name></author><summary type="html">前端小课会分多个阶段来学习前端知识，每阶段大约 20 天左右的时间。每天早晨 7:55 会在公众号推送新的内容。直接通过公众号留言进行打卡，打卡的目的是督促自己能够坚持下来。如果你想学习前端，欢迎加入学习。</summary></entry><entry><title type="html">前端小课第一阶段：学懂 HTML 与 CSS</title><link href="http://localhost:4000/wsy/2019/10/01/first.html" rel="alternate" type="text/html" title="前端小课第一阶段：学懂 HTML 与 CSS" /><published>2019-10-01T09:50:51+08:00</published><updated>2019-10-01T09:50:51+08:00</updated><id>http://localhost:4000/wsy/2019/10/01/first</id><content type="html" xml:base="http://localhost:4000/wsy/2019/10/01/first.html">&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/zh-CN/docs/Web&quot;&gt;Web 开发技术 MDN&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.w3.org/2002/03/tutorials.html#webdesign_htmlcss&quot;&gt;W3C&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;如果你想从0学习前端知识，但是不知道该如何入门；&lt;/li&gt;
+  &lt;li&gt;如果你学过前端，但是基础不太扎实，想重学前端；&lt;/li&gt;
+  &lt;li&gt;如果你有点零碎的时间，想学点东西；&lt;/li&gt;
+  &lt;li&gt;如果你是移动端的同学想转前端，提前想了解一下前端知识；&lt;/li&gt;
+  &lt;li&gt;如果你想开发微信小程序；&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;框架&quot;&gt;框架&lt;/h3&gt;
+&lt;p&gt;总之，如果你想学前端，来吧，一起学习！&lt;/p&gt;
+
+&lt;p&gt;前端小课的目标是帮助想利用业余时间学习前端的同学。第一阶段主要掌握 HTML 和 CSS，共 20 天，每周周一到周五早晨 8 点在本公众号中发布课程内容（节假日除外）。
+我学习前端的原因很简单，主要因为：&lt;/p&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://baidu.github.io/san/&quot;&gt;san&lt;/a&gt;，是一个 MVVM 的组件框架。它体积小巧（&amp;lt; 15K），兼容性好（IE6），性能卓越，是一个可靠、可依赖的实现响应式用户界面的解决方案。&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cn.vuejs.org/&quot;&gt;vue&lt;/a&gt;，渐进式JavaScript 框架。&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://reactjs.org/&quot;&gt;react&lt;/a&gt;，A JavaScript library for building user interfaces。&lt;/li&gt;
+  &lt;li&gt;1.业务需要；&lt;/li&gt;
+  &lt;li&gt;2.想尝试一门新的技术，做一些有意义的事情；&lt;/li&gt;
+  &lt;li&gt;3.想深入学习 Hybrid 方案；&lt;/li&gt;
+  &lt;li&gt;4.想深入学习 JS；&lt;/li&gt;
+  &lt;li&gt;5.扩充自己的编程思维。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;博客推荐&quot;&gt;博客推荐&lt;/h3&gt;
+&lt;p&gt;但我目前并没有完全放弃 iOS，我只是在寻找前端和iOS中的结合点。至于要不要学习前端，你可以根据自己的业务以及自己对未来的规划来考虑，可以先了解一下前端的基本概念、技术栈，一旦需要的时候上手会快很多。有的同学可能会说语言是大同小异的，到时候看看就「能写了」。这里我纠正一下，学语言比较简单，但是某一个方向，语言只占用了很小的一部分。比如前端，你会个 JS 语言就会写前端了吗？当然不是，还有很多需要学习，比如 CSS，Node，前端构建，各种框架，这些知识不花费一定时间琢磨是不会明白的。&lt;/p&gt;
+
+&lt;h2 id=&quot;参与方式&quot;&gt;参与方式&lt;/h2&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.zhangxinxu.com/&quot;&gt;zhangxinxu&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://fex.baidu.com/&quot;&gt;FEX 百度前端团队&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.alloyteam.com/&quot;&gt;AlloyTeam 腾讯&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://fed.taobao.org/&quot;&gt;FED 淘宝前端团队&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">var name = &quot;素燕&quot;; var welcome = &quot;欢迎关注&quot; + name + &quot;公众号&quot;; console.log(welcome); // 欢迎关注素燕公众号</summary></entry></feed>
+  &lt;li&gt;1.关注公众号「素燕」，文末有二维码；&lt;/li&gt;
+  &lt;li&gt;2.在公众号留言区输入打卡指令即可完成打卡，每天文章中会带有不同的打卡指令。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;课程内容-13-天htmlcss&quot;&gt;课程内容 13 天：HTML+CSS&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/-js2txXGKUzEFEMUlF8JBg&quot;&gt;坚持学习前端的第20天&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/IqqoMc967gFYfHRJoCAJhw&quot;&gt;第19天：写出易复用、易维护、结构清晰的 CSS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/b2f58P6P7E00RswRyuHzVQ&quot;&gt;第18天：CSS中的权重&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/nlVmqSaUTsKKIFS2lXBg7Q&quot;&gt;第17天：屏幕尺寸这么多，前端却有高招&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/CEh7LcHDqj5s5UebK5t-Vw&quot;&gt;第16天：领导说，体验差&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/wQOEMwQVdDYXpqSN7SuLcA&quot;&gt;聚齐了这3张宝图，搞懂CSS权重&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/5nrVkgzfMXivl1mAEvrWyg&quot;&gt;第15天：设计师的要求&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/P03ieC4DiTuZzWRY3vDMZg&quot;&gt;第14天：在文字前、后插入一个图标&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/16E5JnHtszJ2rMunlHFPGA&quot;&gt;第13天：CSS中使用图&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/3hhPUbcMPUZp5GYjg7_Gog&quot;&gt;移动端同学为什么要学前端&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/OZNDlCroFkK79EbqZpWr8g&quot;&gt;第12天：打破常规之 display&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/0rOCSAJjMq7N4t8U-I1gnw&quot;&gt;第11天：说好不哭&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/lt7_v8V5g5sG1QdP4-TOFQ&quot;&gt;第10天：撑起CSS布局的半壁江山—盒子模型&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/11D_PwSxll_lKUD-yzWkxQ&quot;&gt;第9天：自我介绍&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/l9pLes4Q64-Yq0KtmcTWQA&quot;&gt;第8天：border 能干啥&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/nS_kcIqBwO03mvF97BZCBQ&quot;&gt;群里讨论的一个选择器问题（一定要看）&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/V00q_cJrpPoEUXD7Yxvyug&quot;&gt;第7天：CSS中的选择器详解&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/hCbRtgZ9v0T9OJhJ15JAeA&quot;&gt;第 6 天：设计一个左右滑动的菜单&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/pHy30He9hS2C4UPDGxYqlg&quot;&gt;第6天：使用CSS的三种方式&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/vvrt3zvOt8jsgaulayu5sg&quot;&gt;第 5 天：读懂 HTML 标签&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/u1z009G2lYZK-SGFCXJhyw&quot;&gt;第4天：给自己一句鼓励的话&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/Y5miYpQhtv4fotp0bFMJiw&quot;&gt;第4天：我学前端时用过的资源&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/LMiPhxhHyOku6HTg0cBQsQ&quot;&gt;第3天：HTML 中的 head 标签&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/7Vx2CYBPTuoHQfYsawQhzA&quot;&gt;第2天：HTML 结构&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mp.weixin.qq.com/s/66oU0fY502OYK9WpxiaCtA&quot;&gt;第1天：开篇词，开发环境准备&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;最后&quot;&gt;最后&lt;/h2&gt;
+
+&lt;p&gt;微信扫码关注公众号，和我一起免费学习&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/suyan-qrcode.png&quot; alt=&quot;素燕公众号二维码&quot; /&gt;&lt;/p&gt;</content><author><name>lefex</name></author><summary type="html">前言</summary></entry></feed>

@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: 超越技术
 description: >- # this means to ignore newlines until "baseurl:"
-  图解算法，图解数据结构，LeectCode。
+  前端小课，前端，图解算法，图解数据结构，LeectCode。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://lefex.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  lefe

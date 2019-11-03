@@ -1,0 +1,47 @@
+---
+layout: post
+title:  "前端下课第二阶段：死磕CSS布局"
+date:   2019-11-03 10:50:51 +0800
+author: lefex
+categories: wsy
+---
+
+## 前言
+
+在我学习前端的时候，被 CSS 布局搞懵了好多次，无数次以为我真的掌握到了布局的本质，但后来发现有些内容还是没有彻底掌握。FlexBox、Position 布局我写过两次文章，即将进入第三次。这次我下了血本，把 MDN 文档都打印出来了，旨在能够理解的更透彻。我想把我对 CSS 布局的理解分享给大家。这一阶段时间比较短，但内容非常重要。在我接触的前端同学中，即使有多年工作经验的，也未必能掌握布局的精华。如果你对 CSS 布局理解的不是很好，不防和我一起系统学习一遍。
+
+前端小课是一本帮助你学习前端的多媒体电子书。每天一小课，分阶段、系统地学习前端知识，避免 case-by-case 重复学习。参与的同学每天都会打卡，算是对自己的一次监督吧，学习也要有一种仪式感。如果你想参与这一阶段学习，但是没有 CSS 基础，建议在这一阶段还没开始前，学习一下第一阶段的内容。
+
+
+## 参与方式
+
+- 1.关注公众号「素燕」，文末有二维码；
+- 2.在公众号留言区输入打卡指令即可完成打卡，每天文章中会带有不同的打卡指令。
+
+![catalog.png](/images/second/catalog.png)
+
+## 课程内容 13 天：死磕 CSS 布局
+
+- [第1天：前端布局概述](https://mp.weixin.qq.com/s/oDNuyEdgUPweSZiOWnriQA)
+- [第3天：布局之源 - 流式布局](https://mp.weixin.qq.com/s/Ib2AnP47yuMe5HrWRyhTig)
+- [第2天：图解 FlexBox 布局（上）](https://mp.weixin.qq.com/s/T-Z_8he9UxBBfL8Jb3zwtA)
+- [第4天：图解 FlexBox 布局（下）](https://mp.weixin.qq.com/s/uct9apWqgznde1m2IMVgwA)
+- [第6天：深入理解 FlexBox 布局的弹性](https://mp.weixin.qq.com/s/XG5QeIUF-qkBAqd_jlUV9g)
+- [第5天：position 布局之相对布局 relative](https://mp.weixin.qq.com/s/RFlSDGIq7ERm2CWCzpQCJQ)
+- [第7天: position 布局之绝对布局 absolute](https://mp.weixin.qq.com/s/UJZTjsKUC-aOo0zrNrryiQ)
+- [第9天: position 布局之 fixed、sticky](https://mp.weixin.qq.com/s/OOOrutqFKvOsY_Td-cpi4w)
+- [第8天：布局翘楚 - Grid 布局概述](https://mp.weixin.qq.com/s/SJ7k23nIgMOcR2fDjOHhGg)
+- [第10天：买一块地盖一处院子，布局区域](https://mp.weixin.qq.com/s/ZziZ9jDKGPORnV8Yv5r_lQ)
+- [第11天：grid布局对齐属性](https://mp.weixin.qq.com/s/9_zPYmfYzhIu-vgnfDGk4g)
+- [第12天： 靠边站之float](https://mp.weixin.qq.com/s/ba8kJOU2a83NBnwG0y8fdQ)
+- [第13天：布局的兼容性与两种不常用的布局](https://mp.weixin.qq.com/s/fM8DkM9sGAGzu-G3TW_5UA)
+
+## 实践 - 仿写朋友圈
+
+- [用前端仿写朋友圈](https://mp.weixin.qq.com/s/BUMaJXJ2bD0FcZ5kMI_WrA)
+
+## 最后
+
+微信扫码关注公众号，和我一起免费学习
+
+![素燕公众号二维码](/assets/suyan-qrcode.png)
